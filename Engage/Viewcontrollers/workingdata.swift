@@ -8,17 +8,7 @@
 import Foundation
 import UIKit
 
-class workingdata {
-    var _workingdoc = "workingdoc"
-    var workingdoc:String {
-        get {
-            return _workingdoc
-        }
-        set (newval) {
-            _workingdoc = newval
-        }
-    }
-    func callval() {
-        print(workingdoc)
-    }
+struct workingdata {
+    static var doc = 1
+    
 }

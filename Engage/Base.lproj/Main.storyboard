@@ -45,6 +45,9 @@
                                             <constraint firstAttribute="width" constant="80" id="Bw2-ZO-wCE"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="debugpush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdT-yf-95L"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,6 +62,7 @@
                     </view>
                     <connections>
                         <outlet property="Formfillerbutton" destination="Qzh-9i-KUq" id="Bbx-8N-W4K"/>
+                        <outlet property="debugbutton" destination="fYz-Xl-TX3" id="wO2-1x-LfR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

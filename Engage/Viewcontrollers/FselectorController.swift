@@ -10,12 +10,13 @@ import UIKit
 
 class FselectorController: UIViewController {
     var data = workingdata()
+    
     @IBOutlet weak var homebutton: UIButton!
     @IBOutlet weak var FSAbutton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("Fselector")
+        print(workingdata.doc)
     }
 
     @IBAction func FSApush(_ sender: Any) {
