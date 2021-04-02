@@ -8,10 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var data = workingdata()
+    
+    @IBOutlet weak var Formfillerbutton: UIButton!
+    
+    
     override func viewDidLoad() {
+        var data = workingdata()
+        data.callval()
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        
     }
 
 
