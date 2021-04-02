@@ -13,8 +13,9 @@ class QandaController: UIViewController {
     var data = workingdata()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("Quanda")
+        print(workingdata.qlist)
+        print(workingdata.qtype)
+        
         
     }
 

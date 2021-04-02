@@ -19,6 +19,8 @@
 		03C00F9126155496002A4488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C00F8F26155496002A4488 /* LaunchScreen.storyboard */; };
 		03C00F9C26155496002A4488 /* EngageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F9B26155496002A4488 /* EngageTests.swift */; };
 		03C00FA726155496002A4488 /* EngageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00FA626155496002A4488 /* EngageUITests.swift */; };
+		03DDB6CF2616B4290046B613 /* templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDB6CE2616B4290046B613 /* templates.swift */; };
+		03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8A82616B9D60040B62F /* hardcoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		03C00FA226155496002A4488 /* EngageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C00FA626155496002A4488 /* EngageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngageUITests.swift; sourceTree = "<group>"; };
 		03C00FA826155496002A4488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03DDB6CE2616B4290046B613 /* templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = templates.swift; sourceTree = "<group>"; };
+		03FAD8A82616B9D60040B62F /* hardcoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hardcoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,6 @@
 		0390F96826168DD4004FD4AE /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				0390F972261695B6004FD4AE /* workingdata.swift */,
 				03C00F8526155495002A4488 /* ViewController.swift */,
 				0390F96326167CE4004FD4AE /* FselectorController.swift */,
 				0390F96C261691A1004FD4AE /* QandaController.swift */,
@@ -98,6 +101,8 @@
 		0390F971261695A3004FD4AE /* Logic classes */ = {
 			isa = PBXGroup;
 			children = (
+				0390F972261695B6004FD4AE /* workingdata.swift */,
+				03DDB6CE2616B4290046B613 /* templates.swift */,
 			);
 			path = "Logic classes";
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		03C00F8026155495002A4488 /* Engage */ = {
 			isa = PBXGroup;
 			children = (
+				03FAD8A72616B8040040B62F /* Question templates */,
 				0390F971261695A3004FD4AE /* Logic classes */,
 				0390F96826168DD4004FD4AE /* Viewcontrollers */,
 				03C00F8126155495002A4488 /* AppDelegate.swift */,
@@ -154,6 +160,14 @@
 				03C00FA826155496002A4488 /* Info.plist */,
 			);
 			path = EngageUITests;
+			sourceTree = "<group>";
+		};
+		03FAD8A72616B8040040B62F /* Question templates */ = {
+			isa = PBXGroup;
+			children = (
+				03FAD8A82616B9D60040B62F /* hardcoding.swift */,
+			);
+			path = "Question templates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,11 +301,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C00F8626155495002A4488 /* ViewController.swift in Sources */,
+				03DDB6CF2616B4290046B613 /* templates.swift in Sources */,
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
+				03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */,
 				0390F96426167CE4004FD4AE /* FselectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var data = workingdata()
     
     @IBOutlet weak var debugbutton: UIButton!
     @IBOutlet weak var Formfillerbutton: UIButton!
@@ -17,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(workingdata.doc)
+        print()
+        
         
         
         

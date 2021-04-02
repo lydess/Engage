@@ -20,9 +20,12 @@ class FselectorController: UIViewController {
     }
 
     @IBAction func FSApush(_ sender: Any) {
+        data.templateset(templateid: 0)
+        print(workingdata.templatename)
     }
     
     @IBAction func homepush(_ sender: Any) {
+        
     }
 }
 
