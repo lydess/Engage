@@ -21,6 +21,7 @@
 		03C00FA726155496002A4488 /* EngageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00FA626155496002A4488 /* EngageUITests.swift */; };
 		03DDB6CF2616B4290046B613 /* templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDB6CE2616B4290046B613 /* templates.swift */; };
 		03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8A82616B9D60040B62F /* hardcoding.swift */; };
+		03FAD8B12617CFBC0040B62F /* Animation test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8B02617CFBC0040B62F /* Animation test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		03C00FA826155496002A4488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DDB6CE2616B4290046B613 /* templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = templates.swift; sourceTree = "<group>"; };
 		03FAD8A82616B9D60040B62F /* hardcoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hardcoding.swift; sourceTree = "<group>"; };
+		03FAD8B02617CFBC0040B62F /* Animation test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation test.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				03C00F8F26155496002A4488 /* LaunchScreen.storyboard */,
 				03C00F9226155496002A4488 /* Info.plist */,
 				03C00F8A26155495002A4488 /* Engage.xcdatamodeld */,
+				03FAD8B02617CFBC0040B62F /* Animation test.swift */,
 			);
 			path = Engage;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C00F8626155495002A4488 /* ViewController.swift in Sources */,
+				03FAD8B12617CFBC0040B62F /* Animation test.swift in Sources */,
 				03DDB6CF2616B4290046B613 /* templates.swift in Sources */,
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,

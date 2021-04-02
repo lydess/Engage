@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import SceneKit
+
 
 class ViewController: UIViewController {
+    @IBOutlet weak var imageview: UIImageView!
     
     @IBOutlet weak var debugbutton: UIButton!
     @IBOutlet weak var Formfillerbutton: UIButton!
+    @IBOutlet weak var debug: UIButton!
+    
+    
     
     
     override func viewDidLoad() {
@@ -22,11 +28,21 @@ class ViewController: UIViewController {
         
         
     }
+    
+   
 
     @IBAction func debugpush(_ sender: Any) {
-        workingdata.doc = 5
-        print(workingdata.doc)
+        
+        
      
+    }
+    
+    @IBAction func debugbu(_ sender: Any) {
+        //SCNTransaction.animationDuration = 30
+        
+        
+        
+        
     }
     
 }
