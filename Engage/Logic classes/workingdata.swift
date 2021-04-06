@@ -16,6 +16,7 @@ struct workingdata {
     static var qlist = [String]()
     static var alist = NSMutableArray()
     static var qtype = [Int]()
+    static var isworking = false
     
     
     var fsa = fsatemp()            // hardcoded, to be replaced

@@ -38,7 +38,7 @@ class animbutton: UIButton {
 }
     func fadeout() {
         let opac = CABasicAnimation(keyPath: "opacity")
-        opac.duration = 1
+        opac.duration = 0.3
         opac.fromValue = 1
         opac.toValue = 0
         

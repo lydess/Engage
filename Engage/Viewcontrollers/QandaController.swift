@@ -16,33 +16,137 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Submit: UIButton!
     @IBOutlet weak var textbox: animtextfield!
     @IBOutlet weak var texterror: UILabel!
+    @IBOutlet weak var labelt: UILabel!
+    @IBOutlet weak var labelstack: UIStackView!
+    @IBOutlet weak var qtext: UILabel!
+    @IBOutlet weak var debug: UIButton!
     
+    
+    @IBOutlet var tapges: UITapGestureRecognizer!
+    // var action = uiaction()
     var data = workingdata()
+    var cords = CGRect.init(x: 100, y: 100, width: 50, height: 50)
+    var queue = [String]()
+    var answer = NSMutableArray()
+    var qtype = [Int]()
+    var step = 0
     
-    
-    
+    //TODO: add logic to check for an existing form being filled out
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(workingdata.qlist)
-        print(workingdata.qtype)
+        if workingdata.isworking == true {
+            resume()
+        }
+        else{
+            yes.isEnabled = false
+            yes.alpha = 0
+            no.isEnabled = false
+            no.alpha = 0
+            textbox.isEnabled = false
+            textbox.alpha = 0
+            Submit.isEnabled = false
+            Submit.alpha = 0
+            labelstack.alpha = 0
+            
+            startup()
+        }
+        
+       
         
         
     }
+    func startup() {
+        queue = workingdata.qlist
+        qtype = workingdata.qtype
+        print(workingdata.qlist)
+        print(workingdata.qtype)
+        self.step = 0
+        uistep()
+        
+    }
+    func reload() {
+        step += 1
+        print("reloading")
+        uistep()
+        
+    }
+    func uistep() {
+        
+        switch qtype[step] {
+        case 0:
+             case0()
+        case 1:
+            case1()
+        case 2:
+            case2()
+        case 3:
+            print("case 3")
+        case 4:
+            print("case 4")
+        default:
+            print("case 1")
+        }
+    }
+    func resume() {
+        
+    }
+    // loads the UI for a yes/no question
+    func case0() {
+        yes.isEnabled = true
+        yes.alpha = 1
+        no.alpha = 1
+        no.isEnabled = true
+        Submit.isEnabled = false
+        textbox.isEnabled = false
+        labelstack.isHidden = true
+        qtext.text = workingdata.qlist[step]
+        print("case 0")
+    }
+    func case1() {
+        yes.isEnabled = false
+        yes.alpha = 0
+        no.isEnabled = false
+        no.alpha = 0
+        Submit.isEnabled = true
+        Submit.alpha = 1
+        textbox.alpha = 1
+        textbox.isEnabled = true
+        labelstack.isHidden = false
+        qtext.text = workingdata.qlist[step]
+        print("case 1")
+        
+    }
+    func case2() {
+        yes.isEnabled = false
+        yes.alpha = 0
+        no.alpha = 0
+        no.isEnabled = false
+        Submit.isEnabled = false
+        Submit.alpha = 0
+        textbox.alpha = 0
+        textbox.isEnabled = false
+        labelstack.isHidden = false
+        labelstack.alpha = 1
+        qtext.text = workingdata.qlist[step]
+        print("case 2")
+    }
+    func case3() {
+        
+    }
     
-    
-
+    @IBAction func debugpush(_ sender: Any) {
+        print(self.answer)
+    }
     @IBAction func submitpush(_ sender: Any) {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        textbox.shonk()
+        answer.add(textbox.text)
+        reload()
 
     }
     @IBAction func swipeleft(_ sender: Any) {
-       // yes.alpha = 1
-        //UIView.animate(withDuration: 0.3) {
-        //    self.yes.alpha = 0
-        //}
+        yes.alpha = 0
+        yes.isEnabled = false
         yes.slideleft()
-       // yes.fadeout()
+        yes.fadeout()
        
 
         
@@ -57,12 +161,79 @@ class QandaController: UIViewController, UITextFieldDelegate {
        
     
     }
+    @IBAction func nopush(_ sender: Any) {
+        answer.add(0)
+        reload()
+    }
+    
+    @IBAction func yespush(_ sender: Any) {
+        answer.add(1)
+        reload()
+    }
+    
     @IBAction func fallAndFade(_ sender: Any) {
         SCNTransaction.animationDuration = 1.0
         yes.alpha = 0
         
     }
+    func yesnostart(button:UIButton) {
+        UIView.animate(withDuration: 0) {
+            self.yes.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.yes.alpha = 1
+        }
+        yes.isEnabled = true
+        no.alpha = 1
+        no.isEnabled = false
+        
+        
+        
+    }
+    
+    @IBAction func taptest(_ sender: Any) {
+        print("text")
+    }
     
 }
 
-
+//class uiaction {
+//    @IBOutlet var swiper: UISwipeGestureRecognizer!
+//    @IBOutlet weak var yes: animbutton!
+//    @IBOutlet weak var no: UIButton!
+//    @IBOutlet weak var Submit: UIButton!
+//    @IBOutlet weak var textbox: animtextfield!
+//    @IBOutlet weak var texterror: UILabel!
+//    @IBOutlet weak var labelt: UILabel!
+//    @IBOutlet weak var labelstack: UIStackView!
+//    @IBOutlet weak var qtext: UILabel!
+//    @IBOutlet weak var debug: UIButton!
+//
+//    func yesno(Boolean:Bool) {
+//        if Boolean == true {
+//            yes.alpha = 1
+//            no.alpha = 1
+//            yes.isEnabled = true
+//            no.isEnabled = true
+//        }
+//        else {
+//            yes.alpha = 0
+//            no.alpha = 0
+//            no.isEnabled = false
+//            yes.isEnabled = false
+//        }
+//    }
+//
+//    func submit(istrue:Bool) {
+//        if istrue == true {
+//            textbox.alpha = 1
+//            textbox.isEnabled = true
+//            Submit.isEnabled = true
+//            Submit.alpha = 1
+//        }
+//        else {
+//            textbox.alpha = 0
+//            textbox.isEnabled = false
+//            Submit.alpha = 0
+//            Submit.isEnabled = false
+//        }
+//    }
+//}

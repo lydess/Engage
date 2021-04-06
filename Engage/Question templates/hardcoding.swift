@@ -29,7 +29,7 @@ class templatetext {
         
     }
     func fsatype() -> [Int] {
-        let qtype = [0,1,2,3,4]
+        let qtype = [0,1,0,1,1]
         return qtype
     }
 }

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Formfillerbutton: UIButton!
     @IBOutlet weak var debug: UIButton!
     
+    @IBOutlet var gesture: UIPanGestureRecognizer!
     
     
     
@@ -28,7 +29,6 @@ class ViewController: UIViewController {
         
         
     }
-    
    
 
     @IBAction func debugpush(_ sender: Any) {
@@ -36,6 +36,8 @@ class ViewController: UIViewController {
         
      
     }
+    
+    
     
     @IBAction func debugbu(_ sender: Any) {
         //SCNTransaction.animationDuration = 30
@@ -45,5 +47,23 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
+      // 1
+      let translation = gesture.translation(in: view)
+
+      // 2
+      guard let gestureView = gesture.view else {
+        return
+      }
+
+      gestureView.center = CGPoint(
+        x: gestureView.center.x + translation.x,
+        y: gestureView.center.y + translation.y
+      )
+
+      // 3
+      gesture.setTranslation(.zero, in: view)
+    }
 }
 
