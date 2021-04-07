@@ -20,10 +20,10 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var labelstack: UIStackView!
     @IBOutlet weak var qtext: UILabel!
     @IBOutlet weak var debug: UIButton!
+    @IBOutlet weak var button: checkbox!
     
     
     @IBOutlet var tapges: UITapGestureRecognizer!
-    // var action = uiaction()
     var data = workingdata()
     var cords = CGRect.init(x: 100, y: 100, width: 50, height: 50)
     var queue = [String]()
@@ -54,6 +54,36 @@ class QandaController: UIViewController, UITextFieldDelegate {
        
         
         
+    }
+    
+    func yesno(Boolean:Bool) {
+        if Boolean == true {
+            yes.alpha = 1
+            no.alpha = 1
+            yes.isEnabled = true
+            no.isEnabled = true
+        }
+        else {
+            yes.alpha = 0
+            no.alpha = 0
+            no.isEnabled = false
+            yes.isEnabled = false
+        }
+    }
+
+    func submit(istrue:Bool) {
+        if istrue == true {
+            textbox.alpha = 1
+            textbox.isEnabled = true
+            Submit.isEnabled = true
+            Submit.alpha = 1
+        }
+        else {
+            textbox.alpha = 0
+            textbox.isEnabled = false
+            Submit.alpha = 0
+            Submit.isEnabled = false
+        }
     }
     func startup() {
         queue = workingdata.qlist
@@ -90,52 +120,50 @@ class QandaController: UIViewController, UITextFieldDelegate {
     func resume() {
         
     }
+    
     // loads the UI for a yes/no question
     func case0() {
-        yes.isEnabled = true
-        yes.alpha = 1
-        no.alpha = 1
-        no.isEnabled = true
-        Submit.isEnabled = false
-        textbox.isEnabled = false
-        labelstack.isHidden = true
+        yesno(Boolean: true)
+        submit(istrue: false)
         qtext.text = workingdata.qlist[step]
         print("case 0")
     }
     func case1() {
-        yes.isEnabled = false
-        yes.alpha = 0
-        no.isEnabled = false
-        no.alpha = 0
-        Submit.isEnabled = true
-        Submit.alpha = 1
-        textbox.alpha = 1
-        textbox.isEnabled = true
-        labelstack.isHidden = false
+        yesno(Boolean: false)
+        submit(istrue: true)
+        labelstack.isHidden = true
         qtext.text = workingdata.qlist[step]
         print("case 1")
         
     }
     func case2() {
-        yes.isEnabled = false
-        yes.alpha = 0
-        no.alpha = 0
-        no.isEnabled = false
-        Submit.isEnabled = false
-        Submit.alpha = 0
-        textbox.alpha = 0
-        textbox.isEnabled = false
+        yesno(Boolean: false)
+        submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
+        buildview()
         qtext.text = workingdata.qlist[step]
+        button.click()
         print("case 2")
+        
     }
     func case3() {
         
     }
-    
+    // programaticly creates a button
+    func buttongen(text:String) -> checkbox {
+        let button = checkbox(frame: CGRect(x: 100, y:100, width: 100, height: 100))
+        button.backgroundColor = .green
+        button.setTitle(text, for: .normal)
+        button.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
+        self.view.addSubview(button)
+        return button
+    }
+    func buildview() {
+        labelstack.addArrangedSubview(buttongen(text: "questiontext"))
+    }
     @IBAction func debugpush(_ sender: Any) {
-        print(self.answer)
+        print(labelstack.debugDescription)
     }
     @IBAction func submitpush(_ sender: Any) {
         answer.add(textbox.text)
@@ -151,6 +179,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
 
         
     
+    }
+    @objc func testfunc() {
+        print("bro-science")
     }
     
     @IBAction func rightswipe(_ sender: Any) {
@@ -195,45 +226,5 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
 }
 
-//class uiaction {
-//    @IBOutlet var swiper: UISwipeGestureRecognizer!
-//    @IBOutlet weak var yes: animbutton!
-//    @IBOutlet weak var no: UIButton!
-//    @IBOutlet weak var Submit: UIButton!
-//    @IBOutlet weak var textbox: animtextfield!
-//    @IBOutlet weak var texterror: UILabel!
-//    @IBOutlet weak var labelt: UILabel!
-//    @IBOutlet weak var labelstack: UIStackView!
-//    @IBOutlet weak var qtext: UILabel!
-//    @IBOutlet weak var debug: UIButton!
-//
-//    func yesno(Boolean:Bool) {
-//        if Boolean == true {
-//            yes.alpha = 1
-//            no.alpha = 1
-//            yes.isEnabled = true
-//            no.isEnabled = true
-//        }
-//        else {
-//            yes.alpha = 0
-//            no.alpha = 0
-//            no.isEnabled = false
-//            yes.isEnabled = false
-//        }
-//    }
-//
-//    func submit(istrue:Bool) {
-//        if istrue == true {
-//            textbox.alpha = 1
-//            textbox.isEnabled = true
-//            Submit.isEnabled = true
-//            Submit.alpha = 1
-//        }
-//        else {
-//            textbox.alpha = 0
-//            textbox.isEnabled = false
-//            Submit.alpha = 0
-//            Submit.isEnabled = false
-//        }
-//    }
-//}
+
+
