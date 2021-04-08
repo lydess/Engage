@@ -21,6 +21,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var qtext: UILabel!
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var button: checkbox!
+    @IBOutlet weak var scrollv: UIScrollView!
+    
     
     @IBOutlet var tapges: UITapGestureRecognizer!
     
@@ -96,6 +98,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func reload() {
         step += 1
+        activecbx = [checkbox]()
         print("reloading")
         uistep()
         
@@ -141,10 +144,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
-      
-        qtext.text = workingdata.qlist[step]
         var qray = workingdata.qcbx[step]
-        print(qray)
+        qtext.text = workingdata.qlist[step]
         for x in 0...qray.count-1 {
             var text = workingdata.qcbx[step][x]
             buttongen(text: text)
@@ -154,8 +155,14 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     func case3() {
-        var qray = "ITS CASE 3 BIACH!"
-        print(qray)
+        yesno(Boolean: false)
+        submit(istrue: false)
+        labelstack.isHidden = false
+        labelstack.alpha = 1
+        
+        qtext.text = workingdata.qlist[step]
+        
+        
         
     }
     // programaticly creates a button
@@ -167,6 +174,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         button.setImage(pic, for: .normal)
         button.setTitle("  " + text, for: .normal)
         button.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
+        activecbx.append(button)
         labelstack.addArrangedSubview(button)
         return button
     }
@@ -174,7 +182,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
  
     @IBAction func debugpush(_ sender: Any) {
-        print(answer)
+        print(activecbx)
     }
     @IBAction func submitpush(_ sender: Any) {
         answer.add(textbox.text)
@@ -193,11 +201,28 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     @objc func testfunc(sender: checkbox) {
         var jack = String(sender.title(for: .normal)!)
+        let pic = UIImage.init(named: "ticked")
+        let opic = UIImage.init(named: "unticked")
+        switch sender.checked {
+        case true:
+            sender.setImage(opic, for: .normal)
+            sender.checked = false
+            print("state is true")
+        case false:
+            sender.setImage(pic, for: .normal)
+            sender.checked = true
+            print("state is false")
+           
+        default:
+            print("somthing is seriously wrong")
+        }
+        
+        
         for x in 0...1{
             jack.remove(at: jack.startIndex)
         }
         answer.add(jack)
-        reload()
+        //reload()
         
         
     }

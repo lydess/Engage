@@ -14,7 +14,7 @@ class checkbox: UIButton {
    var checked = false
     var btest = true
     func click() {
-        self.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
+        //self.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
     }
     @objc func testfunc(_ sender: checkbox) {
         switch checked {
