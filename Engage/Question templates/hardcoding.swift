@@ -32,4 +32,18 @@ class templatetext {
         let qtype = [0,1,2,3,4]
         return qtype
     }
+    func cbxquestions() -> [Array<String>] {
+        var result = [Array<String>]()
+        let q1 = [String]()
+        let q2 = [String]()
+        let q3 = ["box1","box2", "box3", "box4" ]
+        let q4 = [String]()
+        let q5 = [String]()
+        result.append(q1)
+        result.append(q2)
+        result.append(q3)
+        result.append(q4)
+        result.append(q5)
+        return result
+    }
 }

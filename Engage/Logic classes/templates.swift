@@ -44,6 +44,10 @@ class templates {
         }
         return answer
     }
+    func getlists() -> [Array<String>]{
+        let jacks = hc.cbxquestions()
+        return jacks
+    }
 }
 
 

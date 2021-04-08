@@ -22,15 +22,15 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var button: checkbox!
     
-    
     @IBOutlet var tapges: UITapGestureRecognizer!
+    
     var data = workingdata()
     var cords = CGRect.init(x: 100, y: 100, width: 50, height: 50)
     var queue = [String]()
     var answer = NSMutableArray()
     var qtype = [Int]()
     var step = 0
-    
+    var activecbx = [checkbox]()
     //TODO: add logic to check for an existing form being filled out
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +110,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         case 2:
             case2()
         case 3:
-            print("case 3")
+            case3()
         case 4:
             print("case 4")
         default:
@@ -141,29 +141,40 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
-        buildview()
+      
         qtext.text = workingdata.qlist[step]
-        button.click()
+        var qray = workingdata.qcbx[step]
+        print(qray)
+        for x in 0...qray.count-1 {
+            var text = workingdata.qcbx[step][x]
+            buttongen(text: text)
+            
+        }
         print("case 2")
         
     }
     func case3() {
+        var qray = "ITS CASE 3 BIACH!"
+        print(qray)
         
     }
     // programaticly creates a button
-    func buttongen(text:String) -> checkbox {
-        let button = checkbox(frame: CGRect(x: 100, y:100, width: 100, height: 100))
-        button.backgroundColor = .green
-        button.setTitle(text, for: .normal)
+    func buttongen(text: String) -> checkbox {
+        let pic = UIImage.init(named: "unticked")
+        let button = checkbox(frame: CGRect(x: 100, y:100, width: 100, height: 20))
+        button.backgroundColor = .clear
+        button.setTitleColor(.black, for: .normal)
+        button.setImage(pic, for: .normal)
+        button.setTitle("  " + text, for: .normal)
         button.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
-        self.view.addSubview(button)
+        labelstack.addArrangedSubview(button)
         return button
     }
-    func buildview() {
-        labelstack.addArrangedSubview(buttongen(text: "questiontext"))
-    }
+    
+    
+ 
     @IBAction func debugpush(_ sender: Any) {
-        print(labelstack.debugDescription)
+        print(answer)
     }
     @IBAction func submitpush(_ sender: Any) {
         answer.add(textbox.text)
@@ -180,8 +191,15 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     
     }
-    @objc func testfunc() {
-        print("bro-science")
+    @objc func testfunc(sender: checkbox) {
+        var jack = String(sender.title(for: .normal)!)
+        for x in 0...1{
+            jack.remove(at: jack.startIndex)
+        }
+        answer.add(jack)
+        reload()
+        
+        
     }
     
     @IBAction func rightswipe(_ sender: Any) {

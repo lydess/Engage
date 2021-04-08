@@ -228,10 +228,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="fni-ob-eOO" firstAttribute="top" secondItem="rzd-zp-mfj" secondAttribute="top" id="ZUQ-01-jvM"/>
-                                    <constraint firstItem="fni-ob-eOO" firstAttribute="leading" secondItem="rzd-zp-mfj" secondAttribute="leading" id="jIg-px-AFd"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elq-i4-JEy">
                                 <rect key="frame" x="20" y="697" width="46" height="30"/>

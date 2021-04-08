@@ -16,6 +16,7 @@ struct workingdata {
     static var qlist = [String]()
     static var alist = NSMutableArray()
     static var qtype = [Int]()
+    static var qcbx = [Array<String>]()
     static var isworking = false
     
     
@@ -31,11 +32,20 @@ struct workingdata {
             workingdata.templateset = true
             workingdata.qlist =  temple.Getquestions(tempid: templateid)
             workingdata.qtype = temple.Getanswers(tempid: templateid)
+            workingdata.qcbx = temple.getlists()
+            
+            
         default:
             print("Theres somthing wrong with your templates")
         }
     }
     static func wipeout() {
-        
+        workingdata.templatename = "none set"
+        workingdata.templateset = false
+        workingdata.qlist = [String]()
+        workingdata.qtype = [Int]()
+        workingdata.qcbx = [Array<String>]()
+        workingdata.alist = NSMutableArray()
+        print("WORKING DATA WIPED OUT, ALL DATA IS SET TO DEFAULT VALUES")
     }
 }
