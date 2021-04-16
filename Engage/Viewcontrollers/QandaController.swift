@@ -251,8 +251,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
         
     }
-    // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
-    @IBAction func rightswipe(_ sender: Any) {
+    
+    func saveanswer() {
         switch self.qtype[step] {
         case 0:
             if yes.checked {
@@ -330,6 +330,10 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             
         }
+    }
+    // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
+    @IBAction func rightswipe(_ sender: Any) {
+        saveanswer()
     
     }
    
