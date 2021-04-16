@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Yes button.png",
+      "filename" : "yesunticked.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Yes button-1.png",
+      "filename" : "yesunticked@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Yes button-2.png",
+      "filename" : "yesunticked@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

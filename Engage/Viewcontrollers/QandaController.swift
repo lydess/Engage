@@ -11,9 +11,8 @@ import UIKit
 import SceneKit
 class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet var swiper: UISwipeGestureRecognizer!
-    @IBOutlet weak var yes: animbutton!
-    @IBOutlet weak var no: UIButton!
-    @IBOutlet weak var Submit: UIButton!
+    @IBOutlet weak var yes: yesno!
+    @IBOutlet weak var no: yesno!
     @IBOutlet weak var textbox: animtextfield!
     @IBOutlet weak var texterror: UILabel!
     @IBOutlet weak var labelt: UILabel!
@@ -22,6 +21,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var button: checkbox!
     @IBOutlet weak var scrollv: UIScrollView!
+    
+    @IBOutlet weak var sview: UIView!
+    
     
     
     @IBOutlet var tapges: UITapGestureRecognizer!
@@ -36,6 +38,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     //TODO: add logic to check for an existing form being filled out
     override func viewDidLoad() {
         super.viewDidLoad()
+        yes.tag = 1
+        no.tag = 0
         if workingdata.isworking == true {
             resume()
         }
@@ -46,8 +50,6 @@ class QandaController: UIViewController, UITextFieldDelegate {
             no.alpha = 0
             textbox.isEnabled = false
             textbox.alpha = 0
-            Submit.isEnabled = false
-            Submit.alpha = 0
             labelstack.alpha = 0
             
             startup()
@@ -77,14 +79,12 @@ class QandaController: UIViewController, UITextFieldDelegate {
         if istrue == true {
             textbox.alpha = 1
             textbox.isEnabled = true
-            Submit.isEnabled = true
-            Submit.alpha = 1
+            
         }
         else {
             textbox.alpha = 0
             textbox.isEnabled = false
-            Submit.alpha = 0
-            Submit.isEnabled = false
+           
         }
     }
     func startup() {
@@ -96,11 +96,20 @@ class QandaController: UIViewController, UITextFieldDelegate {
         uistep()
         
     }
+    //resets the UI and advances the question step
     func reload() {
         step += 1
+        
+        for x in activecbx {
+            x.isHidden = true
+            labelstack.removeArrangedSubview(x)
+        }
         activecbx = [checkbox]()
         print("reloading")
         uistep()
+        no.checked = false
+        yes.checked = false
+        
         
     }
     func uistep() {
@@ -124,7 +133,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // loads the UI for a yes/no question
+    // Loads the UI based on what type of question is being asked
     func case0() {
         yesno(Boolean: true)
         submit(istrue: false)
@@ -144,13 +153,16 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
+        
         var qray = workingdata.qcbx[step]
         qtext.text = workingdata.qlist[step]
         for x in 0...qray.count-1 {
             var text = workingdata.qcbx[step][x]
             buttongen(text: text)
             
+            
         }
+       
         print("case 2")
         
     }
@@ -159,12 +171,30 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
-        
+        print(step)
+        var qray = workingdata.qcbx[step]
         qtext.text = workingdata.qlist[step]
+        for x in 0...qray.count-1 {
+            
+            var text = workingdata.qcbx[step][x]
+            buttongen(text: text)
+            
+        }
+        
+        
         
         
         
     }
+    func case4() {
+        yesno(Boolean: false)
+        submit(istrue: false)
+        labelstack.isHidden = false
+        labelstack.alpha = 1
+        print(step)
+        
+    }
+    
     // programaticly creates a button
     func buttongen(text: String) -> checkbox {
         let pic = UIImage.init(named: "unticked")
@@ -182,23 +212,18 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
  
     @IBAction func debugpush(_ sender: Any) {
-        print(activecbx)
-    }
-    @IBAction func submitpush(_ sender: Any) {
-        answer.add(textbox.text)
-        reload()
-
-    }
-    @IBAction func swipeleft(_ sender: Any) {
-        yes.alpha = 0
-        yes.isEnabled = false
-        yes.slideleft()
-        yes.fadeout()
-       
-
+        for x in activecbx {
+            if x.checked == true {
+            print(x.titleLabel?.text!)
+            }
+            
+        }
+        print(answer)
         
-    
     }
+
+    
+    
     @objc func testfunc(sender: checkbox) {
         var jack = String(sender.title(for: .normal)!)
         let pic = UIImage.init(named: "ticked")
@@ -207,11 +232,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
         case true:
             sender.setImage(opic, for: .normal)
             sender.checked = false
-            print("state is true")
+            
         case false:
             sender.setImage(pic, for: .normal)
             sender.checked = true
-            print("state is false")
+            
            
         default:
             print("somthing is seriously wrong")
@@ -221,29 +246,93 @@ class QandaController: UIViewController, UITextFieldDelegate {
         for x in 0...1{
             jack.remove(at: jack.startIndex)
         }
-        answer.add(jack)
+        
         //reload()
         
         
     }
-    
+    // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
     @IBAction func rightswipe(_ sender: Any) {
-        no.alpha = 1
-        UIView.animate(withDuration: 0.5) {
-            self.no.alpha = 0
+        switch self.qtype[step] {
+        case 0:
+            if yes.checked {
+                answer.add(1)
+                reload()
+            }
+            if no.checked {
+                answer.add(0)
+                reload()
+            }
+        case 1:
+            if textbox.text?.isEmpty == true {
+                print("answer not given")
+                
+            }
+            else{
+                answer.add(textbox.text!)
+                reload()
+            }
+            
+            
+        case 2:
+            var answerlist = [String]()
+            for x in activecbx{
+                if x.checked == true{
+                    answerlist.append(x.titleLabel!.text!)
+                }
+            
+            }
+            if answerlist.count != 1 {
+                print("ERROR")
+            }
+            if answerlist.count == 1{
+                answer.add(answerlist[0])
+                reload()
+            }
+            
+            
+        case 3:
+            var answerlist = [String]()
+            for x in activecbx{
+                if x.checked == true{
+                    answerlist.append(x.titleLabel!.text!)
+                }
+            
+            }
+            if answerlist.count < 1 {
+                print("Please select an answer")
+            }
+            else{
+                answer.add(answerlist)
+                reload()
+            }
+            
+            
+        
+        default:
+            print("somthings wrong with your cases man")
         }
-       
+        
+        
+        if answer.count < step {
+            print(step)
+            print(answer.count)
+            print("answer was not given")
+        }
+        if answer.count > step {
+            print("answerpool has been corrupted")
+            
+            print("answers in pool" + String(answer.count))
+            print("current step" + String(step))
+            print("answer list")
+            print(answer)
+            
+            
+            
+        }
     
     }
-    @IBAction func nopush(_ sender: Any) {
-        answer.add(0)
-        reload()
-    }
-    
-    @IBAction func yespush(_ sender: Any) {
-        answer.add(1)
-        reload()
-    }
+   
     
     @IBAction func fallAndFade(_ sender: Any) {
         SCNTransaction.animationDuration = 1.0
@@ -257,14 +346,16 @@ class QandaController: UIViewController, UITextFieldDelegate {
         }
         yes.isEnabled = true
         no.alpha = 1
-        no.isEnabled = false
-        
-        
-        
+        no.isEnabled = false 
     }
     
-    @IBAction func taptest(_ sender: Any) {
-        print("text")
+    @IBAction func nopush(_ sender: Any) {
+        no.click(no)
+    }
+    
+    @IBAction func yespush(_ sender: Any) {
+        yes.click(yes)
+        
     }
     
 }
