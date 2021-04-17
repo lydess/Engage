@@ -237,13 +237,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func debugpush(_ sender: Any) {
-        for x in activecbx {
-            if x.checked == true {
-            print(x.titleLabel?.text!)
-            }
-            
-        }
-        print(answer)
+        print(labelstack.alignment.rawValue)
+        print(labelstack.distribution.rawValue)
         
     }
 

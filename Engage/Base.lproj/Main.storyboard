@@ -16,57 +16,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="fyy-0T-3wP">
-                                <rect key="frame" x="82" y="402" width="223" height="34"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ5-Zc-8gq">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
-                                        <state key="normal" title="   Button   " image="unticked">
-                                            <color key="titleColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdcsdcasdc" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZJ-P8-MkL">
-                                        <rect key="frame" x="109" y="0.0" width="114" height="34"/>
-                                        <color key="backgroundColor" red="0.39511358737945557" green="0.71407228708267212" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHh-vM-KLn">
-                                <rect key="frame" x="39" y="806" width="51" height="30"/>
-                                <state key="normal" title="debug1"/>
+                                <rect key="frame" x="179" y="67" width="57" height="30"/>
+                                <state key="normal" title="Debug 1"/>
                                 <connections>
                                     <action selector="debug1push:" destination="I3Z-0w-Ipy" eventType="touchUpInside" id="SGI-FS-dLg"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="SjJ-fZ-3ZB">
-                                <rect key="frame" x="150" y="145" width="115" height="36"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QME-pd-6hb">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbc-d7-p2z">
+                                <rect key="frame" x="179" y="105" width="59" height="30"/>
+                                <state key="normal" title="Debug 2"/>
+                                <connections>
+                                    <action selector="debug2push:" destination="I3Z-0w-Ipy" eventType="touchUpInside" id="Ibn-BG-woD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcy-Gh-8Dy">
+                                <rect key="frame" x="179" y="143" width="59" height="30"/>
+                                <state key="normal" title="Debug 3"/>
+                                <connections>
+                                    <action selector="debug3push:" destination="I3Z-0w-Ipy" eventType="touchUpInside" id="9vU-p8-CGt"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="SjJ-fZ-3ZB">
+                                <rect key="frame" x="20" y="190" width="151" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wJB-XH-hsk">
+                                <rect key="frame" x="205" y="190" width="151" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BwF-hS-eL3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bHh-vM-KLn" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="39" id="7mv-Yq-Cwx"/>
-                            <constraint firstItem="BwF-hS-eL3" firstAttribute="bottom" secondItem="bHh-vM-KLn" secondAttribute="bottom" constant="26" id="XFu-tw-U5w"/>
-                            <constraint firstItem="fyy-0T-3wP" firstAttribute="top" secondItem="SjJ-fZ-3ZB" secondAttribute="bottom" constant="221" id="adB-FW-JoL"/>
-                            <constraint firstItem="SjJ-fZ-3ZB" firstAttribute="top" secondItem="BwF-hS-eL3" secondAttribute="top" constant="101" id="aeE-Mi-taC"/>
-                            <constraint firstItem="SjJ-fZ-3ZB" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="150" id="fjG-bp-bSg"/>
-                            <constraint firstItem="fyy-0T-3wP" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="82" id="kmV-me-YB0"/>
+                            <constraint firstItem="bHh-vM-KLn" firstAttribute="top" secondItem="BwF-hS-eL3" secondAttribute="top" constant="23" id="9mL-4p-5le"/>
+                            <constraint firstItem="tbc-d7-p2z" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="GuT-Q4-Kvs"/>
+                            <constraint firstItem="Fcy-Gh-8Dy" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="lSX-Fp-3m8"/>
+                            <constraint firstItem="tbc-d7-p2z" firstAttribute="top" secondItem="bHh-vM-KLn" secondAttribute="bottom" constant="8" symbolic="YES" id="slx-Is-36j"/>
+                            <constraint firstItem="Fcy-Gh-8Dy" firstAttribute="top" secondItem="tbc-d7-p2z" secondAttribute="bottom" constant="8" symbolic="YES" id="vYc-p8-xtc"/>
+                            <constraint firstItem="bHh-vM-KLn" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="wko-Gt-LKh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Debug2" destination="tbc-d7-p2z" id="Mx6-GA-16h"/>
                         <outlet property="debug1" destination="bHh-vM-KLn" id="tmF-52-keg"/>
-                        <outlet property="testview" destination="fyy-0T-3wP" id="oXz-Pg-Gby"/>
-                        <outlet property="toplabel" destination="QME-pd-6hb" id="bG1-p3-Duw"/>
+                        <outlet property="debug3" destination="Fcy-Gh-8Dy" id="DnK-tD-imW"/>
+                        <outlet property="rightstack" destination="wJB-XH-hsk" id="nt2-ad-863"/>
+                        <outlet property="topstack" destination="SjJ-fZ-3ZB" id="kus-zt-Zj8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHr-b6-YvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,7 +373,6 @@
         <image name="gobutton" width="335" height="119"/>
         <image name="nobutton" width="400" height="400"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
-        <image name="unticked" width="19" height="19"/>
         <image name="yesbutton" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -30,8 +30,8 @@
             filePath = "Engage/Viewcontrollers/QandaController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Engage/Viewcontrollers/QandaController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "fallAndFade(_:)"
             landmarkType = "7">
          </BreakpointContent>
