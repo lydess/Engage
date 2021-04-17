@@ -16,6 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-3u-Spp">
+                                <rect key="frame" x="-2" y="0.0" width="426" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHh-vM-KLn">
                                 <rect key="frame" x="179" y="67" width="57" height="30"/>
                                 <state key="normal" title="Debug 1"/>
@@ -48,6 +53,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BwF-hS-eL3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bHh-vM-KLn" firstAttribute="top" secondItem="BwF-hS-eL3" secondAttribute="top" constant="23" id="9mL-4p-5le"/>
                             <constraint firstItem="tbc-d7-p2z" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="GuT-Q4-Kvs"/>
@@ -56,16 +62,25 @@
                             <constraint firstItem="Fcy-Gh-8Dy" firstAttribute="top" secondItem="tbc-d7-p2z" secondAttribute="bottom" constant="8" symbolic="YES" id="vYc-p8-xtc"/>
                             <constraint firstItem="bHh-vM-KLn" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="wko-Gt-LKh"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DLg-Sl-nlv" appends="YES" id="CdF-19-YZ8"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="Debug2" destination="tbc-d7-p2z" id="Mx6-GA-16h"/>
                         <outlet property="debug1" destination="bHh-vM-KLn" id="tmF-52-keg"/>
                         <outlet property="debug3" destination="Fcy-Gh-8Dy" id="DnK-tD-imW"/>
                         <outlet property="rightstack" destination="wJB-XH-hsk" id="nt2-ad-863"/>
+                        <outlet property="swiperight" destination="DLg-Sl-nlv" id="5Ez-SP-xbC"/>
                         <outlet property="topstack" destination="SjJ-fZ-3ZB" id="kus-zt-Zj8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHr-b6-YvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="DLg-Sl-nlv">
+                    <connections>
+                        <action selector="swiperight:" destination="I3Z-0w-Ipy" id="GJH-qA-yXX"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1079.7101449275362" y="180.80357142857142"/>
         </scene>
