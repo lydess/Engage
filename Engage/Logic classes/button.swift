@@ -58,7 +58,7 @@ class yesno: UIButton {
             self.setImage(noturnoffpic, for: .normal)
             }
             else if self.tag == 1 {
-                self.setImage(yesturnoffpic, for: .normal)
+                self.setImage(noturnoffpic, for: .normal)
             }
             checked = false
             

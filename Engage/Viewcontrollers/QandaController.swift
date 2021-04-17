@@ -22,6 +22,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var button: checkbox!
     @IBOutlet weak var scrollv: UIScrollView!
     
+    @IBOutlet var pan: UIPanGestureRecognizer!
+    @IBOutlet weak var slideright: slideview!
+    @IBOutlet weak var slideleft: slideview!
     @IBOutlet weak var sview: UIView!
     
     
@@ -55,7 +58,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             startup()
         }
         
-       
+        
         
         
     }
@@ -124,7 +127,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         case 3:
             case3()
         case 4:
-            print("case 4")
+            case4()
         default:
             print("case 1")
         }
@@ -153,6 +156,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
+        qtext.text = workingdata.qlist[step]
         
         var qray = workingdata.qcbx[step]
         qtext.text = workingdata.qlist[step]
@@ -171,11 +175,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
+        qtext.text = workingdata.qlist[step]
         print(step)
         var qray = workingdata.qcbx[step]
         qtext.text = workingdata.qlist[step]
         for x in 0...qray.count-1 {
-            
             var text = workingdata.qcbx[step][x]
             buttongen(text: text)
             
@@ -191,7 +195,15 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit(istrue: false)
         labelstack.isHidden = false
         labelstack.alpha = 1
+        qtext.text = workingdata.qlist[step]
         print(step)
+        var questions = workingdata.qcbx[step]
+        for x in 0...questions.count-1 {
+            var text = workingdata.qcbx[step][x]
+            buttongen(text: text)
+        }
+        buttongen(text: "other")
+        
         
     }
     
@@ -209,8 +221,21 @@ class QandaController: UIViewController, UITextFieldDelegate {
         return button
     }
     
+    func othergen(text: String) -> checkbox {
+        let pic = UIImage.init(named: "unticked")
+        let button = checkbox(frame: CGRect(x: 100, y:100, width: 100, height: 20))
+        button.backgroundColor = .clear
+        button.setTitleColor(.black, for: .normal)
+        button.setImage(pic, for: .normal)
+        button.setTitle("  " + text, for: .normal)
+        button.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
+        activecbx.append(button)
+        labelstack.addArrangedSubview(button)
+        return button
+        
+    }
     
- 
+    
     @IBAction func debugpush(_ sender: Any) {
         for x in activecbx {
             if x.checked == true {
@@ -247,9 +272,15 @@ class QandaController: UIViewController, UITextFieldDelegate {
             jack.remove(at: jack.startIndex)
         }
         
-        //reload()
         
         
+        
+    }
+    
+    
+    @IBAction func pan(_ sender: Any) {
+        var jacks = pan.translation(in: view)
+        print(jacks)
     }
     
     func saveanswer() {

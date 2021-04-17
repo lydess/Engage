@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031B97B5262954D90024CD3F /* anim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B4262954D90024CD3F /* anim.swift */; };
+		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		0373148B261D375200438D6B /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373148A261D375200438D6B /* button.swift */; };
 		0390F96426167CE4004FD4AE /* FselectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390F96326167CE4004FD4AE /* FselectorController.swift */; };
 		0390F96D261691A1004FD4AE /* QandaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390F96C261691A1004FD4AE /* QandaController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031B97B4262954D90024CD3F /* anim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anim.swift; sourceTree = "<group>"; };
+		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		0373148A261D375200438D6B /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
 		0390F96326167CE4004FD4AE /* FselectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FselectorController.swift; sourceTree = "<group>"; };
 		0390F96C261691A1004FD4AE /* QandaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QandaController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				03C00F8526155495002A4488 /* ViewController.swift */,
 				0390F96326167CE4004FD4AE /* FselectorController.swift */,
 				0390F96C261691A1004FD4AE /* QandaController.swift */,
+				031B97B9262A74220024CD3F /* debugcontroller.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 				0390F972261695B6004FD4AE /* workingdata.swift */,
 				03DDB6CE2616B4290046B613 /* templates.swift */,
 				0373148A261D375200438D6B /* button.swift */,
+				031B97B4262954D90024CD3F /* anim.swift */,
 			);
 			path = "Logic classes";
 			sourceTree = "<group>";
@@ -312,10 +318,12 @@
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
+				031B97B5262954D90024CD3F /* anim.swift in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
 				03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */,
 				0373148B261D375200438D6B /* button.swift in Sources */,
+				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,
 				0390F96426167CE4004FD4AE /* FselectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

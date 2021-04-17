@@ -38,7 +38,7 @@ class templatetext {
         let q2 = [String]()
         let q3 = ["box1","box2", "box3", "box4" ]
         let q4 = ["box1","box2", "box3", "box4" ]
-        let q5 = [String]()
+        let q5 = ["box1","box2", "box3", "box4" ]
         result.append(q1)
         result.append(q2)
         result.append(q3)
