@@ -35,6 +35,7 @@ class debugcontroller: UIViewController {
     var rightgenstack = UIStackView()
     var sidetoadd = true
     var len = Int()
+    var pdf = PDF()
     
     
     
@@ -65,13 +66,7 @@ class debugcontroller: UIViewController {
     }
     
     @IBAction func debug1push(_ sender: Any) {
-        var idstep = 0
-        for x in 0...2{
-            buttongen2(text: "answer " + String(x), id: x)
-            idstep += 1
-        }
-        buttongen(text: "Other", id: idstep)
-        idstep += 1
+        pdf.getanno()
     }
     @IBAction func debug2push(_ sender: Any) {
         for x in tboxpool {

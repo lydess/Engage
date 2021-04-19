@@ -145,14 +145,22 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-3S-Q5L">
-                                        <rect key="frame" x="136" y="0.0" width="220" height="60"/>
+                                        <rect key="frame" x="136" y="0.0" width="20" height="60"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g" translatesAutoresizingMaskIntoConstraints="NO" id="mpl-Ph-vaB">
+                                        <rect key="frame" x="156" y="0.0" width="200" height="60"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcY-GU-ZKz">
+                                <rect key="frame" x="77" y="121" width="261" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Journy"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2s-r3-ok1">
-                                <rect key="frame" x="36" y="832" width="46" height="30"/>
+                                <rect key="frame" x="20" y="740" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.60460618580000003" blue="0.61125392619999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Debug">
@@ -161,20 +169,6 @@
                                 <connections>
                                     <segue destination="I3Z-0w-Ipy" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="T9Y-2q-bjF"/>
                                 </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yesbutton" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-WF-9cD">
-                                <rect key="frame" x="298" y="9" width="116" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.8984716534614563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="6TS-VU-IxB" appends="YES" id="b4b-bz-09t"/>
-                                </connections>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcY-GU-ZKz">
-                                <rect key="frame" x="77" y="121" width="261" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Journy"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -407,6 +401,7 @@
         <image name="Image" width="56" height="122"/>
         <image name="Journy" width="400" height="400"/>
         <image name="fsabutton" width="335" height="119"/>
+        <image name="g" width="200" height="200"/>
         <image name="gobutton" width="335" height="119"/>
         <image name="nobutton" width="400" height="400"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>

@@ -13,11 +13,20 @@ import PDFKit
 class PDF {
     var pdf = PDFView()
     func getanno()  {
-        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Documents/Engage (original)/Engage/PDF/dtdoc.pdf")
+        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Documents/Engage (original)/Engage/PDF/jack.pdf")
         let save = URL(fileURLWithPath: "/Users/lydess/Documents/untitled folder/testdoc")
         let savestring = "/Users/lydess/Documents/untitled folder/testdoc"
         let doc = PDFDocument(url: pdfloc)
-        doc?.write(toFile: save)
+        
+        var pages = doc?.page
+        
+        
+        
+        doc?.write(toFile: savestring)
+        
+        
+    }
+    func elig(answers:NSMutableArray) {
         
     }
 }
