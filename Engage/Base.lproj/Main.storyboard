@@ -48,22 +48,7 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="221-dA-PqZ">
                                 <rect key="frame" x="43" y="330" width="133" height="34"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="5Ia-CL-Y8V">
-                                        <rect key="frame" x="0.0" y="0.0" width="133" height="34"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLw-2G-X8M">
-                                                <rect key="frame" x="0.0" y="0.0" width="19" height="34"/>
-                                                <state key="normal" image="unticked"/>
-                                            </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asdcasdc" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qqP-1J-mDW">
-                                                <rect key="frame" x="43" y="0.0" width="90" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BwF-hS-eL3"/>
@@ -111,10 +96,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1p-tJ-t6M">
-                                <rect key="frame" x="77" y="190" width="261" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1p-tJ-t6M">
+                                <rect key="frame" x="77" y="293" width="261" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="201-hd-CCz"/>
+                                    <constraint firstAttribute="width" constant="261" id="0KD-mQ-Ub9"/>
+                                    <constraint firstAttribute="height" constant="88" id="Wds-cK-9te"/>
                                 </constraints>
                                 <state key="normal" image="gobutton"/>
                                 <connections>
@@ -160,7 +146,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yesbutton" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-WF-9cD">
-                                <rect key="frame" x="149" y="292" width="116" height="104"/>
+                                <rect key="frame" x="298" y="9" width="116" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.8984716534614563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -168,16 +154,20 @@
                                     <outletCollection property="gestureRecognizers" destination="6TS-VU-IxB" appends="YES" id="b4b-bz-09t"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcY-GU-ZKz">
+                                <rect key="frame" x="77" y="121" width="261" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Journy"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="M1p-tJ-t6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="QAL-s8-tRi"/>
-                            <constraint firstItem="M1p-tJ-t6M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TjG-c3-ACy"/>
+                            <constraint firstItem="M1p-tJ-t6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="2zo-02-UMl"/>
+                            <constraint firstItem="M1p-tJ-t6M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="G2E-x5-OLe"/>
                             <constraint firstItem="f0o-Iu-HG3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="ayl-mw-zdP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f0o-Iu-HG3" secondAttribute="trailing" constant="58" id="edm-29-06R"/>
                             <constraint firstItem="f0o-Iu-HG3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tqQ-wV-n0I"/>
-                            <constraint firstItem="M1p-tJ-t6M" firstAttribute="top" secondItem="f0o-Iu-HG3" secondAttribute="bottom" constant="77" id="yrB-8a-3oi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -266,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLY-js-Vmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986.95652173913049" y="116.51785714285714"/>
+            <point key="canvasLocation" x="981" y="450"/>
         </scene>
         <!--Qanda Controller-->
         <scene sceneID="eig-Yv-jzE">
@@ -393,16 +383,16 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1882.608695652174" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1910" y="450"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image" width="56" height="122"/>
+        <image name="Journy" width="400" height="400"/>
         <image name="fsabutton" width="335" height="119"/>
         <image name="gobutton" width="335" height="119"/>
         <image name="nobutton" width="400" height="400"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
-        <image name="unticked" width="19" height="19"/>
         <image name="yesbutton" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
