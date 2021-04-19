@@ -38,6 +38,16 @@ class QandaController: UIViewController, UITextFieldDelegate {
     var qtype = [Int]()
     var step = 0
     var activecbx = [checkbox]()
+    var genstack = UIStackView()
+    var rightgenstack = UIStackView()
+    var sidetoadd = true
+    var activebut = [UIStackView]()
+    var tboxpool = [UITextField]()
+    var tlabel = [UILabel]()
+    var stackheight = 30
+    var rightstackheight = 30
+
+
     //TODO: add logic to check for an existing form being filled out
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +67,27 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             startup()
         }
+        genstack.axis = .vertical
+        genstack.spacing = 5
+        genstack.alignment = .top
+        genstack.frame = CGRect(x: 20, y: 150, width: 150, height: self.stackheight)
+        genstack.distribution = .fillEqually
+        genstack.isHidden = true
+       
         
         
+        
+        rightgenstack.axis = .vertical
+        rightgenstack.spacing = 5
+        rightgenstack.alignment = .top
+        rightgenstack.frame = CGRect(x: 220  , y: 150, width: 180, height: self.rightstackheight)
+        rightgenstack.distribution = .fillEqually
+        rightgenstack.isHidden = true
+        
+        
+        
+        self.view.addSubview(genstack)
+        self.view.addSubview(rightgenstack)
         
         
     }
@@ -102,16 +131,24 @@ class QandaController: UIViewController, UITextFieldDelegate {
     //resets the UI and advances the question step
     func reload() {
         step += 1
-        
-        for x in activecbx {
+        self.stackheight = 60
+        self.rightstackheight = 60
+        tlabel.removeAll()
+        for x in activebut {
             x.isHidden = true
-            labelstack.removeArrangedSubview(x)
+            rightgenstack.removeArrangedSubview(x)
+            genstack.removeArrangedSubview(x)
         }
         activecbx = [checkbox]()
         print("reloading")
         uistep()
         no.checked = false
         yes.checked = false
+       
+        var yesturnoffpic = UIImage.init(imageLiteralResourceName: "yesbutton")
+        var noturnoffpic = UIImage.init(imageLiteralResourceName: "nobutton")
+        yes.setImage(yesturnoffpic, for: .normal)
+        no.setImage(noturnoffpic, for: .normal)
         
         
     }
@@ -128,6 +165,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
             case3()
         case 4:
             case4()
+        case 5:
+            case5()
         default:
             print("case 1")
         }
@@ -154,15 +193,15 @@ class QandaController: UIViewController, UITextFieldDelegate {
     func case2() {
         yesno(Boolean: false)
         submit(istrue: false)
-        labelstack.isHidden = false
-        labelstack.alpha = 1
+        genstack.isHidden = false
+        rightgenstack.isHidden = false
         qtext.text = workingdata.qlist[step]
         
         var qray = workingdata.qcbx[step]
         qtext.text = workingdata.qlist[step]
         for x in 0...qray.count-1 {
             var text = workingdata.qcbx[step][x]
-            buttongen(text: text)
+            buttongen(text: text, id: x)
             
             
         }
@@ -173,15 +212,17 @@ class QandaController: UIViewController, UITextFieldDelegate {
     func case3() {
         yesno(Boolean: false)
         submit(istrue: false)
-        labelstack.isHidden = false
-        labelstack.alpha = 1
+        genstack.isHidden = false
+        genstack.alpha = 1
+        rightgenstack.isHidden = false
+        rightgenstack.alpha = 1
         qtext.text = workingdata.qlist[step]
         print(step)
         var qray = workingdata.qcbx[step]
         qtext.text = workingdata.qlist[step]
         for x in 0...qray.count-1 {
             var text = workingdata.qcbx[step][x]
-            buttongen(text: text)
+            buttongen(text: text, id: x)
             
         }
         
@@ -200,45 +241,144 @@ class QandaController: UIViewController, UITextFieldDelegate {
         var questions = workingdata.qcbx[step]
         for x in 0...questions.count-1 {
             var text = workingdata.qcbx[step][x]
-            buttongen(text: text)
+            buttongen(text: text, id: x)
         }
-        buttongen(text: "other")
+        otherbuttongen(text: "Other", id: activecbx.count)
         
         
+        
+    }
+    func case5() {
+        qtext.text = workingdata.qlist[step]
     }
     
     // programaticly creates a button
-    func buttongen(text: String) -> checkbox {
-        let pic = UIImage.init(named: "unticked")
-        let button = checkbox(frame: CGRect(x: 100, y:100, width: 100, height: 20))
-        button.backgroundColor = .clear
-        button.setTitleColor(.black, for: .normal)
-        button.setImage(pic, for: .normal)
-        button.setTitle("  " + text, for: .normal)
-        button.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
-        activecbx.append(button)
-        labelstack.addArrangedSubview(button)
-        return button
+    func buttongen(text: String, id: Int) {
+        let buttwidth = 10
+        let buttheight = 60
+        let tboxwidth = 10
+        let tboxheight = 30
+        var rect = CGRect(x: 20, y: 150, width: 150, height: self.stackheight)
+        var rightrec = CGRect(x: 220, y: 150, width: 150, height: self.rightstackheight)
+        
+        let tbox = UILabel()
+        let butt = checkbox()
+       
+        
+        butt.frame = CGRect(x: 0, y: 0, width: buttwidth, height: buttheight)
+        butt.setImage(UIImage.init(named: "unticked"), for: .normal)
+        butt.addTarget(self, action: #selector(click), for: .touchUpInside)
+        butt.tag = id
+        butt.setTitle("", for: .normal)
+        
+        
+        
+        tbox.frame = CGRect(x: 0, y: 0, width: tboxwidth, height: tboxheight)
+        tbox.text = text
+        tbox.textColor = .purple
+        tbox.tag = id
+        
+        
+      
+        var stackView   = UIStackView()
+        stackView = UIStackView(arrangedSubviews: [butt, tbox])
+        stackView.alignment = .trailing
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 3.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        tlabel.append(tbox)
+        activebut.append(stackView)
+        activecbx.append(butt)
+        
+        if activebut.count <= 25 {
+            switch sidetoadd {
+            case true:
+                self.stackheight += buttheight
+                genstack.frame = rect
+                genstack.addArrangedSubview(stackView)
+                self.sidetoadd = false
+            default:
+                self.rightstackheight += buttheight
+                rightgenstack.frame = rightrec
+                rightgenstack.addArrangedSubview(stackView)
+                self.sidetoadd = true
+            }
+       
+            
+        }
+       
     }
     
-    func othergen(text: String) -> checkbox {
-        let pic = UIImage.init(named: "unticked")
-        let button = checkbox(frame: CGRect(x: 100, y:100, width: 100, height: 20))
-        button.backgroundColor = .clear
-        button.setTitleColor(.black, for: .normal)
-        button.setImage(pic, for: .normal)
-        button.setTitle("  " + text, for: .normal)
-        button.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
-        activecbx.append(button)
-        labelstack.addArrangedSubview(button)
-        return button
+    func otherbuttongen(text: String, id: Int) {
+        let buttwidth = 10
+        let buttheight = 60
+        let tboxwidth = 10
+        let tboxheight = 30
+        var leftrec = CGRect(x: 20, y: 150, width: 150, height: self.stackheight)
+        var genrect = CGRect(x: 220, y: 150, width: 180, height: self.rightstackheight)
+        let tbox = UITextField()
+        let butt = checkbox()
+       
+        
+        tbox.returnKeyType = .done
+        butt.frame = CGRect(x: 0, y: 0, width: 10, height: 60)
+        butt.setImage(UIImage.init(named: "unticked"), for: .normal)
+        butt.addTarget(self, action: #selector(otherclick), for: .touchUpInside)
+        butt.tag = id
+        butt.isother = true
+        
+        
+        tbox.frame = CGRect(x: 0, y: 0, width: 10, height: 30)
+        tbox.text = text
+        tbox.textColor = .black
+        tbox.tag = id
+        
+      
+        var stackView   = UIStackView()
+           stackView = UIStackView(arrangedSubviews: [butt, tbox])
+       
+        stackView.alignment = .trailing
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 3.0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        activebut.append(stackView)
+        activecbx.append(butt)
+        tboxpool.append(tbox)
+        
+        
+        
+        if activebut.count <= 25 {
+            switch sidetoadd {
+            case true:
+                self.stackheight += buttheight
+                genstack.frame = leftrec
+                genstack.addArrangedSubview(stackView)
+                self.sidetoadd = false
+            default:
+                self.rightstackheight += buttheight
+                rightgenstack.frame = genrect
+                rightgenstack.addArrangedSubview(stackView)
+                self.sidetoadd = true
+            }
+       
+            
+        }
         
     }
     
     
     @IBAction func debugpush(_ sender: Any) {
-        print(labelstack.alignment.rawValue)
-        print(labelstack.distribution.rawValue)
+        for x in answer{
+            print(x)
+        }
+        
+        
         
     }
 
@@ -279,14 +419,26 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     
     func saveanswer() {
+        if step == workingdata.qlist.count-1 {
+            print("DONE!")
+        }
+        else{
         switch self.qtype[step] {
         case 0:
-            if yes.checked {
-                answer.add(1)
+            if yes.checked == true && no.checked == true {
+                print("WRONG!")
+        
+            }
+            if yes.checked == false && no.checked == false {
+                print("NO ANSWER")
+            }
+            
+            if no.checked == true && yes.checked == false{
+                answer.add(0)
                 reload()
             }
-            if no.checked {
-                answer.add(0)
+            if no.checked == false && yes.checked == true {
+                answer.add(1)
                 reload()
             }
         case 1:
@@ -304,12 +456,17 @@ class QandaController: UIViewController, UITextFieldDelegate {
             var answerlist = [String]()
             for x in activecbx{
                 if x.checked == true{
-                    answerlist.append(x.titleLabel!.text!)
+                    for y in tlabel{
+                        if x.tag == y.tag {
+                            answerlist.append(y.text!)
+                        }
+                    }
                 }
             
             }
             if answerlist.count != 1 {
                 print("ERROR")
+                
             }
             if answerlist.count == 1{
                 answer.add(answerlist[0])
@@ -321,7 +478,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
             var answerlist = [String]()
             for x in activecbx{
                 if x.checked == true{
-                    answerlist.append(x.titleLabel!.text!)
+                    for y in tlabel{
+                        if x.tag == y.tag {
+                            answerlist.append(y.text ?? "Nil")
+                        }
+                    }
                 }
             
             }
@@ -333,7 +494,39 @@ class QandaController: UIViewController, UITextFieldDelegate {
                 reload()
             }
             
+        case 4:
+            var answerlist = [String]()
+            for x in activecbx{
+                if x.checked == true{
+                    switch x.isother {
+                    case false:
+                        for y in tlabel{
+                            if x.tag == y.tag {
+                                answerlist.append(y.text ?? "Nil")
+                            }
+                            
+                        }
+                    default:
+                        for y in tboxpool{
+                            if x.tag == y.tag{
+                                answerlist.append(y.text ?? "NIL")
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                }
+                
             
+            }
+            if answerlist.count < 1 {
+                print("Please select an answer")
+            }
+            else{
+                answer.add(answerlist)
+                reload()
+            }
         
         default:
             print("somthings wrong with your cases man")
@@ -347,7 +540,6 @@ class QandaController: UIViewController, UITextFieldDelegate {
         }
         if answer.count > step {
             print("answerpool has been corrupted")
-            
             print("answers in pool" + String(answer.count))
             print("current step" + String(step))
             print("answer list")
@@ -355,6 +547,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             
             
+        }
         }
     }
     // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
@@ -386,6 +579,67 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBAction func yespush(_ sender: Any) {
         yes.click(yes)
         
+    }
+    @objc func click(sender: checkbox) {
+        
+        let pic = UIImage.init(named: "ticked")
+        let opic = UIImage.init(named: "unticked")
+        switch sender.checked {
+        case true:
+            sender.setImage(opic, for: .normal)
+            sender.checked = false
+            
+        case false:
+            sender.setImage(pic, for: .normal)
+            sender.checked = true
+            
+           
+        default:
+            print("somthing is seriously wrong")
+        }
+        
+        // How to get data from the tapped button
+        var clickedid = sender.tag
+        if sender.checked == true {
+        for x in tlabel {
+            if x.tag == clickedid{
+                print("button clicked was " + x.text!)
+                
+            }
+           
+          }
+        }
+    }
+    
+    @objc func otherclick(sender: checkbox) {
+        
+        let pic = UIImage.init(named: "ticked")
+        let opic = UIImage.init(named: "unticked")
+        switch sender.checked {
+        case true:
+            sender.setImage(opic, for: .normal)
+            sender.checked = false
+            
+        case false:
+            sender.setImage(pic, for: .normal)
+            sender.checked = true
+            
+           
+        default:
+            print("somthing is seriously wrong")
+        }
+        
+        // How to get data from the tapped button
+        var clickedid = sender.tag
+        if sender.checked == true {
+        for x in tboxpool {
+            if x.tag == clickedid{
+                print("button clicked was " + x.text!)
+                
+            }
+           
+          }
+        }
     }
     
 }

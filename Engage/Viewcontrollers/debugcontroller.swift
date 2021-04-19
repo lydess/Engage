@@ -34,22 +34,28 @@ class debugcontroller: UIViewController {
     var genstack = UIStackView()
     var rightgenstack = UIStackView()
     var sidetoadd = true
+    var len = Int()
+    
+    
+    
     
     
     override func viewDidLoad() {
-       
-        
+        len = 100
+        var genrect = CGRect(x: 20, y: 150, width: 180, height: len)
+        genstack.frame = genrect
         genstack.axis = .vertical
         genstack.spacing = 30.0
         genstack.alignment = .fill
-        genstack.frame = CGRect(x: 20, y: 150, width: 150, height: 632)
+        genstack.frame = genrect
         genstack.distribution = .equalSpacing
+        
         
         
         rightgenstack.axis = .vertical
         rightgenstack.spacing = 30.0
         rightgenstack.alignment = .fill
-        rightgenstack.frame = CGRect(x: 220	, y: 150, width: 180, height: 632)
+        rightgenstack.frame = CGRect(x: 220	, y: 150, width: 180, height: 200)
         rightgenstack.distribution = .equalSpacing
         
 
@@ -60,7 +66,7 @@ class debugcontroller: UIViewController {
     
     @IBAction func debug1push(_ sender: Any) {
         var idstep = 0
-        for x in 0...20{
+        for x in 0...2{
             buttongen2(text: "answer " + String(x), id: x)
             idstep += 1
         }
@@ -86,8 +92,10 @@ class debugcontroller: UIViewController {
         }
     }
     func buttongen(text: String, id: Int) {
+        var genrect = CGRect(x: 20, y: 150, width: 180, height: self.len)
         let tbox = UITextField()
         let butt = checkbox()
+       
         
         tbox.returnKeyType = .done
         butt.frame = CGRect(x: 0, y: 0, width: 10, height: 60)
@@ -120,9 +128,12 @@ class debugcontroller: UIViewController {
         if activebut.count <= 25 {
             switch sidetoadd {
             case true:
-                genstack.addArrangedSubview(stackView)
+            self.len += 60
+            genstack.frame = genrect
+            genstack.addArrangedSubview(stackView)
+                
             default:
-                rightgenstack.addArrangedSubview(stackView)
+            rightgenstack.addArrangedSubview(stackView)
             }
        
             
@@ -130,18 +141,23 @@ class debugcontroller: UIViewController {
         
     }
     func buttongen2(text: String, id: Int) {
+        let buttwidth = 10
+        let buttheight = 60
+        let tboxwidth = 10
+        let tboxheight = 30
+        
         let tbox = UILabel()
         let butt = checkbox()
-       
+        var genrect = CGRect(x: 20, y: 150, width: 180, height: self.len)
         
-        butt.frame = CGRect(x: 0, y: 0, width: 10, height: 60)
+        butt.frame = CGRect(x: 0, y: 0, width: buttwidth, height: buttheight)
         butt.setImage(UIImage.init(named: "unticked"), for: .normal)
         butt.addTarget(self, action: #selector(click), for: .touchUpInside)
         butt.tag = id
         
         
         
-        tbox.frame = CGRect(x: 0, y: 0, width: 10, height: 30)
+        tbox.frame = CGRect(x: 0, y: 0, width: tboxwidth, height: tboxheight)
         tbox.text = text
         tbox.textColor = .purple
         tbox.tag = id
@@ -162,6 +178,8 @@ class debugcontroller: UIViewController {
         if activebut.count <= 25 {
             switch sidetoadd {
             case true:
+                self.len += buttheight
+                genstack.frame = genrect
                 genstack.addArrangedSubview(stackView)
                 self.sidetoadd = false
             default:

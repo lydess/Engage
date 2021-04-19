@@ -13,6 +13,7 @@ class checkbox: UIButton {
     var unticked = UIImage.init(imageLiteralResourceName: "unticked")
     var checked = false
     var btest = true
+    var isother = false
     func click() {
         //self.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
     }

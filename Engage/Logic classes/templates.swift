@@ -7,7 +7,20 @@
 
 import Foundation
 import UIKit
+import PDFKit
 
+
+class PDF {
+    var pdf = PDFView()
+    func getanno()  {
+        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Documents/Engage (original)/Engage/PDF/dtdoc.pdf")
+        let save = URL(fileURLWithPath: "/Users/lydess/Documents/untitled folder/testdoc")
+        let savestring = "/Users/lydess/Documents/untitled folder/testdoc"
+        let doc = PDFDocument(url: pdfloc)
+        doc?.write(toFile: save)
+        
+    }
+}
 class templates {
     // Initalizes an empty list for each type, has a function for each list to generate values based on provied template ID (hardcoded solution that will be
     // turned into a GUI feature in the future 

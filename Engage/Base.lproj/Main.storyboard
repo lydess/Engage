@@ -50,13 +50,30 @@
                                 <rect key="frame" x="43" y="330" width="133" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yZh-FT-Ava">
+                                <rect key="frame" x="43" y="220" width="46" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk2-7N-GLk">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.8984716534614563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3N-tI-qgF">
+                                        <rect key="frame" x="0.0" y="30" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BwF-hS-eL3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bHh-vM-KLn" firstAttribute="top" secondItem="BwF-hS-eL3" secondAttribute="top" constant="23" id="9mL-4p-5le"/>
+                            <constraint firstItem="yZh-FT-Ava" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="43" id="F8a-2H-4vs"/>
                             <constraint firstItem="tbc-d7-p2z" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="GuT-Q4-Kvs"/>
+                            <constraint firstItem="yZh-FT-Ava" firstAttribute="top" secondItem="Fcy-Gh-8Dy" secondAttribute="bottom" constant="47" id="WV6-CQ-vzd"/>
                             <constraint firstItem="Fcy-Gh-8Dy" firstAttribute="leading" secondItem="BwF-hS-eL3" secondAttribute="leading" constant="179" id="lSX-Fp-3m8"/>
                             <constraint firstItem="tbc-d7-p2z" firstAttribute="top" secondItem="bHh-vM-KLn" secondAttribute="bottom" constant="8" symbolic="YES" id="slx-Is-36j"/>
                             <constraint firstItem="Fcy-Gh-8Dy" firstAttribute="top" secondItem="tbc-d7-p2z" secondAttribute="bottom" constant="8" symbolic="YES" id="vYc-p8-xtc"/>
@@ -282,21 +299,12 @@
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dev_text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-Lj-hcz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                                <rect key="frame" x="-7" y="44" width="414" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elq-i4-JEy">
-                                <rect key="frame" x="20" y="697" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Debug"/>
-                                <connections>
-                                    <action selector="debugpush:" destination="AHp-rr-q25" eventType="touchUpInside" id="RI3-sN-G14"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIH-C8-pnB" userLabel="Yes" customClass="yesno" customModule="Engage" customModuleProvider="target">
                                 <rect key="frame" x="200" y="157" width="206" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -341,6 +349,15 @@
                                     <action selector="nopush:" destination="AHp-rr-q25" eventType="touchUpInside" id="2sp-Cc-ByL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elq-i4-JEy">
+                                <rect key="frame" x="38" y="761" width="137" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Debug"/>
+                                <connections>
+                                    <action selector="debugpush:" destination="AHp-rr-q25" eventType="touchUpInside" id="RI3-sN-G14"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aaQ-JI-QOE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -383,7 +400,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1910" y="450"/>
+            <point key="canvasLocation" x="1908.6956521739132" y="450"/>
         </scene>
     </scenes>
     <resources>
@@ -394,6 +411,9 @@
         <image name="nobutton" width="400" height="400"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <image name="yesbutton" width="400" height="400"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
