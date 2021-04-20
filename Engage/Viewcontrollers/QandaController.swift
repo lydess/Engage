@@ -46,6 +46,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     var tlabel = [UILabel]()
     var stackheight = 30
     var rightstackheight = 30
+    var complete = false
 
 
     //TODO: add logic to check for an existing form being filled out
@@ -63,7 +64,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             no.alpha = 0
             textbox.isEnabled = false
             textbox.alpha = 0
-            labelstack.alpha = 0
+            
             
             startup()
         }
@@ -250,6 +251,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func case5() {
         qtext.text = workingdata.qlist[step]
+        complete = true
     }
     
     // programaticly creates a button
@@ -553,6 +555,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
     // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
     @IBAction func rightswipe(_ sender: Any) {
         saveanswer()
+        if complete == true {
+            performSegue(withIdentifier: "done", sender: Any?.self)
+        }
+        
+    
     
     }
    

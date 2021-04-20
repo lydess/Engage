@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "GOTAFE-web-assets-1920x1080-1.jpg.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "GOTAFE-web-assets-1920x1080-1.jpg-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "GOTAFE-web-assets-1920x1080-1.jpg-2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

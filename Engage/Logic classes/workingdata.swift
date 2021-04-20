@@ -18,6 +18,7 @@ struct workingdata {
     static var qtype = [Int]()
     static var qcbx = [Array<String>]()
     static var isworking = false
+    static var alreadyworking = false
     
     
     var fsa = fsatemp()            // hardcoded, to be replaced

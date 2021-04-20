@@ -11,6 +11,7 @@ import UIKit
 class FselectorController: UIViewController {
     var data = workingdata()
     
+    @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var homebutton: UIButton!
     @IBOutlet weak var FSAbutton: UIButton!
     override func viewDidLoad() {
