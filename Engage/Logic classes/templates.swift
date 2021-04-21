@@ -17,7 +17,6 @@ class PDF {
         let save = URL(fileURLWithPath: "/Users/lydess/Documents/untitled folder/testdoc")
         let savestring = "/Users/lydess/Documents/untitled folder/testdoc"
         let doc = PDFDocument(url: pdfloc)
-        
         var pages = doc?.page
         
         

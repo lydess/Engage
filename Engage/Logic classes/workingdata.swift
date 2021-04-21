@@ -19,6 +19,7 @@ struct workingdata {
     static var qcbx = [Array<String>]()
     static var isworking = false
     static var alreadyworking = false
+    static var menuseen = false
     
     
     var fsa = fsatemp()            // hardcoded, to be replaced
@@ -47,6 +48,7 @@ struct workingdata {
         workingdata.qtype = [Int]()
         workingdata.qcbx = [Array<String>]()
         workingdata.alist = NSMutableArray()
+        workingdata.alreadyworking = false
         print("WORKING DATA WIPED OUT, ALL DATA IS SET TO DEFAULT VALUES")
     }
 }

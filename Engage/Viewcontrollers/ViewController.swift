@@ -12,6 +12,7 @@ import SceneKit
 class ViewController: UIViewController {
     @IBOutlet weak var imageview: UIImageView!
     
+    @IBOutlet weak var navbartop: UINavigationBar!
     @IBOutlet weak var lilbutton: UIButton!
    
     
@@ -40,22 +41,27 @@ class ViewController: UIViewController {
     var seen = false
     var billboardstart = CGRect()
     var step = 0
+    var navitem = UINavigationItem.init(title: "Return")
     
-    override func viewDidLoad() {
-        
-       
-        
-        
-        super.viewDidLoad()
-        print(workingdata.doc)
-        switch self.seen {
+  
+    
+    override func viewDidAppear(_ animated: Bool) {
+        switch workingdata.menuseen {
         case false:
             initalize()
             list()
-            self.seen = true
+            workingdata.menuseen = true
         default:
             print("le;)")
         }
+    }
+    
+    override func viewDidLoad() {
+        
+        print("main view did load")
+        
+        
+        
         
         
         
@@ -82,8 +88,9 @@ class ViewController: UIViewController {
         debug.isHidden = true
         billboard.frame = CGRect(x: 0, y: -1000, width: 400, height: 400)
         coloring()
+        navbar.layer.cornerRadius = 25
         
-        var timer = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
+        var timer = Timer.scheduledTimer(timeInterval: 9, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
         
     }
     @objc func anim() {
@@ -103,13 +110,13 @@ class ViewController: UIViewController {
     }
     
     func list() {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 1.5, animations: {
             self.topline.alpha = 1
         }, completion: { _ in
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 1.5, animations: {
                 self.midline.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: 1, animations: {
+                UIView.animate(withDuration: 2, animations: {
                     self.bottomline.alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 1, animations: {
@@ -118,7 +125,7 @@ class ViewController: UIViewController {
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {
                             self.navbar.alpha = 1
-                            self.navbak.alpha = 1
+                            
                             self.topline.alpha = 0
                             self.bottomline.alpha = 0
                             self.midline.alpha = 0

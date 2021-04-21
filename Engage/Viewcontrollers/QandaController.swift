@@ -556,6 +556,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBAction func rightswipe(_ sender: Any) {
         saveanswer()
         if complete == true {
+            workingdata.alist = answer
             performSegue(withIdentifier: "done", sender: Any?.self)
         }
         
