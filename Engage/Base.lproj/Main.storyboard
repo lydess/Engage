@@ -517,22 +517,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDs-NM-6OU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="874"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3TW-jE-Hka" userLabel="Slideleft" customClass="slideview" customModule="Engage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="874"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FvW-Kr-cvd" userLabel="Slideright" customClass="slideview" customModule="Engage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" red="1" green="0.91819758873131807" blue="0.7829645572206485" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vmz-ml-qKw">
                                 <rect key="frame" x="0.0" y="-11" width="414" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" backIndicatorImage="arrow.left" catalog="system" backIndicatorTransitionMaskImage="arrow.backward" translatesAutoresizingMaskIntoConstraints="NO" id="dvd-07-lry">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -561,21 +551,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dev_text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-Lj-hcz">
                                 <rect key="frame" x="-7" y="130" width="414" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIH-C8-pnB" userLabel="Yes" customClass="yesno" customModule="Engage" customModuleProvider="target">
-                                <rect key="frame" x="200" y="243" width="206" height="205"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="8" height="8"/>
-                                <state key="normal" image="yesbutton">
-                                    <color key="titleShadowColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="yespush:" destination="AHp-rr-q25" eventType="touchUpInside" id="Ir3-oq-0YR"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5D-pV-t4x">
                                 <rect key="frame" x="200" y="382" width="0.0" height="50"/>
                                 <constraints>
@@ -585,16 +564,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Rg-hx-hWL" customClass="animtextfield" customModule="Engage" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Rg-hx-hWL" customClass="animtextfield" customModule="Engage" customModuleProvider="target">
                                 <rect key="frame" x="128" y="373" width="159" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9H-Qw-woX" userLabel="No" customClass="yesno" customModule="Engage" customModuleProvider="target">
-                                <rect key="frame" x="12" y="257" width="188" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="nobutton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9H-Qw-woX" userLabel="No" customClass="yesno" customModule="Engage" customModuleProvider="target">
+                                <rect key="frame" x="87" y="234" width="113" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="L8G-8y-b8t"/>
+                                    <constraint firstAttribute="width" constant="113" id="fbf-EE-lvM"/>
+                                </constraints>
+                                <state key="normal" image="hand.thumbsdown" catalog="system">
                                     <color key="titleShadowColor" systemColor="systemTealColor"/>
                                 </state>
                                 <connections>
@@ -616,12 +597,28 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items/>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIH-C8-pnB" userLabel="Yes" customClass="yesno" customModule="Engage" customModuleProvider="target">
+                                <rect key="frame" x="221" y="244" width="106" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2jd-Zm-y7u"/>
+                                    <constraint firstAttribute="width" constant="106" id="AHz-iO-hGT"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="8" height="8"/>
+                                <state key="normal" image="hand.thumbsup" catalog="system">
+                                    <color key="titleShadowColor" red="0.99247914552688599" green="0.69363009929656982" blue="0.0056115640327334404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="yespush:" destination="AHp-rr-q25" eventType="touchUpInside" id="Ir3-oq-0YR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aaQ-JI-QOE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="v5D-pV-t4x" firstAttribute="top" secondItem="Si5-C3-VbF" secondAttribute="top" constant="349" id="2JX-3l-C9q"/>
+                            <constraint firstItem="l9H-Qw-woX" firstAttribute="leading" secondItem="aaQ-JI-QOE" secondAttribute="leading" constant="87" id="bul-hh-rYp"/>
+                            <constraint firstItem="7Rg-hx-hWL" firstAttribute="top" secondItem="l9H-Qw-woX" secondAttribute="bottom" constant="16" id="scF-Dw-efy"/>
                             <constraint firstItem="aaQ-JI-QOE" firstAttribute="trailing" secondItem="v5D-pV-t4x" secondAttribute="trailing" constant="214" id="vfO-zZ-aWN"/>
                         </constraints>
                         <connections>
@@ -634,8 +631,6 @@
                         <outlet property="no" destination="l9H-Qw-woX" id="Gbf-0I-tNm"/>
                         <outlet property="pan" destination="Osy-3o-ntg" id="6ag-Nz-FT3"/>
                         <outlet property="qtext" destination="LFh-Lj-hcz" id="m0t-ij-h8s"/>
-                        <outlet property="slideleft" destination="3TW-jE-Hka" id="DTS-np-iDI"/>
-                        <outlet property="slideright" destination="FvW-Kr-cvd" id="IWA-rR-48D"/>
                         <outlet property="swiper" destination="99Y-1n-JQw" id="k8q-5j-ICv"/>
                         <outlet property="textbox" destination="7Rg-hx-hWL" id="7wv-kx-jsF"/>
                         <outlet property="texterror" destination="v5D-pV-t4x" id="KeT-re-rpu"/>
@@ -656,13 +651,13 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2007" y="450"/>
+            <point key="canvasLocation" x="2005.7971014492755" y="450"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="CuH-pm-Wap"/>
         <segue reference="scD-iA-Pat"/>
-        <segue reference="MLA-vx-qlR"/>
+        <segue reference="3r2-dZ-rJf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="a" width="960" height="540"/>
@@ -671,15 +666,15 @@
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="fsabutton" width="335" height="119"/>
         <image name="full pin" width="530" height="146.5"/>
+        <image name="hand.thumbsdown" catalog="system" width="128" height="128"/>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3.circle" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3.circle.fill" catalog="system" width="128" height="121"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
-        <image name="nobutton" width="400" height="400"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="signpost.right" catalog="system" width="128" height="118"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
-        <image name="yesbutton" width="400" height="400"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -691,9 +686,6 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

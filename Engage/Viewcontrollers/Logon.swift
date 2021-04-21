@@ -38,8 +38,8 @@ class logon: UIViewController {
         case 0:
             print("test")
             revealhide(time: 3)
-            var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in "print timer fired" }
-            timer.fire()
+            righttutorial(time: 3)
+            
             step += 1
             
         case 1:
@@ -63,7 +63,7 @@ class logon: UIViewController {
     }
 
    
-    
+
       //  var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in }
         
     
@@ -76,21 +76,26 @@ class logon: UIViewController {
         performSegue(withIdentifier: "main", sender: Any?.self)
     }
     
-    func revealright(time:Double) -> Void {
+    func revealright(time:Double){
+        
         let animation: Void = UIView.animate(withDuration: time, animations: {
             self.swipearrowright.alpha = 1
         }
         )
-        return animation
+        
         
     }
-    
-    func moveright(time:Double) -> Void {
+
+    func righttutorial(time:Double) {
+        self.swipearrowright.alpha = 1
+        
+        var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in self.thumbanim() }
         let animation: Void = UIView.animate(withDuration: time, animations: {
-            self.swipearrowright.transform = CGAffineTransform(translationX: +900, y: 0)
+        var timer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: false) { timer in self.thumbhide() }
+        self.swipearrowright.transform = CGAffineTransform(translationX: +900, y: 0)
         }
         )
-        return animation
+       
         
     }
     
@@ -101,6 +106,15 @@ class logon: UIViewController {
         }
         )
         return test
+    }
+    
+    func thumbanim() {
+        yes.alpha = 1
+        let thumb = UIView.animate(withDuration: 0.5, animations: {self.yes.transform = CGAffineTransform(translationX: +37.5, y: -75)}, completion: {_ in UIView.animate(withDuration: 0.5, animations: {self.yes.transform = CGAffineTransform(translationX: +100, y: +60)})})
+        
+    }
+    func thumbhide() {
+        UIView.animate(withDuration: 1, animations: {self.yes.alpha = 0})
     }
     
     
