@@ -29,72 +29,24 @@ class logon: UIViewController {
     override func viewDidLoad() {
         print("Im alive!")
         initalize()
-        
-        
-    }
-    func flow() {
-        switch step {
-        case 0:
-            
-            var timer = Timer.scheduledTimer(timeInterval: 3.5, target: self, selector: #selector(self.tutorial), userInfo: nil, repeats: false)
-            UIView.animate(withDuration: 5, animations: {
-                self.hi.alpha = 1
-                self.question.alpha = 1
-                
-                
-            },completion:
-                
-                {_ in UIView.animate(withDuration: 1, animations: {
-                    
-            })
-            
-        })
-            
-        case 1:
-            
-            instruction.alpha = 1
-            tutorial()
-        
-        default:
-            print("flow is broken")
-        }
+        uistep()
         
     }
-    @objc func tutorial(){
+    
+    func uistep() {
         switch step {
         case 0:
-        UIView.animate(withDuration: 0.6, animations: {
-            self.swipearrowright.alpha = 1
-        })
-        var timer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(self.swipesignright), userInfo: nil, repeats: false)
+            print("test")
+            revealhide(time: 3)
+            var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in "print timer fired" }
+            timer.fire()
+            step += 1
             
-        UIView.animate(withDuration: 0.85, animations: {
-        self.swipearrowright.transform = CGAffineTransform(translationX: +600, y: 0)
-        }, completion: {_ in
-            print("done")
-    })
         case 1:
-            
-    UIView.animate(withDuration: 0.6,
-    animations: {self.swipearrowleft.alpha = 1},
-    completion: {_ in print("print done")})
-            
-var timer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(self.swipesignleft), userInfo: nil, repeats: false)
-                
-                
-        
-        
-            UIView.animate(withDuration: 0.85, animations: {
-            self.swipearrowleft.transform = CGAffineTransform(translationX: -600, y: 0)
-            }, completion: {_ in
-                print("done")})
-            textfield.alpha = 1
-            textfield.isEnabled = true
-            
+            print("case 1")
         default:
-            print("bad cases")
+            print("cases bad")
         }
-        
     }
     func initalize() {
         hi.alpha = 0
@@ -105,76 +57,51 @@ var timer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #se
         profilepic.alpha = 0
         yes.alpha = 0
         no.alpha = 0
-        flow()
         swipearrowright.alpha = 0
-    }
-    @objc func swipesignright(){
+        swipearrowleft.alpha = 0
         
-        step += 1
-        UIView.animate(withDuration: 1, animations: {
-            
-            self.yes.transform = CGAffineTransform(translationX: +50, y: -100)
-        }, completion: {_ in
-            //self.yes.transform = CGAffineTransform(translationX: -50, y: +100)
-        })
-        UIView.animate(withDuration: 0.1, animations: {
-            self.yes.alpha = 1
-        }, completion: {_ in
-            UIView.animate(withDuration: 1.6, animations: {
-                
-                self.yes.alpha = 0
-            })
-        })
     }
-    @objc func swipesignleft(){
-        
-        
-        UIView.animate(withDuration: 1, animations: {
-            
-            self.no.transform = CGAffineTransform(translationX: -50, y: +100)
-        }, completion: {_ in
-            //self.yes.transform = CGAffineTransform(translationX: -50, y: +100)
-        })
-        UIView.animate(withDuration: 0.1, animations: {
-            self.no.alpha = 1
-        }, completion: {_ in
-            UIView.animate(withDuration: 1.6, animations: {
-                
-                self.no.alpha = 0
-            })
-        })
-    }
+
+   
     
-    func list() {
+      //  var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in }
         
-        UIView.animate(withDuration: 1.5, animations: {
-           
-        }, completion: { _ in
-            UIView.animate(withDuration: 1.5, animations: {
-              
-            }, completion: { _ in
-                UIView.animate(withDuration: 2, animations: {
-                   
-                }, completion: { _ in
-                    UIView.animate(withDuration: 1, animations: {
-                       
-                        
-                    }, completion: { _ in
-                        UIView.animate(withDuration: 1.5, animations: {
-                           
-                        }, completion: { _ in
-                            print("I'm done!")
-                        })
-                    })
-                })
-            })
-        })
-    }
+    
+   
     @IBAction func swiperight(_ sender: Any) {
-        flow()
+        print("swipe right")
         
     }
     @IBAction func swipeleft(_ sender: Any) {
         performSegue(withIdentifier: "main", sender: Any?.self)
     }
+    
+    func revealright(time:Double) -> Void {
+        let animation: Void = UIView.animate(withDuration: time, animations: {
+            self.swipearrowright.alpha = 1
+        }
+        )
+        return animation
+        
+    }
+    
+    func moveright(time:Double) -> Void {
+        let animation: Void = UIView.animate(withDuration: time, animations: {
+            self.swipearrowright.transform = CGAffineTransform(translationX: +900, y: 0)
+        }
+        )
+        return animation
+        
+    }
+    
+    func revealhide(time:Double) -> Void {
+        let test: Void = UIView.animate(withDuration: time, animations: {
+            self.hi.alpha = 1
+            
+        }
+        )
+        return test
+    }
+    
+    
 }
