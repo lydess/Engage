@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var debugbutton: UIButton!
     @IBOutlet weak var debug: UIButton!
     
-    @IBOutlet weak var login: UIButton!
+   
     @IBOutlet weak var form: UIImageView!
 
     
@@ -77,13 +77,12 @@ class ViewController: UIViewController {
         journy.contentVerticalAlignment = .fill
         contact.contentVerticalAlignment = .fill
         contact.contentHorizontalAlignment = .fill
-        login.contentHorizontalAlignment = .fill
-        login.contentVerticalAlignment = .fill
+        
         topline.alpha = 0
         midline.alpha = 0
         navbak.alpha = 0
         bottomline.alpha = 0
-        navbar.alpha = 0
+      
         debug.isEnabled = false
         debug.isHidden = true
        // billboard.frame = CGRect(x: 0, y: -1000, width: 400, height: 400)
@@ -126,7 +125,7 @@ class ViewController: UIViewController {
                         
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {
-                            self.navbar.alpha = 1
+                           
                             
                             self.topline.alpha = 0
                             self.bottomline.alpha = 0

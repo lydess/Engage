@@ -12,7 +12,10 @@ import SceneKit
 
 
 class courseviewcontroller: UIViewController {
+    @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
+        
         
     }
     
