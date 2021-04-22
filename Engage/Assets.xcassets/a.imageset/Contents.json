@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "GOTAFE-web-assets-1920x1080-1.jpg.jpg",
+      "filename" : "GOTAFE.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "GOTAFE-web-assets-1920x1080-1.jpg-1.jpg",
+      "filename" : "GOTAFE-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "GOTAFE-web-assets-1920x1080-1.jpg-2.jpg",
+      "filename" : "GOTAFE-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

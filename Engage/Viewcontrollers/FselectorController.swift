@@ -11,6 +11,7 @@ import UIKit
 class FselectorController: UIViewController {
     @IBOutlet weak var eqb: UIButton!
     @IBOutlet weak var ibutton: UIImageView!
+    @IBOutlet weak var buttonbackground: UIImageView!
     var data = workingdata()
     let alert = UIAlertController(title: "Already working on a form", message: "Select again to delete your current form", preferredStyle: .alert)
     let action = UIAlertAction(title: "Error", style: .destructive, handler: {_ in workingdata.wipeout()
@@ -30,7 +31,7 @@ class FselectorController: UIViewController {
         if workingdata.alreadyworking == true{
             ibutton.image = UIImage(imageLiteralResourceName: "ticked")
         }
-        
+       
     }
 
     @IBAction func FSApush(_ sender: Any) {

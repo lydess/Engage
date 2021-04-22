@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 import SceneKit
-
+import CoreHaptics
 
 class debugcontroller: UIViewController {
     
@@ -19,12 +19,15 @@ class debugcontroller: UIViewController {
     @IBOutlet weak var Debug2: UIButton!
     @IBOutlet weak var debug3: UIButton!
 
+    @IBOutlet weak var yesno: UIImageView!
+    @IBOutlet weak var stack: UIStackView!
+    @IBOutlet var pan: UIPanGestureRecognizer!
     @IBOutlet weak var barbut: UIBarButtonItem!
     @IBOutlet var swiperight: UISwipeGestureRecognizer!
+    @IBOutlet weak var box: UILabel!
     
     
-    
-    
+    var vibe: CHHapticEngine!
     
     
     
@@ -32,27 +35,35 @@ class debugcontroller: UIViewController {
         
         
         
+        
     }
-    @objc func testfunc() {
-        print("dacsd")
-    }
+        func testfunc() {
+           
+        do{
+            vibe = try CHHapticEngine()
+        }
+        catch let error { fatalError("engine creation error \(error)")
+        
+        }
+            
+        }
+        
     
     @IBAction func debug1push(_ sender: Any) {
        
-        let vc = UIViewController()
-        vc.modalPresentationStyle = .popover //or .overFullScreen for transparency
-        let but = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 700))
-        but.backgroundColor = .systemGray5
-        but.addTarget(self, action: #selector(testfunc), for: .touchUpInside)
-        vc.view.addSubview(but)
-        
-        self.present(vc, animated: true, completion: nil)
+       testfunc()
     }
     @IBAction func debug2push(_ sender: Any) {
+        let hapticDict = [
+            CHHapticPattern.Key.pattern: [
+                [CHHapticPattern.Key.event: [CHHapticPattern.Key.eventType: CHHapticEvent.EventType.hapticTransient,
+                      CHHapticPattern.Key.time: 0.001,
+                      CHHapticPattern.Key.eventDuration: 1.0] // End of first event
+                ] // End of first dictionary entry in the array
+            ] // End of array
+        ] // End of haptic dictionary
         
-       
-       
-        
+    
     }
     
     @IBAction func barbutpush(_ sender: Any) {
@@ -85,8 +96,26 @@ class debugcontroller: UIViewController {
         
         
     }
+    
     @IBAction func swiperight(_ sender: Any) {
       
-    
+
 }
+   
+    @IBAction func pandown(_ sender: Any) {
+        var lastplace = box.center
+        if pan.state == .began {
+           var lastplace = box.center
+            
+            print(pan.translation(in: self.view))
+
+        }
+        if pan.state == .changed {
+            var xchange = pan.translation(in: self.view).x
+            var ychange = pan.translation(in: self.view).y
+            
+        }
+        
+        
+    }
 }

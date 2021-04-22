@@ -146,10 +146,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         no.checked = false
         yes.checked = false
        
-        var yesturnoffpic = UIImage.init(imageLiteralResourceName: "yesbutton")
-        var noturnoffpic = UIImage.init(imageLiteralResourceName: "nobutton")
-        yes.setImage(yesturnoffpic, for: .normal)
-        no.setImage(noturnoffpic, for: .normal)
+        
         
         
     }
@@ -372,6 +369,10 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
         }
         
+    }
+    
+    @IBAction func pandown(_ sender: Any) {
+        print("pan recognized")
     }
     
     

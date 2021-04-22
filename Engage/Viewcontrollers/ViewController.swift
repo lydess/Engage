@@ -86,8 +86,9 @@ class ViewController: UIViewController {
         navbar.alpha = 0
         debug.isEnabled = false
         debug.isHidden = true
-        billboard.frame = CGRect(x: 0, y: -1000, width: 400, height: 400)
+       // billboard.frame = CGRect(x: 0, y: -1000, width: 400, height: 400)
         coloring()
+        billboard.alpha = 0
         navbar.layer.cornerRadius = 25
         
         var timer = Timer.scheduledTimer(timeInterval: 9, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
@@ -116,11 +117,12 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 1.5, animations: {
                 self.midline.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: 2, animations: {
-                    self.bottomline.alpha = 1
+                UIView.animate(withDuration: 1, animations: {
+                    //self.billboard.frame = self.billboardstart
+                    self.billboard.alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 1, animations: {
-                        self.billboard.frame = self.billboardstart
+                        
                         
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {

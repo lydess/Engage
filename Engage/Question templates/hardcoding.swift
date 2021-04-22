@@ -22,8 +22,8 @@ class templatetext {
         "Are you currently an australian citizen",
         "Do you live in victoria",
         "Will you be doing 2 courses at the same time as this one?",
-        "Are you currently enrolled in secondary school?",
-        "Are you undertaking a school based traineeship",
+        "Are you currently enrolled in secondary school? 🏫",
+        "Are you undertaking a school based traineeship 👨‍🔧",
         "You're done!"
         ]
         return qtext
