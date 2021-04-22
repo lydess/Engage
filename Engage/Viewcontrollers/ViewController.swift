@@ -89,7 +89,7 @@ class ViewController: UIViewController {
        // billboard.frame = CGRect(x: 0, y: -1000, width: 400, height: 400)
         coloring()
         billboard.alpha = 0
-        navbar.layer.cornerRadius = 25
+        
         
         var timer = Timer.scheduledTimer(timeInterval: 9, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
         
