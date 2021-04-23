@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lilbutton: UIButton!
    
     
+    @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var debugbutton: UIButton!
     @IBOutlet weak var debug: UIButton!
     
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var journy: UIButton!
     @IBOutlet weak var contact: UIButton!
     @IBOutlet weak var billboard: UIImageView!
+ 
     
     @IBOutlet weak var topline: UILabel!
     @IBOutlet weak var midline: UILabel!
@@ -78,10 +80,13 @@ class ViewController: UIViewController {
         contact.contentVerticalAlignment = .fill
         contact.contentHorizontalAlignment = .fill
         
+        scrollview.alpha = 0
+        
         topline.alpha = 0
         midline.alpha = 0
         navbak.alpha = 0
         bottomline.alpha = 0
+        
       
         debug.isEnabled = false
         debug.isHidden = true

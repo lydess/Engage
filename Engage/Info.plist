@@ -58,7 +58,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>TypoGraphica_demo.otf</string>
-		<string></string>
+		<string>Poppins-Medium.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

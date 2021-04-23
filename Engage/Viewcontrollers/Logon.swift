@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SceneKit
 
+
 class logon: UIViewController {
     @IBOutlet weak var profilepic: UIImageView!
     
@@ -24,6 +25,7 @@ class logon: UIViewController {
     @IBOutlet var swipeleft: UISwipeGestureRecognizer!
     @IBOutlet var swipe: UISwipeGestureRecognizer!
     var step = 0
+    @IBOutlet weak var thumbs: UIStackView!
     
     
     override func viewDidLoad() {
@@ -38,12 +40,13 @@ class logon: UIViewController {
         case 0:
             print("test")
             revealhide(time: 3)
-            righttutorial(time: 3)
+            //righttutorial(time: 3)
             
             step += 1
+            var timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in self.uistep() }
             
         case 1:
-            print("case 1")
+            revealbox(time: 1)
         default:
             print("cases bad")
         }
@@ -59,6 +62,8 @@ class logon: UIViewController {
         no.alpha = 0
         swipearrowright.alpha = 0
         swipearrowleft.alpha = 0
+        thumbs.alpha = 0
+        thumbs.isUserInteractionEnabled = false
         
     }
 
@@ -73,9 +78,12 @@ class logon: UIViewController {
         
     }
     @IBAction func swipeleft(_ sender: Any) {
-        performSegue(withIdentifier: "main", sender: Any?.self)
+        
     }
     
+    @IBAction func thumbdown(_ sender: Any) {
+        performSegue(withIdentifier: "main", sender: Any?.self)
+    }
     func revealright(time:Double){
         
         let animation: Void = UIView.animate(withDuration: time, animations: {
@@ -85,7 +93,32 @@ class logon: UIViewController {
         
         
     }
-
+    @IBAction func thumbup(_ sender: Any) {
+        thumbyes(time: 3)
+        let animation: Void = UIView.animate(withDuration: 2, animations: {
+            self.profilepic.alpha = 1
+        }
+        )
+        
+    }
+    
+    func revealbox(time:Double){
+        var timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { timer in self.revealthumbs() }
+        let animation: Void = UIView.animate(withDuration: time, animations: {
+            self.question.alpha = 1
+        }
+        )
+        
+        
+    }
+    func revealthumbs() {
+        let anim = UIView.animate(withDuration: 1.5, animations: {
+            self.thumbs.alpha = 1
+            self.thumbs.isUserInteractionEnabled = true
+            
+        }
+        )
+    }
     func righttutorial(time:Double) {
         self.swipearrowright.alpha = 1
         
@@ -116,6 +149,19 @@ class logon: UIViewController {
     func thumbhide() {
         UIView.animate(withDuration: 1, animations: {self.yes.alpha = 0})
     }
-    
-    
+    func thumbyes(time: Int) {
+        var timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in self.revealtbox(time: 1) }
+        let animation: Void = UIView.animate(withDuration: TimeInterval(time), animations: {
+            self.instruction.alpha = 1
+        }
+        )
+    }
+    func revealtbox(time: Int) {
+        let animation: Void = UIView.animate(withDuration: TimeInterval(time), animations: {
+            self.textfield.alpha = 1
+            self.textfield.isEnabled = true
+        }
+        )
+        
+    }
 }
