@@ -112,7 +112,7 @@ class logon: UIViewController {
         
     }
     func revealthumbs() {
-        let anim = UIView.animate(withDuration: 1.5, animations: {
+        let anim = UIView.animate(withDuration: 0.75, animations: {
             self.thumbs.alpha = 1
             self.thumbs.isUserInteractionEnabled = true
             

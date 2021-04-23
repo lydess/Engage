@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         contact.contentVerticalAlignment = .fill
         contact.contentHorizontalAlignment = .fill
         
-        scrollview.alpha = 0
+        //scrollview.alpha = 0
         
         topline.alpha = 0
         midline.alpha = 0

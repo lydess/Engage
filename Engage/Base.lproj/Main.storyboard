@@ -11,7 +11,7 @@
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
-        <array key="TypoGraphica_demo.otf">
+        <array key="TypoGraphica_demo 2.otf">
             <string>TypoGraphica</string>
         </array>
     </customFonts>
@@ -168,11 +168,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="515"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-KT-cLa" customClass="bubbleview" customModule="Engage" customModuleProvider="target">
+                                    <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-KT-cLa" customClass="bubbleview" customModule="Engage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="1000"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="top" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-Ay-zaz">
-                                                <rect key="frame" x="0.0" y="0.0" width="398" height="800"/>
+                                            <stackView opaque="NO" contentMode="top" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-Ay-zaz">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="1000"/>
                                                 <color key="backgroundColor" red="0.98431372549999996" green="0.85517644559999995" blue="0.5555772309" alpha="1" colorSpace="calibratedRGB"/>
                                             </stackView>
                                         </subviews>
@@ -181,7 +181,7 @@
                                             <constraint firstAttribute="height" constant="1000" id="Aje-9H-Yeg"/>
                                             <constraint firstAttribute="trailing" secondItem="Ell-Ay-zaz" secondAttribute="trailing" id="Fa1-3y-RQL"/>
                                             <constraint firstItem="Ell-Ay-zaz" firstAttribute="leading" secondItem="3MC-KT-cLa" secondAttribute="leading" id="SiF-3r-slh"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ell-Ay-zaz" secondAttribute="bottom" constant="200" id="Xmr-1q-QKG"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ell-Ay-zaz" secondAttribute="bottom" id="Xmr-1q-QKG"/>
                                             <constraint firstItem="Ell-Ay-zaz" firstAttribute="top" secondItem="3MC-KT-cLa" secondAttribute="top" id="r8n-6Q-As3"/>
                                         </constraints>
                                     </view>
