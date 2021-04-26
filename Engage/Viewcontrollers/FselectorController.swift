@@ -19,21 +19,32 @@ class FselectorController: UIViewController {
     })
 // Todo, include additional hard coded documents
     
+    @IBOutlet weak var progbar: UIProgressView!
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var homebutton: UIButton!
     @IBOutlet weak var FSAbutton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        progbar.progress = 0.25
+        
         eqb.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
         print(workingdata.doc)
         alert.addAction(action)
         if workingdata.alreadyworking == true{
-            ibutton.image = UIImage(imageLiteralResourceName: "ticked")
+            
+            var timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
+            
         }
        
     }
-
+    @objc func anim() {
+        ibutton.image = UIImage(imageLiteralResourceName: "ticked")
+        UIView.animate(withDuration: 0.75, animations: {self.progbar.setProgress(0.5, animated: true)})
+        UIView.animate(withDuration: 0.75, animations: {
+            self.FSAbutton.backgroundColor = .gray
+        })
+    }
     @IBAction func FSApush(_ sender: Any) {
         switch workingdata.alreadyworking {
         case true:

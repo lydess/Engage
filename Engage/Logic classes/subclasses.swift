@@ -10,15 +10,35 @@ import UIKit
 
 class bubbleview: UIView {
     var but = "memes"
-    
+    func rndcolour() -> UIColor {
+        var clr = UIColor()
+        var rnd = Int.random(in: 0...4)
+
+        switch rnd {
+        case 0:
+            clr = .red
+        case 1:
+            clr = .yellow
+        case 2:
+            clr = .purple
+        case 3:
+            clr = .cyan
+        case 4:
+            clr = .blue
+        default:
+            clr = .gray
+        }
+        return clr
+    }
     func makebubble(inview: UIView) -> UIStackView {
         let button: UIButton = UIButton()
         let image = UIImage()
         let stack = UIStackView()
-        var rnd = Int.random(in: 0...4)
+        let rightstack = UIStackView()
+        
         let buttonframe = CGRect(x: 0, y: 0, width: 20, height: 30)
         let imageframe = CGRect(x: 0, y: 0, width: 180, height: 30)
-        var clr = UIColor()
+        
         
         let constraintlist = [
             stack.widthAnchor.constraint(equalToConstant: 200),
@@ -37,25 +57,17 @@ class bubbleview: UIView {
         
         stack.axis = .horizontal
         stack.distribution = .fillEqually
-        
         stack.addArrangedSubview(button)
         
-        switch rnd {
-        case 0:
-            clr = .red
-        case 1:
-            clr = .yellow
-        case 2:
-            clr = .purple
-        case 3:
-            clr = .cyan
-        case 4:
-            clr = .blue
-        default:
-            clr = .gray
-        }
-        stack.backgroundColor = clr
+        rightstack.axis = .horizontal
+        rightstack.distribution = .equalSpacing
+        rightstack.addSubview(button)
+        
+        
+        
+        stack.backgroundColor = rndcolour()
         button.backgroundColor = .white
+        rightstack.backgroundColor = rndcolour()
         
         
         return stack

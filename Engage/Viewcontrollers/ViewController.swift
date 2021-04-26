@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 
     
     
+    
     @IBOutlet weak var navbak: UIImageView!
     @IBOutlet var swiperight: UISwipeGestureRecognizer!
     @IBOutlet weak var journy: UIButton!
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
         midline.alpha = 0
         navbak.alpha = 0
         bottomline.alpha = 0
-        
+        scrollview.alpha = 0
       
         debug.isEnabled = false
         debug.isHidden = true
@@ -101,7 +102,8 @@ class ViewController: UIViewController {
     @objc func anim() {
             
         UIView.animate(withDuration: 1){
-        
+            self.topline.textColor = .white
+            
             self.topline.alpha = 1
             self.topline.text = self.insp[self.step]
             
@@ -115,7 +117,7 @@ class ViewController: UIViewController {
     }
     
     func list() {
-        UIView.animate(withDuration: 1.5, animations: {
+        UIView.animate(withDuration: 2, animations: {
             self.topline.alpha = 1
         }, completion: { _ in
             UIView.animate(withDuration: 1.5, animations: {
@@ -131,7 +133,7 @@ class ViewController: UIViewController {
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {
                            
-                            
+                            self.scrollview.alpha = 1
                             self.topline.alpha = 0
                             self.bottomline.alpha = 0
                             self.midline.alpha = 0

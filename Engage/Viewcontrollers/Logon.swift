@@ -22,6 +22,7 @@ class logon: UIViewController {
     @IBOutlet weak var swipearrowleft: UIImageView!
     @IBOutlet weak var textfield: UITextField!
     
+    @IBOutlet weak var skipbutton: UIButton!
     @IBOutlet var swipeleft: UISwipeGestureRecognizer!
     @IBOutlet var swipe: UISwipeGestureRecognizer!
     var step = 0
@@ -64,11 +65,15 @@ class logon: UIViewController {
         swipearrowleft.alpha = 0
         thumbs.alpha = 0
         thumbs.isUserInteractionEnabled = false
+        skipbutton.alpha = 0
         
     }
 
    
-
+    @IBAction func skipbutton(_ sender: Any) {
+        
+    }
+    
       //  var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in }
         
     
@@ -78,7 +83,7 @@ class logon: UIViewController {
         
     }
     @IBAction func swipeleft(_ sender: Any) {
-        
+        skipbutton.alpha = 1
     }
     
     @IBAction func thumbdown(_ sender: Any) {
