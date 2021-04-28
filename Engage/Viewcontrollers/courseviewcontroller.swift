@@ -177,6 +177,7 @@ class courseviewcontroller: UIViewController {
         else
         {
             print(answer + sender.titleLabel!.text!)
+            performSegue(withIdentifier: "courseinfo", sender: Any?.self)
         }
         
     }

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import SceneKit
+import CoreData
+
 
 
 class logon: UIViewController {
@@ -31,7 +33,7 @@ class logon: UIViewController {
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var thumbs: UIStackView!
     
-    
+    var users = DB()
     override func viewDidLoad() {
         print("Im alive!")
         initalize()
@@ -141,7 +143,7 @@ class logon: UIViewController {
     }
     func thumbyes(time: Int) {
         
-        var timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in self.revealtbox(time: 1) }
+        var timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in self.revealtbox(time: 1) }
         
     }
     func revealtbox(time: Int) {
@@ -182,4 +184,6 @@ class logon: UIViewController {
         
     })
 }
+    
+    
 }

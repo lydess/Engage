@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 import UIKit
 import SceneKit
 class QandaController: UIViewController, UITextFieldDelegate {
@@ -54,21 +55,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         yes.tag = 1
         no.tag = 0
+        
+
         yes.yesbutton = true
         no.yesbutton = false
-        if workingdata.isworking == true {
-            resume()
-        }
-        else{
-            yes.isEnabled = false
-            yes.alpha = 0
-            no.isEnabled = false
-            no.alpha = 0
-            textbox.isEnabled = false
-            textbox.alpha = 0
-            
-            startup()
-        }
+        
         genstack.axis = .vertical
         genstack.spacing = 5
         genstack.alignment = .top
@@ -76,8 +67,6 @@ class QandaController: UIViewController, UITextFieldDelegate {
         genstack.distribution = .fillEqually
         genstack.isHidden = true
        
-        
-        
         rightgenstack.axis = .vertical
         rightgenstack.spacing = 5
         rightgenstack.alignment = .top
@@ -85,6 +74,22 @@ class QandaController: UIViewController, UITextFieldDelegate {
         rightgenstack.distribution = .fillEqually
         rightgenstack.isHidden = true
         
+        yes.isEnabled = false
+        yes.alpha = 0
+        no.isEnabled = false
+        no.alpha = 0
+        textbox.isEnabled = false
+        textbox.alpha = 0
+        
+        
+
+        
+        if workingdata.isworking == true {
+            resume()
+        }
+        else{
+            startup()
+        }
         
         if isModalInPresentation == true {
             print("is modal")
@@ -95,7 +100,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
+    func functionName() {
+        print("hello world")
+    }
     func yesno(Boolean:Bool) {
         if Boolean == true {
             yes.alpha = 1
@@ -151,7 +158,18 @@ class QandaController: UIViewController, UITextFieldDelegate {
         workingdata.resumedlist = answer
         workingdata.resumedstep = step
         
-        
+    }
+    
+    func resume() {
+        queue = workingdata.qlist
+        qtype = workingdata.qtype
+        step = workingdata.resumedstep
+        uistep()
+    }
+    @objc func slidedown() {
+        workingdata.qlist = queue
+        workingdata.qtype = qtype
+        workingdata.resumedstep = step
         
     }
     func uistep() {
@@ -173,9 +191,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             print("case 1")
         }
     }
-    func resume() {
-        
-    }
+    
     
     // Loads the UI based on what type of question is being asked
     func case0() {

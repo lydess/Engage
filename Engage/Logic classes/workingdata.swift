@@ -56,4 +56,8 @@ struct workingdata {
         print("WORKING DATA WIPED OUT, ALL DATA IS SET TO DEFAULT VALUES")
     }
     
+    static func grabdata() {
+        print("dismissed")
+    }
+    
 }

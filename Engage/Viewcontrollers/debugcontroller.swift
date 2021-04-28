@@ -16,7 +16,11 @@ class debugcontroller: UIViewController {
     @IBOutlet weak var newdata: UIButton!
     @IBOutlet weak var printdata: UIButton!
     @IBOutlet weak var debug3: UIButton!
-    
+    @IBOutlet weak var namefield: UITextField!
+    @IBOutlet weak var namelabel: UILabel!
+    @IBOutlet weak var coursefield: UITextField!
+   
+    @IBOutlet weak var counter: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -31,11 +35,16 @@ class debugcontroller: UIViewController {
         
     
     @IBAction func savenewdata(_ sender: Any) {
-        let context = appDelegate.persistentContainer.viewContext
         
+        let username = namefield.text
+        let course = coursefield.text
+        
+        let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Userdata", in: context )
         let newclient = NSManagedObject(entity: entity!, insertInto: context)
-        newclient.setValue("lydess", forKey: "username")
+        newclient.setValue(username, forKey: "username")
+        newclient.setValue(course, forKey: "course")
+        
         
         do {
             try context.save()}
@@ -53,19 +62,37 @@ class debugcontroller: UIViewController {
         do {
                     let result = try context.fetch(request)
                     for data in result as! [NSManagedObject] {
-                       print(data.value(forKey: "username") as! String)
+                        print("line " + (data.value(forKey: "username") as! String) + " " + (data.value(forKey: "course") as! String))
                   }
                     
                 } catch {
                     
                     print("Failed")
                 }}
-    @IBAction func debug3push(_ sender: Any) {
+    @IBAction func Deletedata(_ sender: Any) {
         
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        request.returnsObjectsAsFaults = false
         
-        
-        
+        do {
+                    let result = try context.fetch(request)
+                    for data in result as! [NSManagedObject] {
+                        context.delete(data)
+                  }
+            
+                    
+                } catch {
+                    
+                    print("Failed")
+                }
+        do {
+            try context.save()}
+        catch {
+            print("saving failed")
+        }
         
     }
  
+    
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		031B97B5262954D90024CD3F /* anim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B4262954D90024CD3F /* anim.swift */; };
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
+		034E6254263A27DD00629BA4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E6253263A27DD00629BA4 /* Database.swift */; };
+		03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* courseinfocontroller.swift */; };
 		0373148B261D375200438D6B /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373148A261D375200438D6B /* button.swift */; };
 		037904C5262E49E50039BC40 /* TypoGraphica1 in Resources */ = {isa = PBXBuildFile; fileRef = 037904C4262E49E50039BC40 /* TypoGraphica1 */; };
 		037904CE262EA22C0039BC40 /* Logon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037904CD262EA22B0039BC40 /* Logon.swift */; };
@@ -72,6 +74,8 @@
 /* Begin PBXFileReference section */
 		031B97B4262954D90024CD3F /* anim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anim.swift; sourceTree = "<group>"; };
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
+		034E6253263A27DD00629BA4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		03568CB6263A1CD000979E49 /* courseinfocontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseinfocontroller.swift; sourceTree = "<group>"; };
 		0373148A261D375200438D6B /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
 		037904C4262E49E50039BC40 /* TypoGraphica1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TypoGraphica1; sourceTree = "<group>"; };
 		037904C9262E4A340039BC40 /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
@@ -147,6 +151,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03568CB4263A1C9C00979E49 /* Application controllers */ = {
+			isa = PBXGroup;
+			children = (
+				037904D2262F95720039BC40 /* Sidepannelcontroller.swift */,
+				0390F96326167CE4004FD4AE /* FselectorController.swift */,
+				0390F96C261691A1004FD4AE /* QandaController.swift */,
+			);
+			path = "Application controllers";
+			sourceTree = "<group>";
+		};
+		03568CB5263A1CB000979E49 /* Main menu controllers */ = {
+			isa = PBXGroup;
+			children = (
+				037904CD262EA22B0039BC40 /* Logon.swift */,
+				03C00F8526155495002A4488 /* ViewController.swift */,
+			);
+			path = "Main menu controllers";
+			sourceTree = "<group>";
+		};
 		037904A3262D58C80039BC40 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,13 +207,11 @@
 		0390F96826168DD4004FD4AE /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				03C00F8526155495002A4488 /* ViewController.swift */,
-				0390F96326167CE4004FD4AE /* FselectorController.swift */,
-				0390F96C261691A1004FD4AE /* QandaController.swift */,
+				03568CB5263A1CB000979E49 /* Main menu controllers */,
+				03568CB4263A1C9C00979E49 /* Application controllers */,
 				031B97B9262A74220024CD3F /* debugcontroller.swift */,
-				037904CD262EA22B0039BC40 /* Logon.swift */,
-				037904D2262F95720039BC40 /* Sidepannelcontroller.swift */,
 				03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */,
+				03568CB6263A1CD000979E49 /* courseinfocontroller.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -203,6 +224,7 @@
 				0373148A261D375200438D6B /* button.swift */,
 				031B97B4262954D90024CD3F /* anim.swift */,
 				03AD6F7F263245C1005C53CC /* subclasses.swift */,
+				034E6253263A27DD00629BA4 /* Database.swift */,
 			);
 			path = "Logic classes";
 			sourceTree = "<group>";
@@ -436,6 +458,7 @@
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
 				03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */,
+				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
 				031B97B5262954D90024CD3F /* anim.swift in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
@@ -446,6 +469,7 @@
 				037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */,
 				0373148B261D375200438D6B /* button.swift in Sources */,
 				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,
+				034E6254263A27DD00629BA4 /* Database.swift in Sources */,
 				0390F96426167CE4004FD4AE /* FselectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

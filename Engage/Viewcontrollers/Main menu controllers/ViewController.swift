@@ -10,37 +10,17 @@ import SceneKit
 
 
 class ViewController: UIViewController {
-    @IBOutlet weak var imageview: UIImageView!
-    
-    @IBOutlet weak var navbartop: UINavigationBar!
-    @IBOutlet weak var lilbutton: UIButton!
-   
-    @IBOutlet weak var page: UIPageControl!
-    
-    @IBOutlet weak var scrollview: UIScrollView!
-    @IBOutlet weak var debugbutton: UIButton!
-    @IBOutlet weak var debug: UIButton!
-    
-    @IBOutlet weak var newsfeed: UIScrollView!
-    
-    @IBOutlet weak var form: UIImageView!
 
-    
-    
-    
+    @IBOutlet weak var buttonstack: UIStackView!
+    @IBOutlet weak var debug: UIButton!
+    @IBOutlet weak var newsfeed: UIScrollView!
     @IBOutlet weak var navbak: UIImageView!
     @IBOutlet var swiperight: UISwipeGestureRecognizer!
-    @IBOutlet weak var journy: UIButton!
-    @IBOutlet weak var contact: UIButton!
     @IBOutlet weak var billboard: UIImageView!
- 
-    
     @IBOutlet weak var topline: UILabel!
     @IBOutlet weak var midline: UILabel!
     @IBOutlet weak var bottomline: UILabel!
     
-    
-    @IBOutlet weak var navbar: UIStackView!
     var insp = ["Its never too late to learn", "You can Go there",
                   "We're job ready!", "Prepared for the future"]
     var seen = false
@@ -51,6 +31,7 @@ class ViewController: UIViewController {
   
     
     override func viewDidAppear(_ animated: Bool) {
+        
         switch workingdata.menuseen {
         case false:
             initalize()
@@ -62,6 +43,8 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        midline.alpha = 0
+        topline.alpha = 0
         
         print("main view did load")
         
@@ -75,8 +58,7 @@ class ViewController: UIViewController {
     }
     func checklogin() {
         if workingdata.loggedin == false {
-            lilbutton.isEnabled = false
-            lilbutton.setTitleColor(.gray, for: .normal)
+            
         }
         else{
             
@@ -85,12 +67,8 @@ class ViewController: UIViewController {
     func initalize() {
         checklogin()
         billboardstart = billboard.frame
-        lilbutton.contentHorizontalAlignment = .fill
-        lilbutton.contentVerticalAlignment = .fill
-        journy.contentHorizontalAlignment = .fill
-        journy.contentVerticalAlignment = .fill
-        contact.contentVerticalAlignment = .fill
-        contact.contentHorizontalAlignment = .fill
+        
+       
         
         //scrollview.alpha = 0
         
@@ -98,7 +76,7 @@ class ViewController: UIViewController {
         midline.alpha = 0
         navbak.alpha = 0
         bottomline.alpha = 0
-        scrollview.alpha = 0
+        buttonstack.alpha = 0
         newsfeed.alpha = 0
       
         debug.isEnabled = false
@@ -145,12 +123,15 @@ class ViewController: UIViewController {
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {
                            
-                            self.scrollview.alpha = 1
+                            
                             self.topline.alpha = 0
                             self.bottomline.alpha = 0
                             self.midline.alpha = 0
+                            self.buttonstack.alpha = 1
+                            
                         }, completion: { _ in
-                            print("I'm done!")
+                            self.topline.isEnabled = false
+                            self.midline.isEnabled = false
                         })
                     })
                 })
