@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 // stores the "at a momment" data needed for the operation of the app, is callable at any point and can be set at any time, insecure dont store creds
 struct workingdata {
+    static var loggedin = false
+    static var userid = "N/A (User not logged in)"
     static var doc = 1
     static var template = 0
     static var templatename = "none set"
@@ -20,6 +22,7 @@ struct workingdata {
     static var isworking = false
     static var alreadyworking = false
     static var menuseen = false
+    static var courseview = 0
     
     
     var fsa = fsatemp()            // hardcoded, to be replaced
@@ -51,4 +54,5 @@ struct workingdata {
         workingdata.alreadyworking = false
         print("WORKING DATA WIPED OUT, ALL DATA IS SET TO DEFAULT VALUES")
     }
+    
 }

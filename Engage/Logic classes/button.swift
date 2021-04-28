@@ -38,29 +38,18 @@ class checkbox: UIButton {
 
 class yesno: UIButton {
     var checked = false
-    var noturnonpic = UIImage.init(imageLiteralResourceName: "nochecked")
-    var noturnoffpic = UIImage.init(imageLiteralResourceName: "nobutton")
-    var yesturnonpic = UIImage.init(imageLiteralResourceName: "yesticked")
-    var yesturnoffpic = UIImage.init(imageLiteralResourceName: "yesbutton")
+    
+    var noimg = UIImage.init(named: "hand.thumbsup.fill")
+    
+    var yesimg = UIImage.init(named: "hand.thumbsup")
     
     @objc func click(_ sender: yesno) {
         
         switch checked {
         case false:
-            if self.tag == 0 {
-            //self.setImage(noturnonpic, for: .normal)
-            }
-            else if self.tag == 1{
-                //self.setImage(yesturnonpic, for: .normal)
-            }
             checked = true
+            self.setImage(noimg, for: .normal)
         case true:
-            if self.tag == 0 {
-            //self.setImage(noturnoffpic, for: .normal)
-            }
-            else if self.tag == 1 {
-                //self.setImage(noturnoffpic, for: .normal)
-            }
             checked = false
             
         default:

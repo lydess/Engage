@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -291,6 +291,8 @@
 			dependencies = (
 			);
 			name = Engage;
+			packageProductDependencies = (
+			);
 			productName = Engage;
 			productReference = 03C00F7E26155495002A4488 /* Engage.app */;
 			productType = "com.apple.product-type.application";
@@ -362,6 +364,9 @@
 				Base,
 			);
 			mainGroup = 03C00F7526155495002A4488;
+			packageReferences = (
+				03568CA82638C5CB00979E49 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 03C00F7F26155495002A4488 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -775,6 +780,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03568CA82638C5CB00979E49 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = "lottie/macos-spm";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		03C00F8A26155495002A4488 /* Engage.xcdatamodeld */ = {

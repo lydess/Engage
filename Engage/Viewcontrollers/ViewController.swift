@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var navbartop: UINavigationBar!
     @IBOutlet weak var lilbutton: UIButton!
    
+    @IBOutlet weak var page: UIPageControl!
     
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var debugbutton: UIButton!
@@ -71,8 +72,17 @@ class ViewController: UIViewController {
         
         
     }
-    
+    func checklogin() {
+        if workingdata.loggedin == false {
+            lilbutton.isEnabled = false
+            lilbutton.setTitleColor(.gray, for: .normal)
+        }
+        else{
+            
+        }
+    }
     func initalize() {
+        checklogin()
         billboardstart = billboard.frame
         lilbutton.contentHorizontalAlignment = .fill
         lilbutton.contentVerticalAlignment = .fill
