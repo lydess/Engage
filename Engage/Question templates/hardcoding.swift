@@ -30,7 +30,7 @@ class templatetext {
         
     }
     func fsatype() -> [Int] {
-        let qtype = [0,0,0,0,0,5]
+        let qtype = [0,0,3,4,0,5]
         return qtype
     }
     func cbxquestions() -> [Array<String>] {

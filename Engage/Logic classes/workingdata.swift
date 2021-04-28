@@ -23,7 +23,8 @@ struct workingdata {
     static var alreadyworking = false
     static var menuseen = false
     static var courseview = 0
-    
+    static var resumedlist = NSMutableArray()
+    static var resumedstep = Int()
     
     var fsa = fsatemp()            // hardcoded, to be replaced
     var temple = templates()

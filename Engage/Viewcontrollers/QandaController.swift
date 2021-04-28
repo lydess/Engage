@@ -30,7 +30,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var tapges: UITapGestureRecognizer!
-    
+
     var data = workingdata()
     var cords = CGRect.init(x: 100, y: 100, width: 50, height: 50)
     var queue = [String]()
@@ -47,13 +47,15 @@ class QandaController: UIViewController, UITextFieldDelegate {
     var stackheight = 30
     var rightstackheight = 30
     var complete = false
-
+    
 
     //TODO: add logic to check for an existing form being filled out
     override func viewDidLoad() {
         super.viewDidLoad()
         yes.tag = 1
         no.tag = 0
+        yes.yesbutton = true
+        no.yesbutton = false
         if workingdata.isworking == true {
             resume()
         }
@@ -64,7 +66,6 @@ class QandaController: UIViewController, UITextFieldDelegate {
             no.alpha = 0
             textbox.isEnabled = false
             textbox.alpha = 0
-            
             
             startup()
         }
@@ -77,7 +78,6 @@ class QandaController: UIViewController, UITextFieldDelegate {
        
         
         
-        
         rightgenstack.axis = .vertical
         rightgenstack.spacing = 5
         rightgenstack.alignment = .top
@@ -86,6 +86,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
         rightgenstack.isHidden = true
         
         
+        if isModalInPresentation == true {
+            print("is modal")
+        }
         
         self.view.addSubview(genstack)
         self.view.addSubview(rightgenstack)
@@ -145,7 +148,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
         uistep()
         no.checked = false
         yes.checked = false
-       
+        workingdata.resumedlist = answer
+        workingdata.resumedstep = step
         
         
         
@@ -232,8 +236,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     func case4() {
         yesno(Boolean: false)
         submit(istrue: false)
-        labelstack.isHidden = false
-        labelstack.alpha = 1
+        genstack.isHidden = false
+        genstack.alpha = 1
         qtext.text = workingdata.qlist[step]
         print(step)
         var questions = workingdata.qcbx[step]

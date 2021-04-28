@@ -182,10 +182,15 @@ class courseviewcontroller: UIViewController {
     }
     
     @IBAction func topdebugpush(_ sender: Any) {
+        if workingdata.courseview != 0 {
+            
+        
         workingdata.courseview = 0
         userview = 0
         viewchange()
         print("going home")
+        }
+        else {performSegue(withIdentifier: "home", sender: Any?.self)}
         
     }
     @IBAction func bottomdebugpush(_ sender: Any) {

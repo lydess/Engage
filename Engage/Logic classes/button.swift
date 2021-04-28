@@ -38,23 +38,44 @@ class checkbox: UIButton {
 
 class yesno: UIButton {
     var checked = false
-    
+    var yesbutton = Bool()
+    var nonotclicked = UIImage(systemName: "hand.thumbsdown")
+    var noclicked = UIImage(systemName: "hand.thumbsdown.fill")
+    var yesclicked = UIImage(systemName: "hand.thumbsup.fill")
+    var yesnotclicked = UIImage(systemName: "hand.thumbsup")
+
     var noimg = UIImage.init(named: "hand.thumbsup.fill")
     
     var yesimg = UIImage.init(named: "hand.thumbsup")
     
     @objc func click(_ sender: yesno) {
-        
+        if sender.yesbutton == true {
         switch checked {
         case false:
             checked = true
-            self.setImage(noimg, for: .normal)
+            self.setImage(yesclicked, for: .normal)
         case true:
             checked = false
+            self.setImage(yesnotclicked, for: .normal)
             
         default:
             print("somthing is seriously wrong")
             
         }
+        }
+    else{
+    switch checked {
+    case false:
+        checked = true
+        self.setImage(noclicked, for: .normal)
+    case true:
+        checked = false
+        self.setImage(nonotclicked, for: .normal)
+    default:
+        print("somthing is seriously wrong")
+        
+    }
+    
+    }
 }
 }

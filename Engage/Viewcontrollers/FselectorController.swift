@@ -21,6 +21,7 @@ class FselectorController: UIViewController {
     
 // Todo, include additional hard coded documents
     
+    @IBOutlet weak var toptext: UILabel!
     @IBOutlet weak var homebutton: UIButton!
     @IBOutlet weak var progbar: UIProgressView!
     @IBOutlet weak var debug: UIButton!
@@ -35,6 +36,7 @@ class FselectorController: UIViewController {
         print(workingdata.doc)
         alert.addAction(action)
         alert.addAction(more)
+        toptext.text = ("Hello " + workingdata.userid + ", Here are the tasks we need you to complete")
         if workingdata.alreadyworking == true{
             
             var timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
@@ -45,7 +47,7 @@ class FselectorController: UIViewController {
     @objc func anim() {
         ibutton.image = UIImage(imageLiteralResourceName: "ticked")
         UIView.animate(withDuration: 0.5, animations: {
-            self.textout.text = "thanks for your form!, one of your enquiry officers will give you a call soon!"
+            self.textout.text = "thanks for your form!, one of your engaegment officers will give you a call soon!"
         })
         UIView.animate(withDuration: 0.55, animations: {self.progbar.setProgress(0.25, animated: true)})
         UIView.animate(withDuration: 0.75, animations: {

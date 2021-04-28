@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var debugbutton: UIButton!
     @IBOutlet weak var debug: UIButton!
     
-   
+    @IBOutlet weak var newsfeed: UIScrollView!
+    
     @IBOutlet weak var form: UIImageView!
 
     
@@ -98,6 +99,7 @@ class ViewController: UIViewController {
         navbak.alpha = 0
         bottomline.alpha = 0
         scrollview.alpha = 0
+        newsfeed.alpha = 0
       
         debug.isEnabled = false
         debug.isHidden = true
@@ -138,7 +140,7 @@ class ViewController: UIViewController {
                     self.billboard.alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 1, animations: {
-                        
+                        self.newsfeed.alpha = 1
                         
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {
