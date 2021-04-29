@@ -12,53 +12,28 @@ class FselectorController: UIViewController {
     @IBOutlet weak var eqb: UIButton!
     @IBOutlet weak var ibutton: UIImageView!
     @IBOutlet weak var formlist: UIStackView!
-    @IBOutlet weak var buttonbackground: UIImageView!
+    @IBOutlet weak var toptext: UILabel!
+    @IBOutlet weak var debug: UIButton!
+    @IBOutlet weak var FSAbutton: UIButton!
+    
     var data = workingdata()
     let alert = UIAlertController(title: "Already working on a form", message: "Select again to delete your current form", preferredStyle: .alert)
-    let action = UIAlertAction(title: "Error", style: .destructive, handler: {_ in workingdata.wipeout()
-
-    })
+    let action = UIAlertAction(title: "Error", style: .destructive, handler: {_ in workingdata.wipeout() })
     
-    
-// Todo, include additional hard coded documents
-    
-    @IBOutlet weak var casechecker: UILabel!
-    @IBOutlet weak var toptext: UILabel!
-    @IBOutlet weak var homebutton: UIButton!
-    @IBOutlet weak var progbar: UIProgressView!
-    @IBOutlet weak var debug: UIButton!
-    @IBOutlet weak var textout: UILabel!
-    @IBOutlet weak var FSAbutton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var const = [NSLayoutConstraint]()
         let more = UIAlertAction(title: "continue", style: .default, handler: {_ in self.goback() })
         alert.addAction(action)
         alert.addAction(more)
-    
+        //const.append(formlist.widthAnchor.constraint(equalToConstant: 330))
+        //NSLayoutConstraint.activate(const)
         
         toptext.text = ("Hello " + workingdata.userid + ", Here are the tasks we need you to complete")
-        if workingdata.alreadyworking == true{
-            
-            var timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
-            
-        }
-        
-       
-        
        
     }
-    @objc func anim() {
-        ibutton.image = UIImage(imageLiteralResourceName: "ticked")
-        UIView.animate(withDuration: 0.5, animations: {
-            self.textout.text = "thanks for your form!, one of your engaegment officers will give you a call soon!"
-        })
-        UIView.animate(withDuration: 0.55, animations: {self.progbar.setProgress(0.25, animated: true)})
-        UIView.animate(withDuration: 0.75, animations: {
-            self.FSAbutton.backgroundColor = .gray
-        })
-    }
-    func addbut() {
+
+    func addbut(text: String) {
         let symbol = UIImage(systemName: "info.circle.fill")
         let buttstack = UIStackView()
         let button = UIButton()
@@ -68,12 +43,12 @@ class FselectorController: UIViewController {
         buttstack.alignment = .fill
         buttstack.distribution = .fill
         buttstack.frame = CGRect(x: 0, y: 0, width: 330, height: 0)
-        buttstack.spacing = 70
+        buttstack.spacing = 122
         
         var bcst = [NSLayoutConstraint]()
         button.frame = CGRect(x: 0, y: 0, width: 170, height: 75)
         button.backgroundColor = .red
-        button.setTitle("button", for: .normal)
+        button.setTitle(text, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 25
         bcst.append(button.heightAnchor.constraint(equalToConstant: 55))
@@ -81,14 +56,14 @@ class FselectorController: UIViewController {
         NSLayoutConstraint.activate(bcst)
         
         var rbcst = [NSLayoutConstraint]()
-        rightbutton.frame = CGRect(x: 0, y: 0, width: 35, height: 75)
+        rightbutton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         //rightbutton.backgroundColor = .yellow
         rightbutton.setBackgroundImage(symbol, for: .normal)
         rightbutton.contentMode = .scaleToFill
         
         //rbcst.append(rightbutton.heightAnchor//.constraint(equalToConstant: 75))
-        rbcst.append(rightbutton.widthAnchor.constraint(equalToConstant: 35))
-        NSLayoutConstraint.activate(rbcst)
+        rbcst.append(rightbutton.widthAnchor.constraint(equalToConstant: 10))
+        //NSLayoutConstraint.activate(rbcst)
         
         buttstack.addArrangedSubview(button)
         buttstack.addArrangedSubview(rightbutton)
@@ -118,7 +93,7 @@ class FselectorController: UIViewController {
     }
     
     @IBAction func debugpush(_ sender: Any) {
-        addbut()
+        addbut(text: "newbutton")
     }
     @IBAction func homepush(_ sender: Any) {
         
