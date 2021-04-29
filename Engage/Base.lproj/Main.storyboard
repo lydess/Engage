@@ -626,43 +626,14 @@
                                     <barButtonItem id="w2e-vH-Hzw"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-e4-QMN">
-                                <rect key="frame" x="42" y="293" width="330" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-LL-dYo">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI5-kU-wE7">
-                                                <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
-                                                <color key="backgroundColor" red="0.96050208806991577" green="0.56207649323987574" blue="0.2766692527872045" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="KtU-SF-pZ0"/>
-                                                    <constraint firstAttribute="width" constant="170" id="xtD-i4-6Ys"/>
-                                                </constraints>
-                                                <state key="normal" title="Enquiry questions">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="titleShadowColor" red="0.88627450980392153" green="0.39215686274509803" blue="0.14509803921568626" alpha="0.69803921568627447" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="FSApush:" destination="waM-hb-Y5q" eventType="touchUpInside" id="zpm-ma-lAr"/>
-                                                    <segue destination="AHp-rr-q25" kind="presentation" identifier="return" modalPresentationStyle="pageSheet" id="CuH-pm-Wap"/>
-                                                </connections>
-                                            </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UqI-Ps-Ftf">
-                                                <rect key="frame" x="280" y="0.5" width="50" height="49"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="OvE-ag-Qfw"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-e4-QMN">
+                                <rect key="frame" x="42" y="293" width="330" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="H7M-Nk-eTe"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Cassia,   Here are the tasks we need you to complete" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FU-GR-tm3">
-                                <rect key="frame" x="25" y="155" width="530.5" height="103"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello Cassia,   Here are the tasks we need you to complete" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FU-GR-tm3">
+                                <rect key="frame" x="25" y="155" width="369" height="103"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103" id="AgP-us-QfL"/>
@@ -686,6 +657,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="RIc-en-p1x" secondAttribute="bottom" constant="-34" id="63b-hW-LLo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RIc-en-p1x" secondAttribute="trailing" constant="-38" id="8Ho-5b-R7S"/>
                             <constraint firstItem="RIc-en-p1x" firstAttribute="leading" secondItem="di8-lE-0EV" secondAttribute="leadingMargin" constant="-33" id="A1c-st-mz8"/>
+                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="vP3-e4-QMN" secondAttribute="bottom" constant="603" id="ARU-ol-27K"/>
                             <constraint firstItem="RIc-en-p1x" firstAttribute="top" secondItem="2Ye-vz-Caj" secondAttribute="bottom" constant="74" id="Alr-Vt-7IN"/>
                             <constraint firstItem="UU7-35-wqH" firstAttribute="top" secondItem="wir-sO-MM8" secondAttribute="top" id="MgS-L6-oBP"/>
                             <constraint firstItem="wir-sO-MM8" firstAttribute="trailing" secondItem="2Ye-vz-Caj" secondAttribute="trailing" constant="31" id="O3b-0X-aYx"/>
@@ -702,12 +674,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="FSAbutton" destination="MI5-kU-wE7" id="L1r-ZB-X02"/>
                         <outlet property="debug" destination="2Ye-vz-Caj" id="Ibp-WG-QWw"/>
-                        <outlet property="eqb" destination="MI5-kU-wE7" id="4zF-TE-G8J"/>
                         <outlet property="formlist" destination="vP3-e4-QMN" id="onu-L1-JnT"/>
-                        <outlet property="ibutton" destination="UqI-Ps-Ftf" id="PPJ-im-Q62"/>
                         <outlet property="toptext" destination="3FU-GR-tm3" id="ocA-tm-GvF"/>
+                        <segue destination="AHp-rr-q25" kind="presentation" identifier="question" id="7qE-NC-0rZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLY-js-Vmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -842,7 +812,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2hz-fw-GNO"/>
+        <segue reference="7qE-NC-0rZ"/>
+        <segue reference="scD-iA-Pat"/>
         <segue reference="8gQ-yQ-xhw"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -854,7 +825,6 @@
         <image name="full pin" width="530" height="146.5"/>
         <image name="hand.thumbsdown" catalog="system" width="128" height="128"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
-        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="signpost.right" catalog="system" width="128" height="118"/>

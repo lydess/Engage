@@ -37,6 +37,7 @@ class templates {
     var questions = [String]()
     var Qtypes = [Int]()
     var answers = NSMutableArray()
+    var forms = [String]()
     
     // sets the question list based on given id
     func Getquestions(tempid:Int) -> [String]{
@@ -67,6 +68,10 @@ class templates {
     }
     func getlists() -> [Array<String>]{
         let jacks = hc.cbxquestions()
+        return jacks
+    }
+    func getbuttons() ->  [String] {
+        let jacks = hc.formnames()
         return jacks
     }
 }

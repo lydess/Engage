@@ -51,6 +51,7 @@ struct workingdata {
             workingdata.qcbx = temple.getlists()
             
             
+            
         default:
             print("Theres somthing wrong with your templates")
         }

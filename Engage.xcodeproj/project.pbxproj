@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		031B97B5262954D90024CD3F /* anim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B4262954D90024CD3F /* anim.swift */; };
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		034E6254263A27DD00629BA4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E6253263A27DD00629BA4 /* Database.swift */; };
 		03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* courseinfocontroller.swift */; };
@@ -72,7 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		031B97B4262954D90024CD3F /* anim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anim.swift; sourceTree = "<group>"; };
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		034E6253263A27DD00629BA4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		03568CB6263A1CD000979E49 /* courseinfocontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseinfocontroller.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				0390F972261695B6004FD4AE /* workingdata.swift */,
 				03DDB6CE2616B4290046B613 /* templates.swift */,
 				0373148A261D375200438D6B /* button.swift */,
-				031B97B4262954D90024CD3F /* anim.swift */,
 				03AD6F7F263245C1005C53CC /* subclasses.swift */,
 				034E6253263A27DD00629BA4 /* Database.swift */,
 			);
@@ -460,7 +457,6 @@
 				03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */,
 				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
-				031B97B5262954D90024CD3F /* anim.swift in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
 				03AD6F80263245C1005C53CC /* subclasses.swift in Sources */,

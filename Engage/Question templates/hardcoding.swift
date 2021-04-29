@@ -27,7 +27,16 @@ class templatetext {
         "You're done!"
         ]
         return qtext
-        
+    }
+    
+    func formnames() -> [String] {
+        let qtext =  [
+        "Enquiry questions",
+        "Enrollment form",
+        "FSA-151",
+        "Survey"
+        ]
+        return qtext
     }
     func fsatype() -> [Int] {
         let qtype = [0,0,3,4,0,5]

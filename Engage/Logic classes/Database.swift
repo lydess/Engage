@@ -76,4 +76,23 @@ class DB {
         return found
     }
     
+    func changedata(changekey: String, to: String, checkedfield: String) {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try! context.fetch(request)
+            
+            for x in result as! [NSManagedObject] {
+                let subject = x.value(forKey: changekey) as! String
+                let checker = x.value(forKey: checkedfield) as! String
+                if checker == subject {
+                    print("found matching key")
+                    print("changing to " )
+                }
+            }
+        }
+    }
+    
 }
