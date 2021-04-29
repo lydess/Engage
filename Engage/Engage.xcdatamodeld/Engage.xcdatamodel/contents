@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Userdata" representedClassName="Userdata" syncable="YES" codeGenerationType="class">
         <attribute name="course" optional="YES" attributeType="String"/>
+        <attribute name="seen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="step" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Userdata" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="Entity" positionX="-168.46484375" positionY="87.45703125" width="128" height="58"/>
+        <element name="Userdata" positionX="197.28125" positionY="92.453125" width="128" height="103"/>
     </elements>
 </model>

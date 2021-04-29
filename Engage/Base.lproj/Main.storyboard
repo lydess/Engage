@@ -11,7 +11,7 @@
         <array key="Poppins-Bold.ttf">
             <string>Poppins-Bold</string>
         </array>
-        <array key="TypoGraphica_demo.otf">
+        <array key="TypoGraphica_demo 2.otf">
             <string>TypoGraphica</string>
         </array>
     </customFonts>
@@ -316,13 +316,13 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="AlE-h6-sng"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="rL5-Yl-8RN">
-                                <rect key="frame" x="74" y="199" width="378" height="110"/>
+                                <rect key="frame" x="74" y="199" width="267" height="110"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-8n-M8n">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="110"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cBZ-qc-3BC">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" red="0.0" green="0.19215686269999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -334,7 +334,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QtN-BF-mOv">
-                                                <rect key="frame" x="0.0" y="86" width="183" height="24"/>
+                                                <rect key="frame" x="0.0" y="86" width="108" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" red="0.0" green="0.19215686269999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -349,10 +349,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-8b-vFA">
-                                        <rect key="frame" x="108" y="0.0" width="270" height="110"/>
+                                        <rect key="frame" x="108" y="0.0" width="159" height="110"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIO-v3-aE7">
-                                                <rect key="frame" x="0.0" y="0.0" width="270" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="159" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" red="0.0" green="0.19215686269999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -364,7 +364,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bSY-hM-eD5">
-                                                <rect key="frame" x="0.0" y="86" width="270" height="24"/>
+                                                <rect key="frame" x="0.0" y="86" width="159" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" red="0.0" green="0.19215686269999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -495,12 +495,12 @@
                                 <color key="tintColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gx2-2r-aHd">
-                                <rect key="frame" x="35" y="308" width="46" height="30"/>
+                                <rect key="frame" x="35" y="275" width="46" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="skipbutton:" destination="und-Xk-xag" eventType="touchUpInside" id="nk1-uF-eEU"/>
-                                    <segue destination="Fje-2O-7Kq" kind="presentation" modalPresentationStyle="fullScreen" id="yWg-pS-wEY"/>
+                                    <segue destination="waM-hb-Y5q" kind="presentation" modalPresentationStyle="fullScreen" id="wax-nN-zJz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-Za-Yt4">
@@ -617,14 +617,7 @@
                                 <color key="backgroundColor" red="1" green="0.4887863248" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Debug"/>
                                 <connections>
-                                    <segue destination="wWy-00-ij5" kind="popoverPresentation" popoverAnchorView="2Ye-vz-Caj" id="hQ3-8Q-vhx">
-                                        <segue key="commit" inheritsFrom="parent" id="E7z-j8-7l5"/>
-                                        <segue key="preview" inheritsFrom="commit" id="fG5-xf-UFm"/>
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                        <popoverPassthroughViews>
-                                            <view reference="di8-lE-0EV"/>
-                                        </popoverPassthroughViews>
-                                    </segue>
+                                    <action selector="debugpush:" destination="waM-hb-Y5q" eventType="touchUpInside" id="JOy-fb-tEl"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIc-en-p1x">
@@ -633,7 +626,7 @@
                                     <barButtonItem id="w2e-vH-Hzw"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-e4-QMN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-e4-QMN">
                                 <rect key="frame" x="42" y="293" width="330" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-LL-dYo">
@@ -665,18 +658,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Me-El-SQd">
-                                <rect key="frame" x="19" y="566" width="368" height="10"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We're ready to start your journy!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8k-xb-jDs">
-                                <rect key="frame" x="69" y="584" width="299" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello Cassia,   Here are the tasks we need you to complete" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FU-GR-tm3">
                                 <rect key="frame" x="25" y="164" width="386" height="103"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -690,8 +671,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UU7-35-wqH">
                                 <rect key="frame" x="0.0" y="44" width="65" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="&lt;"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="home"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="8gQ-yQ-xhw"/>
                                 </connections>
@@ -721,15 +702,14 @@
                         <outlet property="FSAbutton" destination="MI5-kU-wE7" id="L1r-ZB-X02"/>
                         <outlet property="debug" destination="2Ye-vz-Caj" id="Ibp-WG-QWw"/>
                         <outlet property="eqb" destination="MI5-kU-wE7" id="4zF-TE-G8J"/>
+                        <outlet property="formlist" destination="vP3-e4-QMN" id="onu-L1-JnT"/>
                         <outlet property="ibutton" destination="UqI-Ps-Ftf" id="PPJ-im-Q62"/>
-                        <outlet property="progbar" destination="3Me-El-SQd" id="OdY-2a-YOg"/>
-                        <outlet property="textout" destination="s8k-xb-jDs" id="PQT-rg-9HT"/>
                         <outlet property="toptext" destination="3FU-GR-tm3" id="ocA-tm-GvF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLY-js-Vmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="92"/>
+            <point key="canvasLocation" x="992.75362318840587" y="91.741071428571431"/>
         </scene>
         <!--Qanda Controller-->
         <scene sceneID="eig-Yv-jzE">
@@ -859,10 +839,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2hz-fw-GNO"/>
-        <segue reference="hQ3-8Q-vhx"/>
-        <segue reference="3r2-dZ-rJf"/>
-        <segue reference="QY2-v8-5KV"/>
+        <segue reference="CuH-pm-Wap"/>
+        <segue reference="scD-iA-Pat"/>
+        <segue reference="8gQ-yQ-xhw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="a" width="1056.6666259765625" height="397"/>
@@ -879,9 +858,6 @@
         <image name="signpost.right" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -44,6 +44,7 @@ class debugcontroller: UIViewController {
         let newclient = NSManagedObject(entity: entity!, insertInto: context)
         newclient.setValue(username, forKey: "username")
         newclient.setValue(course, forKey: "course")
+        newclient.setValue(Int16(0), forKey: "step")
         
         
         do {
@@ -61,8 +62,10 @@ class debugcontroller: UIViewController {
         
         do {
                     let result = try context.fetch(request)
+                    
                     for data in result as! [NSManagedObject] {
-                        print("line " + (data.value(forKey: "username") as! String) + " " + (data.value(forKey: "course") as! String))
+                        let step = (data.value(forKey: "step") as! Int16)
+                        print("line " + (data.value(forKey: "username") as! String) + " " + (data.value(forKey: "course") as! String) + " " + String(step) )
                   }
                     
                 } catch {

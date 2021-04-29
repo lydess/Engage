@@ -34,6 +34,7 @@ struct workingdata {
     static var activeusertable = NSMutableArray()
     static var userid = "user not logged in"
     static var usercourse = String()
+    static var userstep = Int16()
     
     var fsa = fsatemp()            // hardcoded, to be replaced
     var temple = templates()
@@ -72,6 +73,7 @@ struct workingdata {
         workingdata.loggedin = true
         workingdata.userid = data.value(forKey: "username") as! String
         workingdata.usercourse = data.value(forKey: "course") as! String
+        workingdata.userstep = data.value(forKey: "step") as! Int16
     }
     
 }
