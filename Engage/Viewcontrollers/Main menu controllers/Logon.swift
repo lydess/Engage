@@ -163,14 +163,11 @@ class logon: UIViewController {
     }
     @IBAction func check(_ sender: Any) {
         print("editing finished")
-        if textfield.text == "xcom"{
-            workingdata.loggedin = true
-            performSegue(withIdentifier: "main", sender: (Any).self)
+        let answer = users.checklogin(givenname: textfield.text!)
+        if answer == true {
+            performSegue(withIdentifier: "main", sender: Any?.self)
         }
-        else{
-            error.alpha = 1
-            var timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { timer in self.alpha() }
-        }
+        
         
     }
     func alpha() {

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var newsfeed: UIScrollView!
     @IBOutlet weak var navbak: UIImageView!
     @IBOutlet var swiperight: UISwipeGestureRecognizer!
+    @IBOutlet weak var Applications: UIButton!
     @IBOutlet weak var billboard: UIImageView!
     @IBOutlet weak var topline: UILabel!
     @IBOutlet weak var midline: UILabel!
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
         
         print("main view did load")
         
-        
+        checklogin()
         
         
         
@@ -58,7 +59,9 @@ class ViewController: UIViewController {
     }
     func checklogin() {
         if workingdata.loggedin == false {
-            
+            Applications.isEnabled = false
+            Applications.tintColor = .gray
+            Applications.setTitleColor(.gray, for: .normal)
         }
         else{
             
@@ -67,9 +70,7 @@ class ViewController: UIViewController {
     func initalize() {
         checklogin()
         billboardstart = billboard.frame
-        
-       
-        
+
         //scrollview.alpha = 0
         
         topline.alpha = 0
@@ -91,18 +92,17 @@ class ViewController: UIViewController {
     }
     @objc func anim() {
             
-        UIView.animate(withDuration: 1){
-            self.topline.textColor = .white
-            
-            self.topline.alpha = 1
-            self.topline.text = self.insp[self.step]
-            
-            
-        }
-        self.step += 1
-        if self.step > 3{
-            self.step = 0
-        }
+//        UIView.animate(withDuration: 1){
+//            self.topline.textColor = .white
+//            self.topline.alpha = 1
+//            self.topline.text = self.insp[self.step]
+//            
+//            
+//        }
+//        self.step += 1
+//        if self.step > 3{
+//            self.step = 0
+//        }
        
     }
     
@@ -116,10 +116,10 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 1, animations: {
                     //self.billboard.frame = self.billboardstart
                     self.billboard.alpha = 1
+                    self.newsfeed.alpha = 1
                 }, completion: { _ in
                     UIView.animate(withDuration: 1, animations: {
-                        self.newsfeed.alpha = 1
-                        
+                        self.topline.transform.translatedBy(x: 200, y: 200)
                     }, completion: { _ in
                         UIView.animate(withDuration: 1.5, animations: {
                            

@@ -51,4 +51,29 @@ class DB {
                     print("Failed")
                 }}
     
+    func checklogin(givenname: String) -> Bool {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var found = Bool()
+        
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try! context.fetch(request)
+            for x in result as! [NSManagedObject] {
+                if x.value(forKey: "username") as! String == givenname {
+                    print("USER was found")
+                    workingdata.setuser(data: x)
+                    found = true
+                    
+                }else{
+                    found = false
+                }
+            }
+                
+            
+        }
+        return found
+    }
+    
 }

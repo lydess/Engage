@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import  UIKit
+
+class courseinfoviewcontroller: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("welcome to course info")
+    }
+}
