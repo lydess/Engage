@@ -49,6 +49,7 @@
 		03C00F9C26155496002A4488 /* EngageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F9B26155496002A4488 /* EngageTests.swift */; };
 		03C00FA726155496002A4488 /* EngageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00FA626155496002A4488 /* EngageUITests.swift */; };
 		03DDB6CF2616B4290046B613 /* templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDB6CE2616B4290046B613 /* templates.swift */; };
+		03F08C83263BDE720026C6E1 /* pageviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F08C82263BDE720026C6E1 /* pageviewcontroller.swift */; };
 		03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8A82616B9D60040B62F /* hardcoding.swift */; };
 		03FAD8B12617CFBC0040B62F /* Animation test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8B02617CFBC0040B62F /* Animation test.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		03C00FA626155496002A4488 /* EngageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngageUITests.swift; sourceTree = "<group>"; };
 		03C00FA826155496002A4488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DDB6CE2616B4290046B613 /* templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = templates.swift; sourceTree = "<group>"; };
+		03F08C82263BDE720026C6E1 /* pageviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageviewcontroller.swift; sourceTree = "<group>"; };
 		03FAD8A82616B9D60040B62F /* hardcoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hardcoding.swift; sourceTree = "<group>"; };
 		03FAD8B02617CFBC0040B62F /* Animation test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation test.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 				031B97B9262A74220024CD3F /* debugcontroller.swift */,
 				03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */,
 				03568CB6263A1CD000979E49 /* courseinfocontroller.swift */,
+				03F08C82263BDE720026C6E1 /* pageviewcontroller.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				0373148B261D375200438D6B /* button.swift in Sources */,
 				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,
 				034E6254263A27DD00629BA4 /* Database.swift in Sources */,
+				03F08C83263BDE720026C6E1 /* pageviewcontroller.swift in Sources */,
 				0390F96426167CE4004FD4AE /* FselectorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
