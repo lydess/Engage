@@ -20,11 +20,13 @@ class debugcontroller: UIViewController {
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var coursefield: UITextField!
    
+    @IBOutlet weak var changetofield: UITextField!
+    @IBOutlet weak var currentkeyfield: UITextField!
     @IBOutlet weak var counter: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-
+    var db = DB()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,5 +99,24 @@ class debugcontroller: UIViewController {
         
     }
  
+    @IBAction func changepush(_ sender: Any) {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try! context.fetch(request)
+            
+            for x in result as! [NSManagedObject] {
+                let subject = x.value(forKey: "username") as! String
+                if x.value(forKey: "username") as! String == changetofield.text	{
+                    print("found matching key")
+                    
+                    print("changing to " )
+                }else{ print(subject)}
+            }
+        }
+        
+    }
     
 }
