@@ -22,6 +22,7 @@ class FselectorController: UIViewController {
     let alert = UIAlertController(title: "Already working on a form", message: "Select again to delete your current form", preferredStyle: .alert)
     let action = UIAlertAction(title: "Error", style: .destructive, handler: {_ in workingdata.wipeout() })
     var activerightbuts = [UIButton]()
+    var activebuts = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +47,13 @@ class FselectorController: UIViewController {
                 addbut(text: temple.getbuttons()[x], id: x)
             }
             if db.checkform() == true {
-                var img = UIImage(systemName: "checkmark.seal")
+                let EQbutton = activebuts[0]
+                let img = UIImage(systemName: "checkmark.seal")
                 activerightbuts[0].setImage(img, for: .normal)
+                EQbutton.setTitleColor(.black, for: .normal)
+                EQbutton.backgroundColor = .gray
+                EQbutton.isUserInteractionEnabled = false
+            
             }else{
                 print("forms not done")
             }
@@ -90,7 +96,7 @@ class FselectorController: UIViewController {
         rightbutton.contentMode = .scaleToFill
         rightbutton.tag = id
         
-        
+        activebuts.append(button)
         activerightbuts.append(rightbutton)
     
         NSLayoutConstraint.activate(bcst)

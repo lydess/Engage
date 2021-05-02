@@ -285,6 +285,7 @@
                         <outlet property="datepicker" destination="2gS-07-DqU" id="mLN-Ck-dcl"/>
                         <outlet property="firstnamefield" destination="7lj-N0-sNP" id="PL6-gp-C6j"/>
                         <outlet property="secondnamefield" destination="7zA-x3-sd8" id="RsH-GB-Gan"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="gohome" modalPresentationStyle="fullScreen" id="EjW-YL-Ro0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csO-VF-az4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -946,7 +947,7 @@
                                     <barButtonItem id="w2e-vH-Hzw"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-e4-QMN">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vP3-e4-QMN">
                                 <rect key="frame" x="42" y="293" width="330" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="H7M-Nk-eTe"/>
@@ -984,7 +985,6 @@
                             <constraint firstItem="D1h-E8-dnW" firstAttribute="top" secondItem="wir-sO-MM8" secondAttribute="top" id="Wa9-MC-hkV"/>
                             <constraint firstItem="vP3-e4-QMN" firstAttribute="top" secondItem="wir-sO-MM8" secondAttribute="top" constant="249" id="acA-gZ-N8c"/>
                             <constraint firstItem="UU7-35-wqH" firstAttribute="leading" secondItem="D1h-E8-dnW" secondAttribute="leading" id="dFR-jt-pMn"/>
-                            <constraint firstAttribute="bottom" secondItem="vP3-e4-QMN" secondAttribute="bottom" constant="603" id="dxB-CJ-nbC"/>
                             <constraint firstItem="3FU-GR-tm3" firstAttribute="leading" secondItem="wir-sO-MM8" secondAttribute="leading" constant="25" id="h9f-XZ-4oh"/>
                             <constraint firstItem="D1h-E8-dnW" firstAttribute="centerX" secondItem="wir-sO-MM8" secondAttribute="centerX" id="muo-SY-UHm"/>
                             <constraint firstItem="3FU-GR-tm3" firstAttribute="top" secondItem="UU7-35-wqH" secondAttribute="bottom" constant="75" id="qCd-09-mVh"/>
@@ -1134,7 +1134,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="2hz-fw-GNO"/>
-        <segue reference="3r2-dZ-rJf"/>
+        <segue reference="EjW-YL-Ro0"/>
         <segue reference="6AK-Je-CiM"/>
     </inferredMetricsTieBreakers>
     <resources>

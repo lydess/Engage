@@ -52,7 +52,9 @@ class debugcontroller: UIViewController {
         
         
         do {
-            try context.save()}
+            try context.save()
+            
+        }
         catch {
             print("saving failed")
         }
@@ -69,13 +71,15 @@ class debugcontroller: UIViewController {
                     
                     for data in result as! [NSManagedObject] {
                         let step = (data.value(forKey: "step") as! Int16)
-                        print("line " + (data.value(forKey: "username") as! String) + " " + (data.value(forKey: "course") as! String) + " " + String(step) )
+                        print(data)
                   }
                     
                 } catch {
                     
                     print("Failed")
-                }}
+                }
+        
+    }
     @IBAction func Deletedata(_ sender: Any) {
         
         let context = appDelegate.persistentContainer.viewContext
