@@ -15,16 +15,18 @@ class FselectorController: UIViewController {
     @IBOutlet weak var toptext: UILabel!
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var FSAbutton: UIButton!
-    
+    var db = DB()
     var data = workingdata()
     var temple = templates()
     var const = [NSLayoutConstraint]()
     let alert = UIAlertController(title: "Already working on a form", message: "Select again to delete your current form", preferredStyle: .alert)
     let action = UIAlertAction(title: "Error", style: .destructive, handler: {_ in workingdata.wipeout() })
+    var activerightbuts = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initalize()
+        checkcompletion()
         toptext.text = ("Hello " + workingdata.userid + ", Here are the tasks we need you to complete")
        
     }
@@ -33,12 +35,20 @@ class FselectorController: UIViewController {
         
         uibuild()
     }
+    func checkcompletion() {
+        
+    }
     
     func uibuild() {
         switch workingdata.userstep {
         case 0:
             for x in 0...1{
                 addbut(text: temple.getbuttons()[x], id: x)
+            }
+            if db.checkform() == true {
+                print("forms already done")
+            }else{
+                print("forms not done")
             }
         case 1:
             for x in 2...4{
@@ -77,6 +87,10 @@ class FselectorController: UIViewController {
         rightbutton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         rightbutton.setBackgroundImage(symbol, for: .normal)
         rightbutton.contentMode = .scaleToFill
+        rightbutton.tag = id
+        
+        
+        activerightbuts.append(rightbutton)
     
         NSLayoutConstraint.activate(bcst)
         
@@ -118,7 +132,9 @@ class FselectorController: UIViewController {
     }
     
     @IBAction func debugpush(_ sender: Any) {
-        addbut(text: "newbutton", id: 0)
+       // addbut(text: "newbutton", id: 0)
+        print(db.checkform())
+    
     }
     @IBAction func homepush(_ sender: Any) {
         

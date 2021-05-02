@@ -5,12 +5,13 @@
     </entity>
     <entity name="Userdata" representedClassName="Userdata" syncable="YES" codeGenerationType="class">
         <attribute name="course" optional="YES" attributeType="String"/>
+        <attribute name="eqcomplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="seen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="step" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Entity" positionX="-168.46484375" positionY="87.45703125" width="128" height="58"/>
-        <element name="Userdata" positionX="197.28125" positionY="92.453125" width="128" height="103"/>
+        <element name="Userdata" positionX="197.28125" positionY="92.453125" width="128" height="104"/>
     </elements>
 </model>

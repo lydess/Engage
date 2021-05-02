@@ -8,7 +8,9 @@
 import Foundation
 import  UIKit
 
-class pageviewcontroller: UIPageViewController {
+class pageviewcontroller: UIPageViewController{
+    
+    
     @IBOutlet weak var topbar: UIImageView!
     
     override func viewDidLoad() {

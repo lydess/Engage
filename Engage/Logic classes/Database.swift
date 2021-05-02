@@ -55,6 +55,7 @@ class DB {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
         var found = Bool()
+        var pred = NSPredicate(format: "username == '\(givenname)'")
         
         request.returnsObjectsAsFaults = false
         
@@ -76,22 +77,27 @@ class DB {
         return found
     }
     
-    func changedata(changekey: String, to: String) {
+    func checkform() -> Bool {
+        var subject = Bool()
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
         request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
         
         do {
             let result = try! context.fetch(request)
             
-            for x in result as! [NSManagedObject] {
-                let subject = x.value(forKey: changekey) as! String
-                if x.value(forKey: "userid") as! String == subject{
-                    print("found matching key")
-                    print("changing to " )
-                }else{ print("newp")}
+            for x in result as! [NSManagedObject]{
+                subject = x.value(forKey: "eqcomplete") as! Bool
+                
             }
+            
+            
         }
+        return subject
     }
     
 }

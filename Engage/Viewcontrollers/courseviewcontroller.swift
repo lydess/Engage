@@ -51,6 +51,7 @@ class courseviewcontroller: UIViewController {
         dynamicstack.axis = .vertical
         bubble.addSubview(dynamicstack)
         setuserview()
+        debug.contentMode = .scaleToFill
         
        
     
@@ -177,6 +178,7 @@ class courseviewcontroller: UIViewController {
         else
         {
             print(answer + sender.titleLabel!.text!)
+            workingdata.selectedcourse = sender.titleLabel!.text!
             performSegue(withIdentifier: "courseinfo", sender: Any?.self)
         }
         

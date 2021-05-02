@@ -27,6 +27,7 @@ struct workingdata {
     static var alreadyworking = false
     static var menuseen = false
     static var courseview = 0
+    static var selectedcourse = "NO_COURSE_SELECTED"
     
     static var resumedlist = NSMutableArray()
     static var resumedstep = Int()

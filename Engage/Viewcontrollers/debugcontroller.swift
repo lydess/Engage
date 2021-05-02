@@ -20,6 +20,7 @@ class debugcontroller: UIViewController {
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var coursefield: UITextField!
    
+    @IBOutlet weak var eqcomplete: UISwitch!
     @IBOutlet weak var changetofield: UITextField!
     @IBOutlet weak var currentkeyfield: UITextField!
     @IBOutlet weak var counter: UILabel!
@@ -47,6 +48,7 @@ class debugcontroller: UIViewController {
         newclient.setValue(username, forKey: "username")
         newclient.setValue(course, forKey: "course")
         newclient.setValue(Int16(0), forKey: "step")
+        newclient.setValue(eqcomplete.isOn, forKey: "eqcomplete")
         
         
         do {
@@ -102,19 +104,21 @@ class debugcontroller: UIViewController {
     @IBAction func changepush(_ sender: Any) {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
         request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
         
         do {
             let result = try! context.fetch(request)
             
-            for x in result as! [NSManagedObject] {
-                let subject = x.value(forKey: "username") as! String
-                if x.value(forKey: "username") as! String == changetofield.text	{
-                    print("found matching key")
-                    
-                    print("changing to " )
-                }else{ print(subject)}
+            for x in result as! [NSManagedObject]{
+                let subject = x.value(forKey: "course") as! String
+                print(subject)
             }
+            
+            
         }
         
     }
