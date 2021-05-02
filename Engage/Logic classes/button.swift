@@ -62,8 +62,21 @@ class yesno: UIButton {
             print("somthing is seriously wrong")
             
         }
+
         }
     else{
+        switch checked {
+        case false:
+            checked = true
+            self.setImage(noclicked, for: .normal)
+        case true:
+            checked = false
+            self.setImage(nonotclicked, for: .normal)
+            
+        default:
+            print("somthing is seriously wrong")
+            
+        }
     switch checked {
     case false:
         checked = true

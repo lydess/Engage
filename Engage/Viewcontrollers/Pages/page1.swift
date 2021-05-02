@@ -18,17 +18,32 @@ class page1: UIViewController {
     @IBOutlet weak var datepicker: UIDatePicker!
     
     var readytosend = false
-    
+    var db = DB()
     override func viewDidLoad() {
         super.viewDidLoad()
      
         
     }
     func readycheck() -> Bool {
-        
+        if firstnamefield.text == "" || secondnamefield.text == "" || commentsfields.text == "" {
+            print("context fakse")
+            return false
+        }else{
+            print("cotext true")
+            return true
+            
+        }
     }
    
     @IBAction func enquirysend(_ sender: Any) {
+        if readycheck() == false{
+            print("data missing")
+        }else{
+            db.sendapp(course: workingdata.usercourse, username: firstnamefield.text!)
+            db.checklogin(givenname: firstnamefield.text!)
+            workingdata.loggedin = true
+            
+        }
     }
     
 }

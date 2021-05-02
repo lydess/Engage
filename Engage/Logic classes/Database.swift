@@ -65,6 +65,7 @@ class DB {
                 if x.value(forKey: "username") as! String == givenname {
                     print("USER was found")
                     workingdata.setuser(data: x)
+                    
                     found = true
                     
                 }else{
@@ -121,4 +122,20 @@ class DB {
         }
     
 }
+    func sendapp(course: String, username: String) {
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Userdata", in: context )
+        let newclient = NSManagedObject(entity: entity!, insertInto: context)
+        newclient.setValue(username, forKey: "username")
+        newclient.setValue(course, forKey: "course")
+        newclient.setValue(false, forKey: "eqcomplete")
+        newclient.setValue(Int16(0), forKey: "step")
+        
+        
+        do {
+            try context.save()}
+        catch {
+            print("saving failed")
+        }
+    }
 }
