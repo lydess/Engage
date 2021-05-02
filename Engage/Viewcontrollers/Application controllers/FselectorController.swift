@@ -15,6 +15,7 @@ class FselectorController: UIViewController {
     @IBOutlet weak var toptext: UILabel!
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var FSAbutton: UIButton!
+    @IBOutlet weak var status: UILabel!
     var db = DB()
     var data = workingdata()
     var temple = templates()
@@ -35,6 +36,7 @@ class FselectorController: UIViewController {
     func initalize() {
         
         uibuild()
+        //status.alpha = 0
     }
     func checkcompletion() {
         
@@ -43,13 +45,15 @@ class FselectorController: UIViewController {
     func uibuild() {
         switch workingdata.userstep {
         case 0:
-            for x in 0...1{
+            for x in 0...0{
                 addbut(text: temple.getbuttons()[x], id: x)
             }
             if db.checkform() == true {
                 let EQbutton = activebuts[0]
                 let img = UIImage(systemName: "checkmark.seal")
                 activerightbuts[0].setImage(img, for: .normal)
+                status.alpha = 1
+                status.text = "Thanks! \(workingdata.userid) for getting these forms done!, we will give you a call soon to work out a good time for an interview!, feel free to contact us in the mean time at our contact centre (check us out back in the main menu)"
                 EQbutton.setTitleColor(.black, for: .normal)
                 EQbutton.backgroundColor = .gray
                 EQbutton.isUserInteractionEnabled = false
@@ -92,7 +96,7 @@ class FselectorController: UIViewController {
         bcst.append(button.widthAnchor.constraint(equalToConstant: 150))
         
         rightbutton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        rightbutton.setBackgroundImage(symbol, for: .normal)
+        
         rightbutton.contentMode = .scaleToFill
         rightbutton.tag = id
         

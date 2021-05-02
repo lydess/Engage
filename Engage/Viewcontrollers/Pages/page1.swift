@@ -12,9 +12,10 @@ class page1: UIViewController {
    
     @IBOutlet weak var firstnamefield: UITextField!
     
-    @IBOutlet weak var commentsfields: UITextView!
+    
     @IBOutlet weak var secondnamefield: UITextField!
     
+    @IBOutlet var tapgesture: UITapGestureRecognizer!
     @IBOutlet weak var datepicker: UIDatePicker!
     
     var readytosend = false
@@ -22,15 +23,19 @@ class page1: UIViewController {
     let alert = UIAlertController(title: "Enquiry sent!", message: "You've already filled out a questions form, so we will just use that!", preferredStyle: .alert)
     let regular = UIAlertController(title: "Enquiry sent!", message: "Check out the applications menu to follow your progress", preferredStyle: .alert)
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-        regular.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
+        regular.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
+        
+        
         
     }
     func readycheck() -> Bool {
-        if firstnamefield.text == "" || secondnamefield.text == "" || commentsfields.text == "" {
+        if firstnamefield.text == "" || secondnamefield.text == "" {
             print("context fakse")
             return false
         }else{
@@ -44,7 +49,7 @@ class page1: UIViewController {
         performSegue(withIdentifier: "gohome", sender: Any.self)
     }
     func timerset() {
-        var timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in self.gohome()}
+        var timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: false) { timer in self.gohome()}
     }
    
     @IBAction func enquirysend(_ sender: Any) {
@@ -60,10 +65,15 @@ class page1: UIViewController {
             
         }
         }else{
-            self.present(alert, animated: true)
-            self.present(regular, animated: true, completion: timerset)
+            self.present(alert, animated: true, completion: timerset)
+            
             
         }
+    }
+    @IBAction func tapdown(_ sender: Any) {
+        self.resignFirstResponder()
+        
+        
     }
     
 }

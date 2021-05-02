@@ -10,7 +10,7 @@ import  UIKit
 
 class courseinfoviewcontroller: UIViewController {
     @IBOutlet weak var topbar: UIImageView!
-    @IBOutlet weak var debug: UIButton!
+
     
     @IBOutlet weak var Coursetitle: UILabel!
     @IBOutlet weak var courseblurb: UITextView!
@@ -49,7 +49,5 @@ class courseinfoviewcontroller: UIViewController {
         }
         
     }
-    @IBAction func debugpush(_ sender: Any) {
-        print(workingdata.courseview)
-    }
+    
 }

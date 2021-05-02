@@ -19,7 +19,10 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var qtext: UILabel!
     @IBOutlet weak var debug: UIButton!
     @IBOutlet var pan: UIPanGestureRecognizer!
-
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var submit: UIButton!
+    @IBOutlet weak var yesnocontainer: UIStackView!
+    
     
     
     
@@ -59,6 +62,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         genstack.frame = CGRect(x: 20, y: 150, width: 150, height: self.stackheight)
         genstack.distribution = .fillEqually
         genstack.isHidden = true
+        
        
         rightgenstack.axis = .vertical
         rightgenstack.spacing = 5
@@ -66,6 +70,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         rightgenstack.frame = CGRect(x: 220  , y: 150, width: 180, height: self.rightstackheight)
         rightgenstack.distribution = .fillEqually
         rightgenstack.isHidden = true
+        
         
         yes.isEnabled = false
         yes.alpha = 0
@@ -98,6 +103,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func yesno(Boolean:Bool) {
         if Boolean == true {
+            yes.reset()
+            no.reset()
             yes.alpha = 1
             no.alpha = 1
             yes.isEnabled = true
@@ -132,11 +139,18 @@ class QandaController: UIViewController, UITextFieldDelegate {
         uistep()
         
     }
+    func arrange() {
+        view.bringSubviewToFront(yesnocontainer)
+        view.sendSubviewToBack(genstack)
+        view.sendSubviewToBack(rightgenstack)
+        view.sendSubviewToBack(background)
+    }
     //resets the UI and advances the question step
     func reload() {
         step += 1
         self.stackheight = 60
         self.rightstackheight = 60
+        
         tlabel.removeAll()
         for x in activebut {
             x.isHidden = true
@@ -150,7 +164,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         yes.checked = false
         workingdata.resumedlist = answer
         workingdata.resumedstep = step
-        
+        arrange()
     }
     
     func resume() {
@@ -390,9 +404,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func debugpush(_ sender: Any) {
-        for x in answer{
-            print(x)
-        }
+        arrange()
         
         
         
@@ -490,6 +502,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             
         case 3:
+            view.sendSubviewToBack(yesnocontainer)
             var answerlist = [String]()
             for x in activecbx{
                 if x.checked == true{
@@ -510,6 +523,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             }
             
         case 4:
+            view.sendSubviewToBack(yesnocontainer)
             var answerlist = [String]()
             for x in activecbx{
                 if x.checked == true{
@@ -567,16 +581,20 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
     @IBAction func rightswipe(_ sender: Any) {
+        
+        
+    
+    
+    }
+   
+    @IBAction func submit(_ sender: Any) {
         saveanswer()
         if complete == true {
             workingdata.alist = answer
             performSegue(withIdentifier: "done", sender: Any?.self)
         }
         
-    
-    
     }
-   
     
     @IBAction func fallAndFade(_ sender: Any) {
         SCNTransaction.animationDuration = 1.0

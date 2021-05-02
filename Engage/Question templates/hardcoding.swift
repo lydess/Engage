@@ -19,9 +19,9 @@ import UIKit
 class templatetext {
     func fsatext() -> [String] {
         let qtext =  [
-        "Are you currently an australian citizen",
-        "Do you live in victoria",
-        "Will you be doing 2 courses at the same time as this one?",
+        "Are you currently an australian citizen 🦘 ",
+        "Do you live in victoria 🚋 ",
+        "Will you be doing 2 courses at the same time as this one? 📚",
         "Are you currently enrolled in secondary school? 🏫",
         "Are you undertaking a school based traineeship 👨‍🔧",
         "You're done!"
@@ -39,7 +39,7 @@ class templatetext {
         return qtext
     }
     func fsatype() -> [Int] {
-        let qtype = [0,0,3,4,0,5]
+        let qtype = [0,0,0,0,0,5]
         return qtype
     }
     func cbxquestions() -> [Array<String>] {

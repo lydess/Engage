@@ -23,11 +23,12 @@ class courseviewcontroller: UIViewController {
     @IBOutlet weak var scrollview: UIScrollView!
     
     var userview = 0
-    var buttonheight = CGFloat(120)
+    var buttonheight = CGFloat(80)
     var buttonwidth = CGFloat(250)
     var stackspacing = 20
     var dynamicstack = UIStackView()
     var buttonid = 1
+    var font = UIFont(name: "Poppins Bold", size: 17)
     
     var activebut = [UIButton]()
     var clr = [.red, UIColor.yellow, UIColor.green,UIColor.blue, UIColor.cyan]
@@ -117,6 +118,7 @@ class courseviewcontroller: UIViewController {
         button.frame = CGRect(x: 0, y: 0, width: buttonwidth, height: self.buttonheight-10)
         button.backgroundColor = color
         button.layer.cornerRadius = 40
+        button.titleLabel?.font = font
         button.setTitle(text, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(click), for: .touchUpInside)

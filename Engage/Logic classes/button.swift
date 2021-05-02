@@ -49,46 +49,24 @@ class yesno: UIButton {
     var yesimg = UIImage.init(named: "hand.thumbsup")
     
     @objc func click(_ sender: yesno) {
-        if sender.yesbutton == true {
-        switch checked {
-        case false:
-            checked = true
-            self.setImage(yesclicked, for: .normal)
+        switch sender.checked {
         case true:
-            checked = false
-            self.setImage(yesnotclicked, for: .normal)
-            
+            sender.checked = false
+            if sender.tag == 0{
+                sender.setImage(nonotclicked, for: .normal)
+            }else{ sender.setImage(yesnotclicked, for: .normal)}
         default:
-            print("somthing is seriously wrong")
-            
+            sender.checked = true
+            if sender.tag == 0{
+                sender.setImage(noclicked, for: .normal)
+            }else{ sender.setImage(yesclicked, for: .normal)}
         }
-
-        }
-    else{
-        switch checked {
-        case false:
-            checked = true
-            self.setImage(noclicked, for: .normal)
-        case true:
-            checked = false
-            self.setImage(nonotclicked, for: .normal)
-            
-        default:
-            print("somthing is seriously wrong")
-            
-        }
-    switch checked {
-    case false:
-        checked = true
-        self.setImage(noclicked, for: .normal)
-    case true:
-        checked = false
-        self.setImage(nonotclicked, for: .normal)
-    default:
-        print("somthing is seriously wrong")
         
     }
-    
+    func reset() {
+        self.checked = false
+        if self.tag == 0{
+            self.setImage(nonotclicked, for: .normal)
+        }else{self.setImage(yesnotclicked, for: .normal)}
     }
-}
 }
