@@ -99,5 +99,26 @@ class DB {
         }
         return subject
     }
+    func finishform() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
+        request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
+        do {
+            let result = try! context.fetch(request)
+            
+            for x in result as! [NSManagedObject]{
+                x.setValue(true, forKey: "eqcomplete")
+                
+            }
+            try context.save()
+            
+        }catch{
+            print("saving failed")
+        }
     
+}
 }

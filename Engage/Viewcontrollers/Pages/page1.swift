@@ -10,17 +10,25 @@ import UIKit
 
 class page1: UIViewController {
    
+    @IBOutlet weak var firstnamefield: UITextField!
     
-  
+    @IBOutlet weak var commentsfields: UITextView!
+    @IBOutlet weak var secondnamefield: UITextField!
+    
+    @IBOutlet weak var datepicker: UIDatePicker!
+    
+    var readytosend = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
         
     }
-    func makevc() {
-        let vc = UIPageViewController()
+    func readycheck() -> Bool {
         
-        vc.setViewControllers([], direction: .forward, animated: true, completion: nil)
+    }
+   
+    @IBAction func enquirysend(_ sender: Any) {
     }
     
 }

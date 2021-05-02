@@ -46,7 +46,8 @@ class FselectorController: UIViewController {
                 addbut(text: temple.getbuttons()[x], id: x)
             }
             if db.checkform() == true {
-                print("forms already done")
+                var img = UIImage(systemName: "checkmark.seal")
+                activerightbuts[0].setImage(img, for: .normal)
             }else{
                 print("forms not done")
             }

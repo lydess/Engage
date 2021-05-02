@@ -260,8 +260,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     func case5() {
+        var db = DB()
         qtext.text = workingdata.qlist[step]
         complete = true
+        db.finishform()
+        
     }
     
     // programaticly creates a button
