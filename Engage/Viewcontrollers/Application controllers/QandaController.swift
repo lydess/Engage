@@ -51,7 +51,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         yes.tag = 1
         no.tag = 0
-        
+        submit.layer.cornerRadius = 20
+        yes.imageView?.contentMode = .scaleAspectFill
+        no.imageView?.contentMode = .scaleToFill
 
         yes.yesbutton = true
         no.yesbutton = false
@@ -78,6 +80,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
         no.alpha = 0
         textbox.isEnabled = false
         textbox.alpha = 0
+        yes.contentHorizontalAlignment = .fill
+        no.contentHorizontalAlignment = .fill
+        yes.contentVerticalAlignment = .fill
+        no.contentVerticalAlignment = .fill
+        
         
         
 

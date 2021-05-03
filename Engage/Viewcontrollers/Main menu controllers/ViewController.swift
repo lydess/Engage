@@ -33,14 +33,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        switch workingdata.menuseen {
-        case false:
-            initalize()
-            list()
-            workingdata.menuseen = true
-        default:
-            print("le;)")
-        }
+        
     }
     
     override func viewDidLoad() {
@@ -50,7 +43,14 @@ class ViewController: UIViewController {
         print("main view did load")
         
         checklogin()
-        
+        switch workingdata.menuseen {
+        case false:
+            initalize()
+            list()
+            workingdata.menuseen = true
+        default:
+            print("le;)")
+        }
         
         
         

@@ -17,6 +17,7 @@ class courseviewcontroller: UIViewController {
     @IBOutlet weak var vertstack: UIStackView!
     @IBOutlet weak var avo: UIButton!
     
+    @IBOutlet weak var homelabel: UILabel!
     @IBOutlet weak var debug2: UIButton!
     @IBOutlet weak var buttonstack: UIStackView!
     @IBOutlet weak var trades: UIButton!
@@ -29,6 +30,7 @@ class courseviewcontroller: UIViewController {
     var dynamicstack = UIStackView()
     var buttonid = 1
     var font = UIFont(name: "Poppins Bold", size: 17)
+    
     
     var activebut = [UIButton]()
     var clr = [.red, UIColor.yellow, UIColor.green,UIColor.blue, UIColor.cyan]
@@ -52,7 +54,9 @@ class courseviewcontroller: UIViewController {
         dynamicstack.axis = .vertical
         bubble.addSubview(dynamicstack)
         setuserview()
-        debug.contentMode = .scaleToFill
+        debug.contentVerticalAlignment = .fill
+        debug.contentHorizontalAlignment = .fill
+         
         
        
     
@@ -145,6 +149,7 @@ class courseviewcontroller: UIViewController {
     
     @objc func click(sender: UIButton){
         print("current button id is " + String(buttonid))
+        homelabel.text = "Back"
         var answer = "The button you clicked was "
         if workingdata.courseview == 0{
         workingdata.courseview = sender.tag
@@ -193,7 +198,9 @@ class courseviewcontroller: UIViewController {
         workingdata.courseview = 0
         userview = 0
         viewchange()
+            homelabel.text = "Home"
         print("going home")
+        
         }
         else {performSegue(withIdentifier: "home", sender: Any?.self)}
         
