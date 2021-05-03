@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ycz-27-yzv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -762,12 +762,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="rL5-Yl-8RN">
-                                <rect key="frame" x="25" y="274" width="365.5" height="110"/>
+                                <rect key="frame" x="47" y="274" width="365.5" height="110"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-8n-M8n">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cBZ-qc-3BC">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cBZ-qc-3BC">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
@@ -779,12 +779,12 @@
                                                     <segue destination="Fje-2O-7Kq" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QY2-v8-5KV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QtN-BF-mOv">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QtN-BF-mOv">
                                                 <rect key="frame" x="0.0" y="86" width="180" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
-                                                <state key="normal" title="Contact" image="phone.bubble.left.fill" catalog="system">
+                                                <state key="normal" title="   Contact" image="phone.bubble.left.fill" catalog="system">
                                                     <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
@@ -797,7 +797,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-8b-vFA">
                                         <rect key="frame" x="193" y="0.0" width="172.5" height="110"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIO-v3-aE7">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIO-v3-aE7">
                                                 <rect key="frame" x="0.0" y="0.0" width="172.5" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
@@ -809,7 +809,7 @@
                                                     <segue destination="waM-hb-Y5q" kind="presentation" modalPresentationStyle="fullScreen" id="2hz-fw-GNO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bSY-hM-eD5">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bSY-hM-eD5">
                                                 <rect key="frame" x="0.0" y="86" width="172.5" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
@@ -835,7 +835,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="56x-hw-l2I" secondAttribute="bottom" constant="366" id="94l-cZ-TDN"/>
                             <constraint firstItem="WlV-ax-vdF" firstAttribute="trailing" secondItem="56x-hw-l2I" secondAttribute="trailing" constant="122.5" id="ACU-yZ-Z2G"/>
                             <constraint firstItem="uUm-he-3cu" firstAttribute="leading" secondItem="c2s-r3-ok1" secondAttribute="leading" constant="45" id="BJ8-59-1qL"/>
-                            <constraint firstItem="rL5-Yl-8RN" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="25" id="F7A-zo-qxS"/>
+                            <constraint firstItem="rL5-Yl-8RN" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="47" id="F7A-zo-qxS"/>
                             <constraint firstItem="aNr-CO-JYm" firstAttribute="centerX" secondItem="V4c-Kk-BoY" secondAttribute="centerX" constant="2" id="Hrs-zC-eNh"/>
                             <constraint firstItem="XhL-ow-2Uj" firstAttribute="top" secondItem="CUE-8R-5GW" secondAttribute="bottom" constant="55" id="Kjk-Ap-RlW"/>
                             <constraint firstItem="CUE-8R-5GW" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="63" id="NvL-H7-9ef"/>
@@ -1353,9 +1353,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7qE-NC-0rZ"/>
-        <segue reference="scD-iA-Pat"/>
-        <segue reference="8gQ-yQ-xhw"/>
+        <segue reference="2hz-fw-GNO"/>
+        <segue reference="3r2-dZ-rJf"/>
         <segue reference="BKl-m4-Pyg"/>
         <segue reference="Bdw-CM-hLD"/>
     </inferredMetricsTieBreakers>
