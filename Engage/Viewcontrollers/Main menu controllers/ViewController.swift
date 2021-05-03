@@ -167,14 +167,14 @@ class ViewController: UIViewController {
   
     
     @IBAction func debugpush(_ sender: Any) {
-          
+        
      
     }
     @IBAction func swiperight(_ sender: Any) {
-        if workingdata.userid == "william" {
+        
             debug.isEnabled = true
             debug.isHidden = false
-        }
+        
         
     }
     

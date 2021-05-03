@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
+		034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8851263F888C0070DC23 /* masterdebugcontroller.swift */; };
+		034D885A263F8AA60070DC23 /* uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8859263F8AA60070DC23 /* uitests.swift */; };
+		034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D885E263F91D50070DC23 /* embedtestcontroller.swift */; };
 		034E6254263A27DD00629BA4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E6253263A27DD00629BA4 /* Database.swift */; };
 		03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* courseinfocontroller.swift */; };
 		0373148B261D375200438D6B /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373148A261D375200438D6B /* button.swift */; };
@@ -75,6 +78,9 @@
 /* Begin PBXFileReference section */
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
+		034D8851263F888C0070DC23 /* masterdebugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = masterdebugcontroller.swift; sourceTree = "<group>"; };
+		034D8859263F8AA60070DC23 /* uitests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitests.swift; sourceTree = "<group>"; };
+		034D885E263F91D50070DC23 /* embedtestcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = embedtestcontroller.swift; sourceTree = "<group>"; };
 		034E6253263A27DD00629BA4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		03568CB6263A1CD000979E49 /* courseinfocontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseinfocontroller.swift; sourceTree = "<group>"; };
 		0373148A261D375200438D6B /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
@@ -162,6 +168,17 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		034D8850263F88750070DC23 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				031B97B9262A74220024CD3F /* debugcontroller.swift */,
+				034D8851263F888C0070DC23 /* masterdebugcontroller.swift */,
+				034D8859263F8AA60070DC23 /* uitests.swift */,
+				034D885E263F91D50070DC23 /* embedtestcontroller.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		03568CB4263A1C9C00979E49 /* Application controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,10 +235,10 @@
 		0390F96826168DD4004FD4AE /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				034D8850263F88750070DC23 /* Debug */,
 				031BF263263CC17D000C1FBC /* Pages */,
 				03568CB5263A1CB000979E49 /* Main menu controllers */,
 				03568CB4263A1C9C00979E49 /* Application controllers */,
-				031B97B9262A74220024CD3F /* debugcontroller.swift */,
 				03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */,
 				03568CB6263A1CD000979E49 /* courseinfocontroller.swift */,
 			);
@@ -470,6 +487,8 @@
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
 				03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */,
 				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
+				034D885A263F8AA60070DC23 /* uitests.swift in Sources */,
+				034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
@@ -478,6 +497,7 @@
 				031BF265263CC198000C1FBC /* page1.swift in Sources */,
 				03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */,
 				037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */,
+				034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */,
 				0373148B261D375200438D6B /* button.swift in Sources */,
 				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,
 				034E6254263A27DD00629BA4 /* Database.swift in Sources */,
