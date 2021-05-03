@@ -884,145 +884,6 @@
             </objects>
             <point key="canvasLocation" x="-630.43478260869574" y="91.741071428571431"/>
         </scene>
-        <!--Logon-->
-        <scene sceneID="ziu-p6-6d4">
-            <objects>
-                <viewController id="und-Xk-xag" customClass="logon" customModule="Engage" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qSP-e4-yTD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbA-R2-ppa">
-                                <rect key="frame" x="190" y="334" width="35" height="48"/>
-                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="34"/>
-                                <color key="textColor" red="0.0" green="0.19215686274509802" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.57485650509999997" green="0.3854432398" blue="0.32746067179999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Have you received a text from us?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEZ-eF-3Ne">
-                                <rect key="frame" x="64" y="437" width="327" height="24"/>
-                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HtX-If-KSL">
-                                <rect key="frame" x="369" y="463.5" width="158" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-gN-IMa">
-                                <rect key="frame" x="-113" y="463.5" width="158" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="5aS-j5-7la">
-                                <rect key="frame" x="136" y="486.5" width="139" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ou-MM-13D">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="7Xp-hV-tt8"/>
-                                            <constraint firstAttribute="width" constant="50" id="oOX-lj-aj0"/>
-                                        </constraints>
-                                        <state key="normal" title="👎"/>
-                                        <connections>
-                                            <action selector="swipeleft:" destination="und-Xk-xag" eventType="touchUpInside" id="PJg-Mu-3Ei"/>
-                                            <action selector="thumbdown:" destination="und-Xk-xag" eventType="touchUpInside" id="prm-kb-GWo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kv-R4-vrx">
-                                        <rect key="frame" x="89" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2hm-bC-Su9"/>
-                                            <constraint firstAttribute="width" constant="50" id="iX3-wG-iYi"/>
-                                        </constraints>
-                                        <state key="normal" title="👍"/>
-                                        <connections>
-                                            <action selector="thumbup:" destination="und-Xk-xag" eventType="touchUpInside" id="Fc8-gB-4jO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="POw-eB-KTT">
-                                <rect key="frame" x="88" y="48.5" width="235" height="247"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gx2-2r-aHd">
-                                <rect key="frame" x="35" y="275" width="46" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="skipbutton:" destination="und-Xk-xag" eventType="touchUpInside" id="nk1-uF-eEU"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8d-Za-Yt4">
-                                <rect key="frame" x="109" y="395" width="180" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="check:" destination="und-Xk-xag" eventType="editingDidEnd" id="P7s-f8-W0V"/>
-                                    <action selector="slideup:" destination="und-Xk-xag" eventType="editingDidBegin" id="7QH-3q-J4Y"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sorry!, we cant find that code. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSm-es-nwf">
-                                <rect key="frame" x="82" y="461" width="234" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="p9a-R4-xID"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="JEZ-eF-3Ne" firstAttribute="top" secondItem="jbA-R2-ppa" secondAttribute="bottom" constant="55" id="6V7-Pj-h9Z"/>
-                            <constraint firstItem="JEZ-eF-3Ne" firstAttribute="leading" secondItem="p9a-R4-xID" secondAttribute="leading" constant="64" id="X4F-dq-qEc"/>
-                            <constraint firstItem="5aS-j5-7la" firstAttribute="top" secondItem="JEZ-eF-3Ne" secondAttribute="bottom" constant="25.5" id="cbQ-F3-Ygn"/>
-                            <constraint firstItem="p9a-R4-xID" firstAttribute="trailing" secondItem="jbA-R2-ppa" secondAttribute="trailing" constant="189" id="ds9-9U-TRG"/>
-                            <constraint firstItem="jbA-R2-ppa" firstAttribute="top" secondItem="p9a-R4-xID" secondAttribute="top" constant="290" id="hY6-WJ-M9R"/>
-                            <constraint firstItem="5aS-j5-7la" firstAttribute="leading" secondItem="p9a-R4-xID" secondAttribute="leading" constant="136" id="mfz-LM-CTc"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="JKN-Bh-I8h" appends="YES" id="h8G-RH-Aso"/>
-                            <outletCollection property="gestureRecognizers" destination="zyH-4t-gAf" appends="YES" id="44p-No-cA2"/>
-                            <outletCollection property="gestureRecognizers" destination="QeT-cy-0qh" appends="YES" id="iGs-at-s2s"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="error" destination="VSm-es-nwf" id="BJr-YS-5Mt"/>
-                        <outlet property="hi" destination="jbA-R2-ppa" id="7Ws-XR-NnF"/>
-                        <outlet property="profilepic" destination="POw-eB-KTT" id="0Py-82-gOh"/>
-                        <outlet property="question" destination="JEZ-eF-3Ne" id="rVc-9T-tId"/>
-                        <outlet property="skipbutton" destination="Gx2-2r-aHd" id="hmq-Ml-v5Z"/>
-                        <outlet property="swipe" destination="JKN-Bh-I8h" id="rTc-AE-YKG"/>
-                        <outlet property="swipearrowleft" destination="HtX-If-KSL" id="w6R-Tk-W4U"/>
-                        <outlet property="swipearrowright" destination="gFt-gN-IMa" id="tJ7-ku-GOD"/>
-                        <outlet property="swipeleft" destination="zyH-4t-gAf" id="0Ns-A2-TDx"/>
-                        <outlet property="textfield" destination="A8d-Za-Yt4" id="D9K-ly-xch"/>
-                        <outlet property="thumbs" destination="5aS-j5-7la" id="S25-7t-1v3"/>
-                        <outlet property="touchdown" destination="QeT-cy-0qh" id="mBu-8f-s0l"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="main" animates="NO" modalPresentationStyle="fullScreen" id="3r2-dZ-rJf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-cN-yzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="JKN-Bh-I8h">
-                    <connections>
-                        <action selector="swiperight:" destination="und-Xk-xag" id="NXn-oD-3Oj"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="zyH-4t-gAf">
-                    <connections>
-                        <action selector="swipeleft:" destination="und-Xk-xag" id="SE7-Wp-Tcu"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <tapGestureRecognizer id="QeT-cy-0qh">
-                    <connections>
-                        <action selector="tapdown:" destination="und-Xk-xag" id="iW5-W4-Tuz"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-604.34782608695662" y="-773.4375"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="6dB-cM-nP8">
             <objects>
@@ -1354,15 +1215,13 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="2hz-fw-GNO"/>
-        <segue reference="3r2-dZ-rJf"/>
+        <segue reference="EjW-YL-Ro0"/>
         <segue reference="BKl-m4-Pyg"/>
         <segue reference="Bdw-CM-hLD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="a" width="1056.6666259765625" height="397"/>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="arrow.backward.square" catalog="system" width="128" height="114"/>
-        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="dogs" width="674.5" height="540"/>
         <image name="full pin" width="530" height="146.5"/>
@@ -1370,7 +1229,6 @@
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="news" width="350" height="197"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="phone.bubble.left.fill" catalog="system" width="128" height="110"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
