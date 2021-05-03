@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
+		0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */; };
 		034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8851263F888C0070DC23 /* masterdebugcontroller.swift */; };
 		034D885A263F8AA60070DC23 /* uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8859263F8AA60070DC23 /* uitests.swift */; };
 		034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D885E263F91D50070DC23 /* embedtestcontroller.swift */; };
@@ -16,7 +17,7 @@
 		03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* courseinfocontroller.swift */; };
 		0373148B261D375200438D6B /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373148A261D375200438D6B /* button.swift */; };
 		037904C5262E49E50039BC40 /* TypoGraphica1 in Resources */ = {isa = PBXBuildFile; fileRef = 037904C4262E49E50039BC40 /* TypoGraphica1 */; };
-		037904CE262EA22C0039BC40 /* Logon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037904CD262EA22B0039BC40 /* Logon.swift */; };
+		037904CE262EA22C0039BC40 /* (Deprecated) Logon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037904CD262EA22B0039BC40 /* (Deprecated) Logon.swift */; };
 		037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037904D2262F95720039BC40 /* Sidepannelcontroller.swift */; };
 		0390F96426167CE4004FD4AE /* FselectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390F96326167CE4004FD4AE /* FselectorController.swift */; };
 		0390F96D261691A1004FD4AE /* QandaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390F96C261691A1004FD4AE /* QandaController.swift */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
+		0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logincontroller.swift; sourceTree = "<group>"; };
 		034D8851263F888C0070DC23 /* masterdebugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = masterdebugcontroller.swift; sourceTree = "<group>"; };
 		034D8859263F8AA60070DC23 /* uitests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitests.swift; sourceTree = "<group>"; };
 		034D885E263F91D50070DC23 /* embedtestcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = embedtestcontroller.swift; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 		0373148A261D375200438D6B /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
 		037904C4262E49E50039BC40 /* TypoGraphica1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TypoGraphica1; sourceTree = "<group>"; };
 		037904C9262E4A340039BC40 /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
-		037904CD262EA22B0039BC40 /* Logon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logon.swift; sourceTree = "<group>"; };
+		037904CD262EA22B0039BC40 /* (Deprecated) Logon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(Deprecated) Logon.swift"; sourceTree = "<group>"; };
 		037904D2262F95720039BC40 /* Sidepannelcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidepannelcontroller.swift; sourceTree = "<group>"; };
 		0390F96326167CE4004FD4AE /* FselectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FselectorController.swift; sourceTree = "<group>"; };
 		0390F96C261691A1004FD4AE /* QandaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QandaController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		0349E1F0263FFB5C00D4C8D7 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				037904CD262EA22B0039BC40 /* (Deprecated) Logon.swift */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
 		034D8850263F88750070DC23 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +202,8 @@
 		03568CB5263A1CB000979E49 /* Main menu controllers */ = {
 			isa = PBXGroup;
 			children = (
-				037904CD262EA22B0039BC40 /* Logon.swift */,
 				03C00F8526155495002A4488 /* ViewController.swift */,
+				0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */,
 			);
 			path = "Main menu controllers";
 			sourceTree = "<group>";
@@ -260,6 +270,7 @@
 		03C00F7526155495002A4488 = {
 			isa = PBXGroup;
 			children = (
+				0349E1F0263FFB5C00D4C8D7 /* Deprecated */,
 				03C00F8026155495002A4488 /* Engage */,
 				03C00F9A26155496002A4488 /* EngageTests */,
 				03C00FA526155496002A4488 /* EngageUITests */,
@@ -493,7 +504,8 @@
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
 				03AD6F80263245C1005C53CC /* subclasses.swift in Sources */,
-				037904CE262EA22C0039BC40 /* Logon.swift in Sources */,
+				0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */,
+				037904CE262EA22C0039BC40 /* (Deprecated) Logon.swift in Sources */,
 				031BF265263CC198000C1FBC /* page1.swift in Sources */,
 				03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */,
 				037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */,
