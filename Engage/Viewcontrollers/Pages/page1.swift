@@ -10,6 +10,7 @@ import UIKit
 
 class page1: UIViewController {
    
+    @IBOutlet weak var textview: UITextView!
     @IBOutlet weak var firstnamefield: UITextField!
     
     
@@ -32,8 +33,10 @@ class page1: UIViewController {
         super.viewDidLoad()
         alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
         regular.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
-        
-        
+        datepicker.backgroundColor = .white
+        datepicker.layer.cornerRadius = 10
+        textview.backgroundColor = .white
+                
         
     }
     func readycheck() -> Bool {

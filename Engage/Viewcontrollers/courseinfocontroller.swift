@@ -29,7 +29,7 @@ class courseinfoviewcontroller: UIViewController {
     
     func initalize() {
         Coursetitle.text = workingdata.selectedcourse
-        topbar.layer.shadowOffset = .init(width: 500, height: 500)
+        //topbar.layer.shadowOffset = .init(width: 500, height: 500)
         //fullfeelabel.shadowColor = .black
         //fullfeelabel.toggleBoldface(Any?.self)
         //fullfeelabel.shadowOffset = CGSize(width: 1, height: 1)
@@ -37,6 +37,7 @@ class courseinfoviewcontroller: UIViewController {
         var course = workingdata.courseview
         costsbackground.layer.cornerRadius = 20
         courseblurb.layer.cornerRadius = 20
+        //topbar.layer.cornerRadius = 20
         switch workingdata.courseview {
         case 0:
             topbar.backgroundColor = clrlist[1]

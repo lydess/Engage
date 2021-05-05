@@ -166,10 +166,11 @@ class ViewController: UIViewController {
     }
     func newsbar() {
         if workingdata.shownews == true {
-            newsfeed.alpha = 1
+            UIView.animate(withDuration: 0.25, animations: {self.newsfeed.alpha = 1} )
+            
             newsfeed.isUserInteractionEnabled = true
         }else{
-            newsfeed.alpha = 0
+            UIView.animate(withDuration: 0.25, animations: {self.newsfeed.alpha = 0} )
             newsfeed.isUserInteractionEnabled = false
         }
     }
