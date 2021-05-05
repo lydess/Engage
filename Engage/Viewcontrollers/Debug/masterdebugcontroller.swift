@@ -11,6 +11,7 @@ import UIKit
 
 class masterdebugcontroller: UIViewController {
    
+    @IBOutlet var tap: UITapGestureRecognizer!
     @IBOutlet weak var modalswitch: UISwitch!
     
     
@@ -38,5 +39,8 @@ class masterdebugcontroller: UIViewController {
         default:
             performSegue(withIdentifier: "debugfullscreen", sender: Any?.self)
         }
+    }
+    @IBAction func tapdown(_ sender: Any) {
+        print("hello world")
     }
 }

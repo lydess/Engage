@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
+		0328986826422BF1003BC87A /* swiftassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986726422BF1003BC87A /* swiftassets.swift */; };
 		0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */; };
 		034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8851263F888C0070DC23 /* masterdebugcontroller.swift */; };
 		034D885A263F8AA60070DC23 /* uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8859263F8AA60070DC23 /* uitests.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
+		0328986726422BF1003BC87A /* swiftassets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftassets.swift; sourceTree = "<group>"; };
 		0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logincontroller.swift; sourceTree = "<group>"; };
 		034D8851263F888C0070DC23 /* masterdebugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = masterdebugcontroller.swift; sourceTree = "<group>"; };
 		034D8859263F8AA60070DC23 /* uitests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitests.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				0373148A261D375200438D6B /* button.swift */,
 				03AD6F7F263245C1005C53CC /* subclasses.swift */,
 				034E6253263A27DD00629BA4 /* Database.swift */,
+				0328986726422BF1003BC87A /* swiftassets.swift */,
 			);
 			path = "Logic classes";
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				031BF265263CC198000C1FBC /* page1.swift in Sources */,
 				03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */,
 				037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */,
+				0328986826422BF1003BC87A /* swiftassets.swift in Sources */,
 				034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */,
 				0373148B261D375200438D6B /* button.swift in Sources */,
 				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,

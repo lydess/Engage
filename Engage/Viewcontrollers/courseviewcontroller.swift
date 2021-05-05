@@ -22,7 +22,7 @@ class courseviewcontroller: UIViewController {
     @IBOutlet weak var buttonstack: UIStackView!
     @IBOutlet weak var trades: UIButton!
     @IBOutlet weak var scrollview: UIScrollView!
-    
+    var color = colors()
     var userview = 0
     var buttonheight = CGFloat(80)
     var buttonwidth = CGFloat(250)
@@ -33,7 +33,7 @@ class courseviewcontroller: UIViewController {
     
     
     var activebut = [UIButton]()
-    var clr = [.red, UIColor.yellow, UIColor.green,UIColor.blue, UIColor.cyan]
+    var clr = [UIColor]()
     
     var mainmenu = ["Technical trade","Health and community","Land and animals","Business and Technology","Short courses"]
     var techtxt = ["Electrotechnology","Plumbing","Airconditioning","Automotive"]
@@ -47,6 +47,7 @@ class courseviewcontroller: UIViewController {
         //bubble.isLayoutMarginsRelativeArrangement = true
         //bubble.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 30)
         
+        clr = color.colorlist()
         dynamicstack.frame = CGRect(x: 0, y: 0, width: buttonwidth, height: buttonheight)
         //dynamicstack.backgroundColor = .yellow
         dynamicstack.distribution = .fillEqually
@@ -56,6 +57,7 @@ class courseviewcontroller: UIViewController {
         setuserview()
         debug.contentVerticalAlignment = .fill
         debug.contentHorizontalAlignment = .fill
+        
          
         
        
@@ -71,23 +73,23 @@ class courseviewcontroller: UIViewController {
             }
         case 1:
             for x in 0...techtxt.count-1 {
-                addbut(text: techtxt[x], color: clr[x])
+                addbut(text: techtxt[x], color: clr[0])
             }
         case 2:
             for x in 0...healthtxt.count-1 {
-                addbut(text: healthtxt[x], color: clr[x])
+                addbut(text: healthtxt[x], color: clr[1])
             }
         case 3:
             for x in 0...landtxt.count-1 {
-                addbut(text: landtxt[x], color: clr[x])
+                addbut(text: landtxt[x], color: clr[2])
             }
         case 4:
             for x in 0...technology.count-1 {
-                addbut(text: technology[x], color: clr[x])
+                addbut(text: technology[x], color: clr[3])
             }
         case 5:
             for x in 0...sctxt.count-1 {
-                addbut(text: sctxt[x], color: clr[x])
+                addbut(text: sctxt[x], color: clr[4])
             }
         default:
             print("somthings wrong with cases")
@@ -149,6 +151,7 @@ class courseviewcontroller: UIViewController {
     
     @objc func click(sender: UIButton){
         print("current button id is " + String(buttonid))
+        var bcolor = sender.backgroundColor
         homelabel.text = "Back"
         var answer = "The button you clicked was "
         if workingdata.courseview == 0{

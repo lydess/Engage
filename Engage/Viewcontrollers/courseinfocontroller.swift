@@ -17,10 +17,14 @@ class courseinfoviewcontroller: UIViewController {
     @IBOutlet weak var costsbackground: UIImageView!
     @IBOutlet weak var fullfeeint: UILabel!
     @IBOutlet weak var fullfeelabel: UILabel!
+    
+    var clr = colors()
+    var clrlist = [UIColor]()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("welcome to course info")
         initalize()
+        
     }
     
     func initalize() {
@@ -29,20 +33,21 @@ class courseinfoviewcontroller: UIViewController {
         //fullfeelabel.shadowColor = .black
         //fullfeelabel.toggleBoldface(Any?.self)
         //fullfeelabel.shadowOffset = CGSize(width: 1, height: 1)
-        
+        clrlist = clr.colorlist()
+        var course = workingdata.courseview
         costsbackground.layer.cornerRadius = 20
         courseblurb.layer.cornerRadius = 20
         switch workingdata.courseview {
         case 0:
-            topbar.backgroundColor = .red
+            topbar.backgroundColor = clrlist[1]
         case 1:
-            topbar.backgroundColor = .yellow
+            topbar.backgroundColor = clrlist[course]
         case 2:
-            topbar.backgroundColor = .blue
+            topbar.backgroundColor = clrlist[course]
         case 3:
-            topbar.backgroundColor = .green
+            topbar.backgroundColor = clrlist[course]
         case 4:
-            topbar.backgroundColor = .brown
+            topbar.backgroundColor = clrlist[course]
         
         default:
             topbar.backgroundColor = .darkGray

@@ -13,7 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var buttonstack: UIStackView!
     @IBOutlet weak var debug: UIButton!
-    @IBOutlet weak var newsfeed: UIScrollView!
+  
+    @IBOutlet weak var newsfeed: UIView!
     @IBOutlet weak var navbak: UIImageView!
     @IBOutlet var swiperight: UISwipeGestureRecognizer!
     @IBOutlet weak var Applications: UIButton!
@@ -39,6 +40,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         midline.alpha = 0
         topline.alpha = 0
+        newsfeed.alpha = 0
+        newsfeed.isUserInteractionEnabled = false
+        newsbar()
         
         print("main view did load")
         
@@ -78,7 +82,7 @@ class ViewController: UIViewController {
         navbak.alpha = 0
         bottomline.alpha = 0
         buttonstack.alpha = 0
-        newsfeed.alpha = 0
+        
       
         debug.isEnabled = false
         debug.isHidden = true
@@ -116,7 +120,7 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 1, animations: {
                     //self.billboard.frame = self.billboardstart
                     self.billboard.alpha = 1
-                    self.newsfeed.alpha = 1
+                   
                 }, completion: { _ in
                     UIView.animate(withDuration: 1, animations: {
                         self.topline.transform.translatedBy(x: 200, y: 200)
@@ -160,6 +164,15 @@ class ViewController: UIViewController {
         bottomline.attributedText = (myNewLabelText)
         
     }
+    func newsbar() {
+        if workingdata.shownews == true {
+            newsfeed.alpha = 1
+            newsfeed.isUserInteractionEnabled = true
+        }else{
+            newsfeed.alpha = 0
+            newsfeed.isUserInteractionEnabled = false
+        }
+    }
     
     @objc func quotes() {
         print("tick")
@@ -178,6 +191,12 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func newspush(_ sender: Any) {
+        if workingdata.shownews == true{
+            workingdata.shownews = false
+        }else {workingdata.shownews = true}
+        newsbar()
+    }
     
    
     

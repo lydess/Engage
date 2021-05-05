@@ -13,9 +13,11 @@ class page1: UIViewController {
     @IBOutlet weak var firstnamefield: UITextField!
     
     
+    @IBOutlet var tapdown: UITapGestureRecognizer!
+    
     @IBOutlet weak var secondnamefield: UITextField!
     
-    @IBOutlet var tapgesture: UITapGestureRecognizer!
+   
     @IBOutlet weak var datepicker: UIDatePicker!
     
     var readytosend = false
@@ -50,6 +52,7 @@ class page1: UIViewController {
     }
     func timerset() {
         var timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: false) { timer in self.gohome()}
+        
     }
    
     @IBAction func enquirysend(_ sender: Any) {
@@ -70,10 +73,10 @@ class page1: UIViewController {
             
         }
     }
-    @IBAction func tapdown(_ sender: Any) {
-        self.resignFirstResponder()
-        
-        
+    
+    
+    @IBAction func tap(_ sender: Any) {
+        view.endEditing(true)
     }
     
 }
