@@ -772,81 +772,6 @@
                                 <color key="textColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rL5-Yl-8RN">
-                                <rect key="frame" x="47" y="274" width="355" height="110"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-8n-M8n">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="110"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cBZ-qc-3BC">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="   Course Search" image="book.fill" catalog="system">
-                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="Fje-2O-7Kq" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QY2-v8-5KV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QtN-BF-mOv">
-                                                <rect key="frame" x="0.0" y="43" width="180" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="   Contact" image="phone.bubble.left.fill" catalog="system">
-                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feE-8X-KXd">
-                                                <rect key="frame" x="0.0" y="86" width="180" height="24"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="   Login" image="person.fill" catalog="system">
-                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="6pE-yt-cGy" kind="presentation" id="bai-ef-1cN"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="ZZf-cV-j9O"/>
-                                            <constraint firstAttribute="height" constant="110" id="hGh-mp-wDE"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-8b-vFA">
-                                        <rect key="frame" x="184" y="0.0" width="171" height="110"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIO-v3-aE7">
-                                                <rect key="frame" x="0.0" y="0.0" width="171" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="     Applications" image="folder.fill" catalog="system">
-                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="waM-hb-Y5q" kind="presentation" modalPresentationStyle="fullScreen" id="2hz-fw-GNO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bSY-hM-eD5">
-                                                <rect key="frame" x="0.0" y="86" width="171" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="17"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="  News" image="newspaper.fill" catalog="system">
-                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="newspush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gSB-zl-o41"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a" translatesAutoresizingMaskIntoConstraints="NO" id="CUE-8R-5GW">
                                 <rect key="frame" x="63" y="44" width="287" height="167"/>
                             </imageView>
@@ -860,7 +785,7 @@
                                     <segue destination="Ycz-27-yzv" kind="presentation" modalPresentationStyle="fullScreen" id="7kJ-7F-PJF"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-0I-Uqb">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YcQ-0I-Uqb">
                                 <rect key="frame" x="47" y="464" width="320" height="376"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="376" id="K6G-7b-tWR"/>
@@ -870,6 +795,80 @@
                                     <segue destination="7Pw-6l-NzL" kind="embed" id="fOt-yc-6A1"/>
                                 </connections>
                             </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rL5-Yl-8RN">
+                                <rect key="frame" x="20" y="246" width="392.5" height="189"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-8n-M8n">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="189"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cBZ-qc-3BC">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="19"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="   Course Search" image="book.fill" catalog="system">
+                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="Fje-2O-7Kq" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QY2-v8-5KV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QtN-BF-mOv">
+                                                <rect key="frame" x="0.0" y="69" width="180" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="   Contact" image="phone.bubble.left.fill" catalog="system">
+                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feE-8X-KXd">
+                                                <rect key="frame" x="0.0" y="151" width="180" height="38"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="27"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="   Login" image="person.fill" catalog="system">
+                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="6pE-yt-cGy" kind="presentation" id="bai-ef-1cN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="ZZf-cV-j9O"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-8b-vFA">
+                                        <rect key="frame" x="184" y="0.0" width="208.5" height="189"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIO-v3-aE7">
+                                                <rect key="frame" x="0.0" y="0.0" width="208.5" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="     Applications" image="folder.fill" catalog="system">
+                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="waM-hb-Y5q" kind="presentation" modalPresentationStyle="fullScreen" id="2hz-fw-GNO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bSY-hM-eD5">
+                                                <rect key="frame" x="0.0" y="155" width="208.5" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="24"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="  News" image="newspaper.fill" catalog="system">
+                                                    <color key="titleColor" red="0.8862745098" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="newspush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gSB-zl-o41"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WlV-ax-vdF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -877,8 +876,7 @@
                         <constraints>
                             <constraint firstItem="nZ9-X3-0Zx" firstAttribute="leading" secondItem="c2s-r3-ok1" secondAttribute="leading" constant="-20" id="3v2-zj-zEk"/>
                             <constraint firstItem="nZ9-X3-0Zx" firstAttribute="centerX" secondItem="CUE-8R-5GW" secondAttribute="centerX" constant="0.5" id="78t-Yd-wxp"/>
-                            <constraint firstItem="YcQ-0I-Uqb" firstAttribute="top" secondItem="rL5-Yl-8RN" secondAttribute="bottom" constant="80" id="CpD-Ho-eiF"/>
-                            <constraint firstItem="rL5-Yl-8RN" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="47" id="F7A-zo-qxS"/>
+                            <constraint firstItem="rL5-Yl-8RN" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="20" id="F7A-zo-qxS"/>
                             <constraint firstItem="aNr-CO-JYm" firstAttribute="centerX" secondItem="V4c-Kk-BoY" secondAttribute="centerX" constant="2" id="Hrs-zC-eNh"/>
                             <constraint firstItem="XhL-ow-2Uj" firstAttribute="top" secondItem="CUE-8R-5GW" secondAttribute="bottom" constant="55" id="Kjk-Ap-RlW"/>
                             <constraint firstItem="CUE-8R-5GW" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="63" id="NvL-H7-9ef"/>
@@ -894,7 +892,7 @@
                             <constraint firstItem="nZ9-X3-0Zx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hPk-YD-FV8"/>
                             <constraint firstItem="YcQ-0I-Uqb" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="47" id="hvg-Lu-Ruy"/>
                             <constraint firstItem="WlV-ax-vdF" firstAttribute="trailing" secondItem="CUE-8R-5GW" secondAttribute="trailing" constant="64" id="idA-7A-UDR"/>
-                            <constraint firstItem="rL5-Yl-8RN" firstAttribute="top" secondItem="WlV-ax-vdF" secondAttribute="top" constant="230" id="ncE-G2-Spb"/>
+                            <constraint firstItem="rL5-Yl-8RN" firstAttribute="top" secondItem="WlV-ax-vdF" secondAttribute="top" constant="202" id="ncE-G2-Spb"/>
                             <constraint firstItem="aNr-CO-JYm" firstAttribute="centerX" secondItem="XhL-ow-2Uj" secondAttribute="centerX" constant="1" id="oce-U8-oO4"/>
                             <constraint firstItem="c2s-r3-ok1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="poH-jg-Mwj"/>
                             <constraint firstAttribute="trailing" secondItem="nZ9-X3-0Zx" secondAttribute="trailing" id="uJI-Fa-QJZ"/>
@@ -1329,12 +1327,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMn-RK-gRk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.768115942029" y="290.625"/>
+            <point key="canvasLocation" x="71" y="286"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="scD-iA-Pat"/>
-        <segue reference="EjW-YL-Ro0"/>
+        <segue reference="2hz-fw-GNO"/>
+        <segue reference="8gQ-yQ-xhw"/>
         <segue reference="BKl-m4-Pyg"/>
         <segue reference="fvh-vs-V6n"/>
     </inferredMetricsTieBreakers>
