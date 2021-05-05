@@ -74,6 +74,27 @@ class templates {
         let jacks = hc.formnames()
         return jacks
     }
+    func getpictures() -> [UIImage] {
+        var imagestack = [UIImage]()
+        var page1 = UIImage(imageLiteralResourceName: "dogs")
+        var page2 = UIImage(imageLiteralResourceName: "news")
+        var page3 = UIImage(imageLiteralResourceName: "grad")
+        imagestack.append(page1)
+        imagestack.append(page2)
+        imagestack.append(page3)
+        return imagestack
+    }
+    func gettitles() -> [String] {
+        var stringlist = [String]()
+        var page1 = "Dog grooming back on at Wallan!, contact Wallan reception to Learn more"
+        var page2 = "New cafe/training"
+        var page3 = "Graduations are on now, come celebrate with our students on thier achivements"
+        
+        stringlist.append(page1)
+        stringlist.append(page2)
+        stringlist.append(page3)
+        return stringlist
+    }
 }
 
 
