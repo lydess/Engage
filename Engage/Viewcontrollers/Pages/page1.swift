@@ -18,7 +18,9 @@ class page1: UIViewController {
     
     @IBOutlet weak var secondnamefield: UITextField!
     
-   
+    @IBOutlet weak var toolbar: UIToolbar!
+    
+    @IBOutlet weak var barbutton: UIBarButtonItem!
     @IBOutlet weak var datepicker: UIDatePicker!
     
     var readytosend = false
@@ -36,6 +38,9 @@ class page1: UIViewController {
         datepicker.backgroundColor = .white
         datepicker.layer.cornerRadius = 10
         textview.backgroundColor = .white
+        textview.inputAccessoryView = toolbar
+        NotificationCenter.default.addObserver(self, selector: #selector(toolbarshow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toolbarhide), name: UIResponder.keyboardWillShowNotification, object: nil)
                 
         
     }
@@ -56,6 +61,12 @@ class page1: UIViewController {
     func timerset() {
         var timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: false) { timer in self.gohome()}
         
+    }
+    @objc func toolbarshow() {
+        toolbar.alpha = 1
+    }
+    @objc func toolbarhide() {
+        toolbar.alpha = 0
     }
    
     @IBAction func enquirysend(_ sender: Any) {
@@ -80,6 +91,10 @@ class page1: UIViewController {
     
     @IBAction func tap(_ sender: Any) {
         view.endEditing(true)
+    }
+    @IBAction func Done(_ sender: Any) {
+        view.endEditing(true)
+        toolbar.alpha = 0
     }
     
 }

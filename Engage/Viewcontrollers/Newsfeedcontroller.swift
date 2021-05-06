@@ -15,9 +15,7 @@ class newsfeedcontroller: UIViewController {
     
     var clr = colors()
     var lists = templates()
-    @IBOutlet weak var scroll: UIScrollView!
-    
-    @IBOutlet weak var coreview: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +57,7 @@ class newsfeedcontroller: UIViewController {
         box.addSubview(image)
         box.addSubview(title)
         
-        coreview.addSubview(box)
+        
         pageno += 1
         
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SceneKit
+import Foundation
 
 
 class ViewController: UIViewController {
@@ -38,13 +39,14 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
         midline.alpha = 0
         topline.alpha = 0
         newsfeed.alpha = 0
         newsfeed.isUserInteractionEnabled = false
         newsbar()
         
-        print("main view did load")
+       
         
         checklogin()
         switch workingdata.menuseen {
@@ -63,11 +65,15 @@ class ViewController: UIViewController {
     }
     func checklogin() {
         if workingdata.loggedin == false {
+            print("loginchecked, user not logged in")
             Applications.isEnabled = false
             Applications.tintColor = .gray
             Applications.setTitleColor(.gray, for: .normal)
         }
         else{
+            Applications.isEnabled = true
+            Applications.tintColor = .white
+            Applications.setTitleColor(.orange, for: .normal)
             
         }
     }
@@ -111,21 +117,21 @@ class ViewController: UIViewController {
     }
     
     func list() {
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 1, animations: {
             self.topline.alpha = 1
         }, completion: { _ in
-            UIView.animate(withDuration: 1.5, animations: {
+            UIView.animate(withDuration: 0.75, animations: {
                 self.midline.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: 1, animations: {
+                UIView.animate(withDuration: 0.5, animations: {
                     //self.billboard.frame = self.billboardstart
                     self.billboard.alpha = 1
                    
                 }, completion: { _ in
-                    UIView.animate(withDuration: 1, animations: {
+                    UIView.animate(withDuration: 0.5, animations: {
                         self.topline.transform.translatedBy(x: 200, y: 200)
                     }, completion: { _ in
-                        UIView.animate(withDuration: 1.5, animations: {
+                        UIView.animate(withDuration: 0.75, animations: {
                            
                             
                             self.topline.alpha = 0
@@ -177,6 +183,11 @@ class ViewController: UIViewController {
     
     @objc func quotes() {
         print("tick")
+    }
+    @objc func login() {
+        print("re-enabling application")
+        checklogin()
+        
     }
   
     

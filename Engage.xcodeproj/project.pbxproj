@@ -11,6 +11,7 @@
 		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
 		0328986826422BF1003BC87A /* swiftassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986726422BF1003BC87A /* swiftassets.swift */; };
 		0328986E26424F8C003BC87A /* Newsfeedcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */; };
+		034498722643771500F8A26E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034498712643771500F8A26E /* Errors.swift */; };
 		0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */; };
 		034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8851263F888C0070DC23 /* masterdebugcontroller.swift */; };
 		034D885A263F8AA60070DC23 /* uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8859263F8AA60070DC23 /* uitests.swift */; };
@@ -83,6 +84,7 @@
 		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
 		0328986726422BF1003BC87A /* swiftassets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftassets.swift; sourceTree = "<group>"; };
 		0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeedcontroller.swift; sourceTree = "<group>"; };
+		034498712643771500F8A26E /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logincontroller.swift; sourceTree = "<group>"; };
 		034D8851263F888C0070DC23 /* masterdebugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = masterdebugcontroller.swift; sourceTree = "<group>"; };
 		034D8859263F8AA60070DC23 /* uitests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitests.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				03AD6F7F263245C1005C53CC /* subclasses.swift */,
 				034E6253263A27DD00629BA4 /* Database.swift */,
 				0328986726422BF1003BC87A /* swiftassets.swift */,
+				034498712643771500F8A26E /* Errors.swift */,
 			);
 			path = "Logic classes";
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
 				03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */,
 				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
+				034498722643771500F8A26E /* Errors.swift in Sources */,
 				034D885A263F8AA60070DC23 /* uitests.swift in Sources */,
 				034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,

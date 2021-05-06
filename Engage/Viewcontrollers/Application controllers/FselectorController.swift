@@ -85,10 +85,10 @@ class FselectorController: UIViewController {
         buttstack.spacing = 122
         
         button.frame = CGRect(x: 0, y: 0, width: 170, height: 75)
-        button.backgroundColor = .red
+        button.backgroundColor = .orange
         button.setTitle(text, for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.layer.cornerRadius = 25
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(click), for: .touchUpInside)
         button.tag = id
         
@@ -106,7 +106,7 @@ class FselectorController: UIViewController {
         NSLayoutConstraint.activate(bcst)
         
         buttstack.addArrangedSubview(button)
-        buttstack.addArrangedSubview(rightbutton)
+        //buttstack.addArrangedSubview(rightbutton)
         
         formlist.addArrangedSubview(buttstack)
         

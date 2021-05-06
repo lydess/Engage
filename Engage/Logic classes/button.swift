@@ -43,10 +43,6 @@ class yesno: UIButton {
     var noclicked = UIImage(systemName: "hand.thumbsdown.fill")
     var yesclicked = UIImage(systemName: "hand.thumbsup.fill")
     var yesnotclicked = UIImage(systemName: "hand.thumbsup")
-
-    var noimg = UIImage.init(named: "hand.thumbsup.fill")
-    
-    var yesimg = UIImage.init(named: "hand.thumbsup")
     
     @objc func click(_ sender: yesno) {
         switch sender.checked {

@@ -73,3 +73,14 @@ class bubbleview: UIView {
         return stack
     }
 }
+
+class commentfield: UITextField {
+    var donebar = UIToolbar()
+    var barbutton = UIBarButtonItem()
+    
+    
+    func setup() {
+        donebar.items?.append(barbutton)
+        self.inputAccessoryView = donebar
+    }
+}
