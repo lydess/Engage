@@ -44,6 +44,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     var stackheight = 30
     var rightstackheight = 30
     var complete = false
+    var givenanswer = Bool()
     
 
     //TODO: add logic to check for an existing form being filled out
@@ -54,6 +55,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
         submit.layer.cornerRadius = 20
         yes.imageView?.contentMode = .scaleAspectFill
         no.imageView?.contentMode = .scaleToFill
+        
+       
 
         yes.yesbutton = true
         no.yesbutton = false
@@ -110,12 +113,17 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func yesno(Boolean:Bool) {
         if Boolean == true {
+            var noclear = UIImage(systemName: "hand.thumbsdown")
+            var yesclear = UIImage(systemName: "hand.thumbsup")
             yes.reset()
             no.reset()
             yes.alpha = 1
             no.alpha = 1
             yes.isEnabled = true
             no.isEnabled = true
+            givenanswer = Bool()
+            no.setImage(noclear, for: .normal)
+            yes.setImage(yesclear, for: .normal)
         }
         else {
             yes.alpha = 0
@@ -459,22 +467,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
         else{
         switch self.qtype[step] {
         case 0:
-            if yes.checked == true && no.checked == true {
-                print("WRONG!")
-        
-            }
-            if yes.checked == false && no.checked == false {
-                print("NO ANSWER")
-            }
-            
-            if no.checked == true && yes.checked == false{
-                answer.add(0)
-                reload()
-            }
-            if no.checked == false && yes.checked == true {
-                answer.add(1)
-                reload()
-            }
+            answer.add(givenanswer)
+            reload()
+           
         case 1:
             if textbox.text?.isEmpty == true {
                 print("answer not given")
@@ -618,12 +613,24 @@ class QandaController: UIViewController, UITextFieldDelegate {
         no.isEnabled = false 
     }
     
+    
+    
     @IBAction func nopush(_ sender: Any) {
-        no.click(no)
+        var img = UIImage(systemName: "hand.thumbsdown.fill")
+        
+      givenanswer = false
+        no.setImage(img, for: .normal)
+      saveanswer()
+        
+        
     }
     
     @IBAction func yespush(_ sender: Any) {
-        yes.click(yes)
+        var img = UIImage(systemName: "hand.thumbsup.fill")
+        
+        yes.setImage(img, for: .normal)
+        givenanswer = true
+        saveanswer()
         
     }
     @objc func click(sender: checkbox) {
@@ -685,6 +692,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     
 }
+
+
 
 
 

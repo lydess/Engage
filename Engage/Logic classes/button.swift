@@ -35,8 +35,11 @@ class checkbox: UIButton {
     
     
 }
-
+protocol clicked {
+    func buttondidclick()
+}
 class yesno: UIButton {
+    var clickdelegate: clicked!
     var checked = false
     var yesbutton = Bool()
     var nonotclicked = UIImage(systemName: "hand.thumbsdown")
@@ -45,18 +48,21 @@ class yesno: UIButton {
     var yesnotclicked = UIImage(systemName: "hand.thumbsup")
     
     @objc func click(_ sender: yesno) {
-        switch sender.checked {
-        case true:
-            sender.checked = false
-            if sender.tag == 0{
-                sender.setImage(nonotclicked, for: .normal)
-            }else{ sender.setImage(yesnotclicked, for: .normal)}
+        switch sender.tag {
+        case 0:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "noclicked"), object: nil)
+            print("posted no")
+            checked = false
+
         default:
-            sender.checked = true
-            if sender.tag == 0{
-                sender.setImage(noclicked, for: .normal)
-            }else{ sender.setImage(yesclicked, for: .normal)}
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "yesclicked"), object: nil)
+            checked = true
+            print("posted yes")
+
         }
+            
+           
+        
         
     }
     func reset() {
