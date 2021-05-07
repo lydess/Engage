@@ -27,6 +27,7 @@ class logincontroller: UIViewController {
         submit.alpha = 0
         submit.isEnabled = false
         submit.layer.cornerRadius = 15
+        textfield.alpha = 0
         var loginstep = 0
     }
     func perform(answer: Bool) {
@@ -42,6 +43,7 @@ class logincontroller: UIViewController {
             loginstep += 1
             yes.alpha = 0
             no.alpha = 0
+            textfield.alpha = 1
             submit.alpha = 1
             submit.isEnabled = true
         
@@ -60,13 +62,7 @@ class logincontroller: UIViewController {
             }
         }
     }
-    @IBAction func yestap(_ sender: yesno) {
-        perform(answer: true)
-    }
-    @IBAction func notap(_ sender: yesno) {
-        perform(answer: false)
-    }
-    @IBAction func submitpush(_ sender: Any) {
+    func progress() {
         login = textfield.text ?? ""
         db.checklogin(givenname: login)
         
@@ -77,5 +73,14 @@ class logincontroller: UIViewController {
                 dismiss(animated: true, completion: {})
             
         }else{ print("Failure")}
+    }
+    @IBAction func yestap(_ sender: yesno) {
+        perform(answer: true)
+    }
+    @IBAction func notap(_ sender: yesno) {
+        perform(answer: false)
+    }
+    @IBAction func submitpush(_ sender: Any) {
+        progress()
     }
 }

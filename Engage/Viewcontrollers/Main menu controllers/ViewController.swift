@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var billboard: UIImageView!
     @IBOutlet weak var topline: UILabel!
     @IBOutlet weak var midline: UILabel!
+    @IBOutlet weak var loginbutton: UIButton!
     @IBOutlet weak var bottomline: UILabel!
     
     var insp = ["Its never too late to learn", "You can Go there",
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     var seen = false
     var billboardstart = CGRect()
     var step = 0
+    
     var navitem = UINavigationItem.init(title: "Return")
     
   
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         newsfeed.alpha = 0
         newsfeed.isUserInteractionEnabled = false
         newsbar()
+        debug.alpha = 0
         
        
         
@@ -69,11 +72,16 @@ class ViewController: UIViewController {
             Applications.isEnabled = false
             Applications.tintColor = .gray
             Applications.setTitleColor(.gray, for: .normal)
+            
+            
         }
         else{
             Applications.isEnabled = true
             Applications.tintColor = .white
             Applications.setTitleColor(.orange, for: .normal)
+            loginbutton.setTitle("Logout", for: .normal)
+            
+            
             
         }
     }
@@ -86,7 +94,7 @@ class ViewController: UIViewController {
         topline.alpha = 0
         midline.alpha = 0
         navbak.alpha = 0
-        bottomline.alpha = 0
+        
         buttonstack.alpha = 0
         
       
@@ -135,7 +143,7 @@ class ViewController: UIViewController {
                            
                             
                             self.topline.alpha = 0
-                            self.bottomline.alpha = 0
+                            
                             self.midline.alpha = 0
                             self.buttonstack.alpha = 1
                             
@@ -167,7 +175,7 @@ class ViewController: UIViewController {
         myNewLabelText.append(tafetext)
         
         
-        bottomline.attributedText = (myNewLabelText)
+        
         
     }
     func newsbar() {
@@ -199,6 +207,7 @@ class ViewController: UIViewController {
         
             debug.isEnabled = true
             debug.isHidden = false
+        debug.alpha = 1
         
         
     }

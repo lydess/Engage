@@ -12,12 +12,11 @@ class courseinfoviewcontroller: UIViewController {
     @IBOutlet weak var topbar: UIImageView!
 
     
+    @IBOutlet weak var costsbutton: UIButton!
     @IBOutlet weak var Coursetitle: UILabel!
     @IBOutlet weak var courseblurb: UITextView!
-    @IBOutlet weak var costsbackground: UIImageView!
-    @IBOutlet weak var fullfeeint: UILabel!
-    @IBOutlet weak var fullfeelabel: UILabel!
-    
+
+    var cviewbox = UIView()
     var clr = colors()
     var clrlist = [UIColor]()
     override func viewDidLoad() {
@@ -35,7 +34,7 @@ class courseinfoviewcontroller: UIViewController {
         //fullfeelabel.shadowOffset = CGSize(width: 1, height: 1)
         clrlist = clr.colorlist()
         var course = workingdata.courseview
-        costsbackground.layer.cornerRadius = 20
+        costsbutton.layer.cornerRadius = 20
         courseblurb.layer.cornerRadius = 20
         //topbar.layer.cornerRadius = 20
         switch workingdata.courseview {
@@ -53,6 +52,21 @@ class courseinfoviewcontroller: UIViewController {
         default:
             topbar.backgroundColor = .darkGray
         }
+        
+    }
+    @IBAction func costspush(_ sender: Any) {
+        container()
+        
+    }
+    
+    func container() {
+        var cview = UIView(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
+        cview.backgroundColor = .red
+        cviewbox.addSubview(cview)
+        
+        
+        
+        
         
     }
     
