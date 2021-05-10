@@ -43,4 +43,8 @@ class masterdebugcontroller: UIViewController {
     @IBAction func tapdown(_ sender: Any) {
         print("hello world")
     }
+    @IBAction func pdfdown(_ sender: Any) {
+        var pdf = PDF()
+        pdf.getanno()
+    }
 }

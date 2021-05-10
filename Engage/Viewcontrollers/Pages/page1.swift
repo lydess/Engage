@@ -13,6 +13,7 @@ class page1: UIViewController {
     @IBOutlet weak var textview: UITextView!
     @IBOutlet weak var firstnamefield: UITextField!
     
+    @IBOutlet weak var header: UIImageView!
     
     @IBOutlet var tapdown: UITapGestureRecognizer!
     
@@ -25,6 +26,7 @@ class page1: UIViewController {
     
     var readytosend = false
     var db = DB()
+    var clr = colors()
     let alert = UIAlertController(title: "Enquiry sent!", message: "You've already filled out a questions form, so we will just use that!", preferredStyle: .alert)
     let regular = UIAlertController(title: "Enquiry sent!", message: "Check out the applications menu to follow your progress", preferredStyle: .alert)
     
@@ -33,12 +35,15 @@ class page1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var clrlist = clr.colorlist()
         alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
         regular.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
         datepicker.backgroundColor = .white
+        datepicker.tintColor = .black
         datepicker.layer.cornerRadius = 10
         textview.backgroundColor = .white
         textview.inputAccessoryView = toolbar
+        header.backgroundColor = clrlist[workingdata.courseview]
         NotificationCenter.default.addObserver(self, selector: #selector(toolbarshow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toolbarhide), name: UIResponder.keyboardWillShowNotification, object: nil)
                 
@@ -60,6 +65,12 @@ class page1: UIViewController {
     }
     func timerset() {
         var timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: false) { timer in self.gohome()}
+        
+    }
+    func textapply() {
+        
+        
+        
         
     }
     @objc func toolbarshow() {

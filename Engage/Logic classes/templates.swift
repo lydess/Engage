@@ -13,15 +13,15 @@ import PDFKit
 class PDF {
     var pdf = PDFView()
     func getanno()  {
-        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Documents/Engage (original)/Engage/PDF/jack.pdf")
-        let save = URL(fileURLWithPath: "/Users/lydess/Documents/untitled folder/testdoc")
-        let savestring = "/Users/lydess/Documents/untitled folder/testdoc"
+        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Desktop/PDFs/tool.pdf")
+        let save = URL(fileURLWithPath: "/Users/lydess/Desktop/PDFs/generaton.pdf")
+        let savestring = "/Users/lydess/Desktop/PDFs/generaton.pdf"
         let doc = PDFDocument(url: pdfloc)
         var pages = doc?.page
         
         
         
-        doc?.write(toFile: savestring)
+        //doc?.write(toFile: savestring)
         
         
     }

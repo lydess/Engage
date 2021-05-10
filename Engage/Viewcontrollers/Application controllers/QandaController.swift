@@ -113,23 +113,22 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func yesno(Boolean:Bool) {
         if Boolean == true {
-            var noclear = UIImage(systemName: "hand.thumbsdown")
-            var yesclear = UIImage(systemName: "hand.thumbsup")
-            yes.reset()
-            no.reset()
+       
+            
             yes.alpha = 1
             no.alpha = 1
             yes.isEnabled = true
             no.isEnabled = true
             givenanswer = Bool()
-            no.setImage(noclear, for: .normal)
-            yes.setImage(yesclear, for: .normal)
+           
+            submit.alpha = 0
         }
         else {
             yes.alpha = 0
             no.alpha = 0
             no.isEnabled = false
             yes.isEnabled = false
+            submit.alpha = 1
         }
     }
 
@@ -617,9 +616,14 @@ class QandaController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nopush(_ sender: Any) {
         var img = UIImage(systemName: "hand.thumbsdown.fill")
+        no.setImage(UIImage(systemName: "hand.thumbsdown.fill"), for: .normal)
+        var timea = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false, block: {_ in self.no.setImage(UIImage(systemName: "hand.thumbsdown"), for: .normal)
+            timea.invalidate()
+        })
         
-      givenanswer = false
-        no.setImage(img, for: .normal)
+        givenanswer = false
+       
+     
       saveanswer()
         
         
@@ -628,7 +632,10 @@ class QandaController: UIViewController, UITextFieldDelegate {
     @IBAction func yespush(_ sender: Any) {
         var img = UIImage(systemName: "hand.thumbsup.fill")
         
-        yes.setImage(img, for: .normal)
+        yes.setImage(UIImage(systemName: "hand.thumbsup.fill"), for: .normal)
+        var timea = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false, block: {_ in self.yes.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
+            timea.invalidate()
+        })
         givenanswer = true
         saveanswer()
         

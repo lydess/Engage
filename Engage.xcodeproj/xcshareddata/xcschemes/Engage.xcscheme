@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "03C00F9626155496002A4488"
@@ -39,12 +39,22 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "03C00FA126155496002A4488"
                BuildableName = "EngageUITests.xctest"
                BlueprintName = "EngageUITests"
+               ReferencedContainer = "container:Engage.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "033E6C4626476DD100CCE764"
+               BuildableName = "GotafeUITests.xctest"
+               BlueprintName = "GotafeUITests"
                ReferencedContainer = "container:Engage.xcodeproj">
             </BuildableReference>
          </TestableReference>
