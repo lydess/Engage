@@ -12,6 +12,10 @@
 		0328986826422BF1003BC87A /* swiftassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986726422BF1003BC87A /* swiftassets.swift */; };
 		0328986E26424F8C003BC87A /* Newsfeedcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */; };
 		033E6C4A26476DD100CCE764 /* GotafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C4926476DD100CCE764 /* GotafeUITests.swift */; };
+		033E6C9B2648BDF800CCE764 /* pdfactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9A2648BDF800CCE764 /* pdfactions.swift */; };
+		033E6C9D2648BF8800CCE764 /* PDFdirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9C2648BF8800CCE764 /* PDFdirector.swift */; };
+		033E6C9F2648C05600CCE764 /* PDFparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9E2648C05600CCE764 /* PDFparser.swift */; };
+		033E6CA22649FCDE00CCE764 /* Contactcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */; };
 		034498722643771500F8A26E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034498712643771500F8A26E /* Errors.swift */; };
 		0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */; };
 		034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8851263F888C0070DC23 /* masterdebugcontroller.swift */; };
@@ -94,6 +98,10 @@
 		033E6C4726476DD100CCE764 /* GotafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033E6C4926476DD100CCE764 /* GotafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotafeUITests.swift; sourceTree = "<group>"; };
 		033E6C4B26476DD100CCE764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033E6C9A2648BDF800CCE764 /* pdfactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pdfactions.swift; sourceTree = "<group>"; };
+		033E6C9C2648BF8800CCE764 /* PDFdirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFdirector.swift; sourceTree = "<group>"; };
+		033E6C9E2648C05600CCE764 /* PDFparser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFparser.swift; sourceTree = "<group>"; };
+		033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactcontroller.swift; sourceTree = "<group>"; };
 		034498712643771500F8A26E /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logincontroller.swift; sourceTree = "<group>"; };
 		034D8851263F888C0070DC23 /* masterdebugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = masterdebugcontroller.swift; sourceTree = "<group>"; };
@@ -213,8 +221,19 @@
 		033E6C992648B60F00CCE764 /* PDF management */ = {
 			isa = PBXGroup;
 			children = (
+				033E6C9A2648BDF800CCE764 /* pdfactions.swift */,
+				033E6C9C2648BF8800CCE764 /* PDFdirector.swift */,
+				033E6C9E2648C05600CCE764 /* PDFparser.swift */,
 			);
 			path = "PDF management";
+			sourceTree = "<group>";
+		};
+		033E6CA02649FCCF00CCE764 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		0349E1F0263FFB5C00D4C8D7 /* Deprecated */ = {
@@ -292,6 +311,7 @@
 		0390F96826168DD4004FD4AE /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				033E6CA02649FCCF00CCE764 /* Contact */,
 				0328986C26424F77003BC87A /* Courseview */,
 				034D8850263F88750070DC23 /* Debug */,
 				031BF263263CC17D000C1FBC /* Pages */,
@@ -585,10 +605,12 @@
 				03DDB6CF2616B4290046B613 /* templates.swift in Sources */,
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
+				033E6CA22649FCDE00CCE764 /* Contactcontroller.swift in Sources */,
 				03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */,
 				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
 				034498722643771500F8A26E /* Errors.swift in Sources */,
 				034D885A263F8AA60070DC23 /* uitests.swift in Sources */,
+				033E6C9D2648BF8800CCE764 /* PDFdirector.swift in Sources */,
 				034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
@@ -602,7 +624,9 @@
 				037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */,
 				0328986826422BF1003BC87A /* swiftassets.swift in Sources */,
 				034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */,
+				033E6C9B2648BDF800CCE764 /* pdfactions.swift in Sources */,
 				0373148B261D375200438D6B /* button.swift in Sources */,
+				033E6C9F2648C05600CCE764 /* PDFparser.swift in Sources */,
 				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,
 				034E6254263A27DD00629BA4 /* Database.swift in Sources */,
 				03F08C83263BDE720026C6E1 /* pageviewcontroller.swift in Sources */,

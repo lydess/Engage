@@ -37,6 +37,8 @@ struct workingdata {
     static var usercourse = String()
     static var userstep = Int16()
     
+    static var selectedcampus = Int()
+    
     static var shownews = false
     
     var fsa = fsatemp()            // hardcoded, to be replaced

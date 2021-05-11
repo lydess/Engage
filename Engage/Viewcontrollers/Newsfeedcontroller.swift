@@ -19,7 +19,7 @@ class newsfeedcontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let photos = lists.getpictures()
+        let photos = lists.getnewspictures()
         for x in 0...photos.count-1 {
             buildbox()
             
@@ -27,7 +27,7 @@ class newsfeedcontroller: UIViewController {
         
     }
     func buildbox() {
-        let photos = lists.getpictures()
+        let photos = lists.getnewspictures()
         let titles = lists.gettitles()
         let pageframe = CGRect(x: (pageno * pagewidth + (12 * pageno)), y: 0, width: pagewidth, height: pageheight)
         let clrlist = clr.colorlist()

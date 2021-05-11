@@ -13,7 +13,7 @@ class masterdebugcontroller: UIViewController {
    
     @IBOutlet var tap: UITapGestureRecognizer!
     @IBOutlet weak var modalswitch: UISwitch!
-    
+    var pdf = pdfdirector()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ class masterdebugcontroller: UIViewController {
         print("hello world")
     }
     @IBAction func pdfdown(_ sender: Any) {
-        var pdf = PDF()
-        pdf.getanno()
+        pdf.main()
     }
 }

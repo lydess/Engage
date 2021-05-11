@@ -12,16 +12,14 @@ import PDFKit
 
 class PDF {
     var pdf = PDFView()
-    func getanno()  {
-        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Desktop/PDFs/tool.pdf")
+    func getanno() -> PDFDocument  {
+        let pdfloc = URL(fileURLWithPath: "/Users/lydess/Desktop/PDFs/newpdf.pdf")
         let save = URL(fileURLWithPath: "/Users/lydess/Desktop/PDFs/generaton.pdf")
         let savestring = "/Users/lydess/Desktop/PDFs/generaton.pdf"
         let doc = PDFDocument(url: pdfloc)
-        var pages = doc?.page
+        return doc!
         
         
-        
-        //doc?.write(toFile: savestring)
         
         
     }
@@ -74,11 +72,11 @@ class templates {
         let jacks = hc.formnames()
         return jacks
     }
-    func getpictures() -> [UIImage] {
+    func getnewspictures() -> [UIImage] {
         var imagestack = [UIImage]()
-        var page1 = UIImage(imageLiteralResourceName: "dogs")
-        var page2 = UIImage(imageLiteralResourceName: "news")
-        var page3 = UIImage(imageLiteralResourceName: "grad")
+        let page1 = UIImage(imageLiteralResourceName: "dogs")
+        let page2 = UIImage(imageLiteralResourceName: "news")
+        let page3 = UIImage(imageLiteralResourceName: "grad")
         imagestack.append(page1)
         imagestack.append(page2)
         imagestack.append(page3)
@@ -86,14 +84,46 @@ class templates {
     }
     func gettitles() -> [String] {
         var stringlist = [String]()
-        var page1 = "Dog grooming back on at Wallan!, contact Wallan reception to Learn more"
-        var page2 = "New cafe/training"
-        var page3 = "Graduations are on now, come celebrate with our students on thier achivements"
+        let page1 = "Dog grooming back on at Wallan!, contact Wallan reception to Learn more"
+        let page2 = "New cafe/training"
+        let page3 = "Graduations are on now, come celebrate with our students on thier achivements"
         
         stringlist.append(page1)
         stringlist.append(page2)
         stringlist.append(page3)
         return stringlist
+    }
+    func getcampusimages() -> [UIImage] {
+        var imagestack = [UIImage]()
+        let wallan = UIImage(imageLiteralResourceName: "wallan")
+        let fryers = UIImage(imageLiteralResourceName: "fryers")
+        let archer = UIImage(imageLiteralResourceName: "archer")
+        let seymour = UIImage(imageLiteralResourceName: "seymour")
+        let tone = UIImage(imageLiteralResourceName: "tone")
+        let benalla = UIImage(imageLiteralResourceName: "benalla")
+        let docker = UIImage(imageLiteralResourceName: "docker")
+        
+        imagestack.append(wallan)
+        imagestack.append(fryers)
+        imagestack.append(archer)
+        imagestack.append(seymour)
+        imagestack.append(tone)
+        imagestack.append(benalla)
+        imagestack.append(docker)
+   
+        return imagestack
+    }
+    func getcampustitles() -> [String] {
+        var stringstack = [String]()
+        stringstack.append("Wallan")
+        stringstack.append("Fryers st")
+        stringstack.append("Archer")
+        //stringstack.append("William Orr")
+        stringstack.append("Docker st")
+        stringstack.append("Benalla")
+        stringstack.append("Seymour")
+        stringstack.append("Tone rd")
+        return stringstack
     }
 }
 
