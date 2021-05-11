@@ -16,7 +16,7 @@ class contactcontroller: UIViewController {
     var nextasset = 0
     var nextcolor = 0
     var clr = colors()
-    
+    var tap = UIGestureRecognizer(target: Any?.self, action: #selector(imgtapped))
     
     
     @IBOutlet weak var masterstack: UIStackView!
@@ -37,7 +37,7 @@ class contactcontroller: UIViewController {
     func buildviews() {
         var clrlist = clr.colorlist()
         var CVnextspot = 30 + campuses
-        var campusview = UIStackView(frame: CGRect(x: 0, y: CVnextspot, width: CVwidth, height: CVheight))
+        var campusview = campusview(frame: CGRect(x: 0, y: CVnextspot, width: CVwidth, height: CVheight))
 //        campusview.translatesAutoresizingMaskIntoConstraints = false
 //        var conlist = [NSLayoutConstraint]()
 //        var leadingconst = campusview.trailingAnchor.constraint(equalTo: campusview.trailingAnchor, constant: +20)
@@ -48,6 +48,8 @@ class contactcontroller: UIViewController {
         addcontent(stack: campusview)
         campusview.backgroundColor = clrlist[nextasset]
         campusview.contentMode = .center
+       
+        
         //campusview.alignment = .center
         
         masterstack.addSubview(campusview)
@@ -61,31 +63,48 @@ class contactcontroller: UIViewController {
         
     }
     
-    func addcontent(stack: UIStackView) {
-        var assets = templates()
-        var piclist = assets.getcampusimages()
-        var titlelist = assets.getcampustitles()
+    func addcontent(stack: campusview) {
+        let assets = templates()
+        let piclist = assets.getcampusimages()
+        let titlelist = assets.getcampustitles()
         
-        var title = UILabel(frame: CGRect(x: 0, y: 0, width: CVwidth, height: 30))
-        var photo = UIImageView()
+        let photo = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: CVheight))
+        
+        
         photo.translatesAutoresizingMaskIntoConstraints = false
         var strain = [NSLayoutConstraint]()
-        strain.append(photo.heightAnchor.constraint(equalToConstant: 250))
+        strain.append(photo.heightAnchor.constraint(equalToConstant: 260))
         //strain.append(photo.widthAnchor.constraint(equalToConstant: 375))
-    
         NSLayoutConstraint.activate(strain)
-        title.text = titlelist[nextasset]
-        title.textAlignment = .center
-        title.font = UIFont(name: "Poppins Bold", size: 20)
-        title.textColor = .white
+       
+       
+       
+        photo.setTitle(titlelist[nextasset], for: .normal)
+        photo.contentVerticalAlignment = .bottom
+        photo.titleLabel?.textAlignment = .center
+        photo.titleLabel?.font = UIFont(name: "Poppins Bold", size: 22)
+        photo.titleLabel?.tintColor = .white
         
-        photo.image = piclist[nextasset]
+        
+        photo.setBackgroundImage(piclist[nextasset], for: .normal)
+        photo.addTarget(self, action: #selector(taped), for: .touchDown)
         stack.addArrangedSubview(photo)
-        stack.addArrangedSubview(title)
+      
+       
+        
+        stack.addGestureRecognizer(tap)
         
         if nextasset == piclist.count-1 {
             nextasset = 0
         }
+        
+    }
+    @objc func taped(sender: UIButton){
+        
+        performSegue(withIdentifier: "campusinfo", sender: Any?.self)
+    }
+    @objc func imgtapped() {
+        print("imgtapped")
         
     }
 }

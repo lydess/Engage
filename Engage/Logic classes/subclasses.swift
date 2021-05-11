@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+class campusview: UIStackView {
+    var linkedbtn = UIImageView()
+    var linkedimg = UIButton()
+}
+class campusimage: UIImageView {
+    var linkedbtn = UIButton()
+}
 class bubbleview: UIView {
     var but = "memes"
     func rndcolour() -> UIColor {

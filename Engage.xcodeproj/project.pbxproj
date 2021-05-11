@@ -16,6 +16,7 @@
 		033E6C9D2648BF8800CCE764 /* PDFdirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9C2648BF8800CCE764 /* PDFdirector.swift */; };
 		033E6C9F2648C05600CCE764 /* PDFparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9E2648C05600CCE764 /* PDFparser.swift */; };
 		033E6CA22649FCDE00CCE764 /* Contactcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */; };
+		033E6CA4264A355D00CCE764 /* campusinfocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6CA3264A355D00CCE764 /* campusinfocontroller.swift */; };
 		034498722643771500F8A26E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034498712643771500F8A26E /* Errors.swift */; };
 		0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */; };
 		034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8851263F888C0070DC23 /* masterdebugcontroller.swift */; };
@@ -102,6 +103,7 @@
 		033E6C9C2648BF8800CCE764 /* PDFdirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFdirector.swift; sourceTree = "<group>"; };
 		033E6C9E2648C05600CCE764 /* PDFparser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFparser.swift; sourceTree = "<group>"; };
 		033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactcontroller.swift; sourceTree = "<group>"; };
+		033E6CA3264A355D00CCE764 /* campusinfocontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campusinfocontroller.swift; sourceTree = "<group>"; };
 		034498712643771500F8A26E /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logincontroller.swift; sourceTree = "<group>"; };
 		034D8851263F888C0070DC23 /* masterdebugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = masterdebugcontroller.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */,
+				033E6CA3264A355D00CCE764 /* campusinfocontroller.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
+				033E6CA4264A355D00CCE764 /* campusinfocontroller.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
 				03AD6F80263245C1005C53CC /* subclasses.swift in Sources */,
 				0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */,
