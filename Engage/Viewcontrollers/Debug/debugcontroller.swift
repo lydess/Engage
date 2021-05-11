@@ -126,5 +126,11 @@ class debugcontroller: UIViewController {
         }
         
     }
+    @IBAction func campus(_ sender: Any) {
+        db.createcampus()
+    }
     
+    @IBAction func printcampus(_ sender: Any) {
+        db.listcampus()
+    }
 }

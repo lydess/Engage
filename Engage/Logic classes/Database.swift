@@ -138,4 +138,41 @@ class DB {
             print("saving failed")
         }
     }
+    
+    func createcampus() {
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Campus", in: context )
+        let newcampus = NSManagedObject(entity: entity!, insertInto: context)
+        
+        
+        newcampus.setValue("Fryers", forKey: "name")
+        newcampus.setValue("15-200 Fryers st Shepparton 3630 v", forKey: "address")
+        newcampus.setValue("example", forKey: "courses")
+        
+        do {
+            try context.save()}
+        catch {
+            print("saving failed")
+        }
+        
+    }
+    func listcampus() -> NSManagedObject {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Campus")
+        var found = Bool()
+        var pred = NSPredicate(format: "name == 'fryers'")
+        var memes = NSManagedObject()
+        request.predicate = pred
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try! context.fetch(request)
+            for x in result as! [NSManagedObject] {
+                memes = x
+            }
+                
+            
+        }
+        return memes
+    }
 }

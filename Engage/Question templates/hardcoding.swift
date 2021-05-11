@@ -58,4 +58,14 @@ class templatetext {
         result.append(q6)
         return result
     }
+    struct campusinfo {
+        var name = String()
+        var address = String()
+        var services = String()
+        
+        func generatecampus() {
+            
+            
+        }
+    }
 }

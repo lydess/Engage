@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Campus" representedClassName="Campus" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="courses" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="services" optional="YES" attributeType="Transformable"/>
+    </entity>
     <entity name="Operation" representedClassName="Operation" syncable="YES" codeGenerationType="class">
         <attribute name="seen" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
@@ -13,5 +19,6 @@
     <elements>
         <element name="Operation" positionX="-168.46484375" positionY="87.45703125" width="128" height="44"/>
         <element name="Userdata" positionX="197.28125" positionY="92.453125" width="128" height="104"/>
+        <element name="Campus" positionX="18" positionY="126" width="128" height="89"/>
     </elements>
 </model>

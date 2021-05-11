@@ -14,6 +14,15 @@ class campusinfocontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("super dooper view contooper")
+       
+        uibuild()
+    }
+    func uibuild() {
+        switch workingdata.selectedcampus {
+        case 0:
+            toplabel.text = "Fryers st"
+        default:
+            print("cases be borked")
+        }
     }
 }
