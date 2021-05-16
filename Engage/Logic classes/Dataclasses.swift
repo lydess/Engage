@@ -23,3 +23,14 @@ class courseinfo {
         print(ns.value(forKey: "name"))
     }
 }
+
+class campus {
+    var Name: String
+    var Address: String
+    
+    init(name: String, address: String) {
+        Name = name
+        Address = address
+    }
+    
+}

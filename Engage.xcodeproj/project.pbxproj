@@ -64,6 +64,7 @@
 		03C00FA726155496002A4488 /* EngageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00FA626155496002A4488 /* EngageUITests.swift */; };
 		03DDB6CF2616B4290046B613 /* templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DDB6CE2616B4290046B613 /* templates.swift */; };
 		03F08C83263BDE720026C6E1 /* pageviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F08C82263BDE720026C6E1 /* pageviewcontroller.swift */; };
+		03F18123264CC01800ED4F51 /* campusviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F18122264CC01800ED4F51 /* campusviewcontroller.swift */; };
 		03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8A82616B9D60040B62F /* hardcoding.swift */; };
 		03FAD8B12617CFBC0040B62F /* Animation test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAD8B02617CFBC0040B62F /* Animation test.swift */; };
 /* End PBXBuildFile section */
@@ -159,6 +160,7 @@
 		03C00FA826155496002A4488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DDB6CE2616B4290046B613 /* templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = templates.swift; sourceTree = "<group>"; };
 		03F08C82263BDE720026C6E1 /* pageviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageviewcontroller.swift; sourceTree = "<group>"; };
+		03F18122264CC01800ED4F51 /* campusviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campusviewcontroller.swift; sourceTree = "<group>"; };
 		03FAD8A82616B9D60040B62F /* hardcoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hardcoding.swift; sourceTree = "<group>"; };
 		03FAD8B02617CFBC0040B62F /* Animation test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation test.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -324,6 +326,7 @@
 				03568CB5263A1CB000979E49 /* Main menu controllers */,
 				03568CB4263A1C9C00979E49 /* Application controllers */,
 				0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */,
+				03F18122264CC01800ED4F51 /* campusviewcontroller.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
 				0390F973261695B6004FD4AE /* workingdata.swift in Sources */,
 				033E6CA4264A355D00CCE764 /* campusinfocontroller.swift in Sources */,
+				03F18123264CC01800ED4F51 /* campusviewcontroller.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
 				03AD6F80263245C1005C53CC /* subclasses.swift in Sources */,
 				0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */,

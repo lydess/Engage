@@ -44,9 +44,9 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
         midline.alpha = 0
         topline.alpha = 0
-        newsfeed.alpha = 0
-        newsfeed.isUserInteractionEnabled = false
-        newsbar()
+        
+        
+        
         debug.alpha = 0
         
        
@@ -178,16 +178,6 @@ class ViewController: UIViewController {
         
         
     }
-    func newsbar() {
-        if workingdata.shownews == true {
-            UIView.animate(withDuration: 0.25, animations: {self.newsfeed.alpha = 1} )
-            
-            newsfeed.isUserInteractionEnabled = true
-        }else{
-            UIView.animate(withDuration: 0.25, animations: {self.newsfeed.alpha = 0} )
-            newsfeed.isUserInteractionEnabled = false
-        }
-    }
     
     @objc func quotes() {
         print("tick")
@@ -216,7 +206,7 @@ class ViewController: UIViewController {
         if workingdata.shownews == true{
             workingdata.shownews = false
         }else {workingdata.shownews = true}
-        newsbar()
+       
     }
     
    

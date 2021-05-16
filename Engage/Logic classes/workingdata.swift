@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 // stores the "at a momment" data needed for the operation of the app, is callable at any point and can be set at any time, insecure dont store creds
-struct workingdata {
+class workingdata {
     static var loggedin = false
     
     
@@ -38,6 +38,7 @@ struct workingdata {
     static var userstep = Int16()
     
     static var selectedcampus = Int()
+    static var campusobject:campus = campus(name: "default", address: "default")
     
     static var shownews = false
     

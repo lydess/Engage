@@ -14,15 +14,28 @@ class campusinfocontroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        getcampus()
         uibuild()
     }
-    func uibuild() {
+    func getcampus() {
+       
         switch workingdata.selectedcampus {
         case 0:
-            toplabel.text = "Fryers st"
+            workingdata.campusobject = campus(name: "Fryers st",
+                                              address: "152/200 Fryers st Shepparton Victoria 3630"
+                                              
+            
+            
+            
+            
+            )
         default:
-            print("cases be borked")
+        print("failure")
         }
+    }
+    func uibuild() {
+        var data = workingdata.campusobject
+        toplabel.text = data.Name
+        
     }
 }

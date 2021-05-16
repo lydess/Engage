@@ -46,6 +46,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     var complete = false
     var givenanswer = Bool()
     
+    
 
     //TODO: add logic to check for an existing form being filled out
     override func viewDidLoad() {
@@ -289,9 +290,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func case5() {
         var db = DB()
+        var alert = UIAlertAction
         qtext.text = workingdata.qlist[step]
         complete = true
         db.finishform()
+        
         
     }
     

@@ -17,6 +17,7 @@ class contactcontroller: UIViewController {
     var nextcolor = 0
     var clr = colors()
     var tap = UIGestureRecognizer(target: Any?.self, action: #selector(imgtapped))
+    var step = 0
     
     
     @IBOutlet weak var masterstack: UIStackView!
@@ -84,12 +85,13 @@ class contactcontroller: UIViewController {
         photo.titleLabel?.textAlignment = .center
         photo.titleLabel?.font = UIFont(name: "Poppins Bold", size: 22)
         photo.titleLabel?.tintColor = .white
-        
+        photo.tag = step
+        step += 1
         
         photo.setBackgroundImage(piclist[nextasset], for: .normal)
         photo.addTarget(self, action: #selector(taped), for: .touchDown)
         stack.addArrangedSubview(photo)
-      
+        
        
         
         stack.addGestureRecognizer(tap)
@@ -100,7 +102,7 @@ class contactcontroller: UIViewController {
         
     }
     @objc func taped(sender: UIButton){
-        
+        workingdata.selectedcampus = sender.tag
         performSegue(withIdentifier: "campusinfo", sender: Any?.self)
     }
     @objc func imgtapped() {
