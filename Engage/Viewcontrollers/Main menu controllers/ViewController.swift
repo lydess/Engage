@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonstack: UIStackView!
     @IBOutlet weak var debug: UIButton!
   
+    @IBOutlet weak var courses: UIButton!
     @IBOutlet weak var newsfeed: UIView!
     @IBOutlet weak var navbak: UIImageView!
     @IBOutlet var swiperight: UISwipeGestureRecognizer!
@@ -44,6 +45,8 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
         midline.alpha = 0
         topline.alpha = 0
+        courses.titleLabel?.adjustsFontSizeToFitWidth = true
+        Applications.titleLabel?.adjustsFontSizeToFitWidth = true
         
         
         

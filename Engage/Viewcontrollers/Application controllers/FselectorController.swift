@@ -27,11 +27,13 @@ class FselectorController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(formdone), name: NSNotification.Name(rawValue: "formdone"), object: nil)
         initalize()
         checkcompletion()
         toptext.text = ("Hello " + workingdata.userid + ", Here are the tasks we need you to complete")
        
     }
+    
     
     func initalize() {
         
@@ -41,7 +43,11 @@ class FselectorController: UIViewController {
     func checkcompletion() {
         
     }
-    
+    @objc func formdone() {
+        activebuts.removeAll()
+        formlist.removeArrangedSubview(formlist.arrangedSubviews[0])
+        uibuild()
+    }
     func uibuild() {
         switch workingdata.userstep {
         case 0:

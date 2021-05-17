@@ -11,6 +11,7 @@
 		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
 		0328986826422BF1003BC87A /* swiftassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986726422BF1003BC87A /* swiftassets.swift */; };
 		0328986E26424F8C003BC87A /* Newsfeedcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */; };
+		032BF9372651ECD00068F620 /* costscontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032BF9362651ECD00068F620 /* costscontroller.swift */; };
 		033E6C4A26476DD100CCE764 /* GotafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C4926476DD100CCE764 /* GotafeUITests.swift */; };
 		033E6C9B2648BDF800CCE764 /* pdfactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9A2648BDF800CCE764 /* pdfactions.swift */; };
 		033E6C9D2648BF8800CCE764 /* PDFdirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E6C9C2648BF8800CCE764 /* PDFdirector.swift */; };
@@ -98,6 +99,7 @@
 		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
 		0328986726422BF1003BC87A /* swiftassets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftassets.swift; sourceTree = "<group>"; };
 		0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeedcontroller.swift; sourceTree = "<group>"; };
+		032BF9362651ECD00068F620 /* costscontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = costscontroller.swift; sourceTree = "<group>"; };
 		033E6C4726476DD100CCE764 /* GotafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GotafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033E6C4926476DD100CCE764 /* GotafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GotafeUITests.swift; sourceTree = "<group>"; };
 		033E6C4B26476DD100CCE764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */,
 				03568CB6263A1CD000979E49 /* courseinfocontroller.swift */,
+				032BF9362651ECD00068F620 /* costscontroller.swift */,
 			);
 			path = Courseview;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C00F8626155495002A4488 /* ViewController.swift in Sources */,
+				032BF9372651ECD00068F620 /* costscontroller.swift in Sources */,
 				03FAD8B12617CFBC0040B62F /* Animation test.swift in Sources */,
 				03DDB6CF2616B4290046B613 /* templates.swift in Sources */,
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,

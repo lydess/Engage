@@ -289,14 +289,23 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     func case5() {
-        var db = DB()
-        var alert = UIAlertAction
+       let db = DB()
+       let alert = UIAlertAction(title: "Complete!", style: .default, handler: {_ in self.go()})
+        var action = UIAlertController(title: "Complete!", message: "Your form is finished and submitted!", preferredStyle: .actionSheet)
         qtext.text = workingdata.qlist[step]
         complete = true
         db.finishform()
+        action.addAction(alert)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "formdone"), object: nil)
+        self.present(action, animated: true, completion: {})
         
         
     }
+    
+    func go() {
+        self.dismiss(animated: true, completion: {})
+    }
+    
     
     // programaticly creates a button
     func buttongen(text: String, id: Int) {
