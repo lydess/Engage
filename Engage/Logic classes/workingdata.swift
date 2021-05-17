@@ -39,6 +39,7 @@ class workingdata {
     
     static var selectedcampus = Int()
     static var campusobject:campus = campus(name: "default", address: "default")
+    static var progress = Float(0.0)
     
     static var shownews = false
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
+		0326D429265206D40072C377 /* servicescontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326D428265206D40072C377 /* servicescontroller.swift */; };
 		0328986826422BF1003BC87A /* swiftassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986726422BF1003BC87A /* swiftassets.swift */; };
 		0328986E26424F8C003BC87A /* Newsfeedcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */; };
 		032BF9372651ECD00068F620 /* costscontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032BF9362651ECD00068F620 /* costscontroller.swift */; };
@@ -97,6 +98,7 @@
 /* Begin PBXFileReference section */
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
+		0326D428265206D40072C377 /* servicescontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicescontroller.swift; sourceTree = "<group>"; };
 		0328986726422BF1003BC87A /* swiftassets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftassets.swift; sourceTree = "<group>"; };
 		0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeedcontroller.swift; sourceTree = "<group>"; };
 		032BF9362651ECD00068F620 /* costscontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = costscontroller.swift; sourceTree = "<group>"; };
@@ -203,19 +205,27 @@
 			isa = PBXGroup;
 			children = (
 				03F08C82263BDE720026C6E1 /* pageviewcontroller.swift */,
-				031BF264263CC198000C1FBC /* page1.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
 		};
-		0328986C26424F77003BC87A /* Courseview */ = {
+		0326D427265206C80072C377 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				0326D428265206D40072C377 /* servicescontroller.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		0328986C26424F77003BC87A /* Course search */ = {
+			isa = PBXGroup;
+			children = (
+				031BF264263CC198000C1FBC /* page1.swift */,
 				03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */,
 				03568CB6263A1CD000979E49 /* courseinfocontroller.swift */,
 				032BF9362651ECD00068F620 /* costscontroller.swift */,
 			);
-			path = Courseview;
+			path = "Course search";
 			sourceTree = "<group>";
 		};
 		033E6C4826476DD100CCE764 /* GotafeUITests */ = {
@@ -322,8 +332,9 @@
 		0390F96826168DD4004FD4AE /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				0326D427265206C80072C377 /* services */,
 				033E6CA02649FCCF00CCE764 /* Contact */,
-				0328986C26424F77003BC87A /* Courseview */,
+				0328986C26424F77003BC87A /* Course search */,
 				034D8850263F88750070DC23 /* Debug */,
 				031BF263263CC17D000C1FBC /* Pages */,
 				03568CB5263A1CB000979E49 /* Main menu controllers */,
@@ -623,6 +634,7 @@
 				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
 				034498722643771500F8A26E /* (Deprecated) Errors.swift in Sources */,
 				034D885A263F8AA60070DC23 /* uitests.swift in Sources */,
+				0326D429265206D40072C377 /* servicescontroller.swift in Sources */,
 				033E6C9D2648BF8800CCE764 /* PDFdirector.swift in Sources */,
 				034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,

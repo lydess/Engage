@@ -16,6 +16,7 @@ class contactcontroller: UIViewController {
     var nextasset = 0
     var nextcolor = 0
     var clr = colors()
+    @IBOutlet weak var homebutton: UIButton!
     var tap = UIGestureRecognizer(target: Any?.self, action: #selector(imgtapped))
     var step = 0
     
@@ -108,5 +109,8 @@ class contactcontroller: UIViewController {
     @objc func imgtapped() {
         print("imgtapped")
         
+    }
+    @IBAction func homedown(_ sender: Any) {
+        self.dismiss(animated: true, completion: {})
     }
 }

@@ -25,7 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var midline: UILabel!
     @IBOutlet weak var loginbutton: UIButton!
     @IBOutlet weak var bottomline: UILabel!
+    @IBOutlet weak var contact: UIButton!
     
+    @IBOutlet weak var community: UIButton!
     var insp = ["Its never too late to learn", "You can Go there",
                   "We're job ready!", "Prepared for the future"]
     var seen = false
@@ -47,6 +49,8 @@ class ViewController: UIViewController {
         topline.alpha = 0
         courses.titleLabel?.adjustsFontSizeToFitWidth = true
         Applications.titleLabel?.adjustsFontSizeToFitWidth = true
+        contact.titleLabel?.adjustsFontSizeToFitWidth = true
+        community.titleLabel?.adjustsFontSizeToFitWidth = true
         
         
         
@@ -82,7 +86,10 @@ class ViewController: UIViewController {
             Applications.isEnabled = true
             Applications.tintColor = .white
             Applications.setTitleColor(.orange, for: .normal)
-            loginbutton.setTitle("Logout", for: .normal)
+            loginbutton.setTitle("   Linked", for: .normal)
+            loginbutton.isEnabled = false
+            loginbutton.tintColor = .gray
+            loginbutton.titleLabel?.textColor = .gray
             
             
             
@@ -96,7 +103,7 @@ class ViewController: UIViewController {
         
         topline.alpha = 0
         midline.alpha = 0
-        navbak.alpha = 0
+       
         
         buttonstack.alpha = 0
         

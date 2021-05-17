@@ -15,7 +15,9 @@ class FselectorController: UIViewController {
     @IBOutlet weak var toptext: UILabel!
     @IBOutlet weak var debug: UIButton!
     @IBOutlet weak var FSAbutton: UIButton!
+    @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var home: UIButton!
     var db = DB()
     var data = workingdata()
     var temple = templates()
@@ -26,19 +28,50 @@ class FselectorController: UIViewController {
     var activebuts = [UIButton]()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        progress.setProgress(workingdata.progress, animated: false)
         NotificationCenter.default.addObserver(self, selector: #selector(formdone), name: NSNotification.Name(rawValue: "formdone"), object: nil)
+        
         initalize()
         checkcompletion()
-        toptext.text = ("Hello " + workingdata.userid + ", Here are the tasks we need you to complete")
+        
+        
        
+    }
+    @objc func reload() {
+        super.viewDidAppear(true)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        progressbar()
+        
     }
     
     
     func initalize() {
         
+        
         uibuild()
         //status.alpha = 0
+    }
+    func progressbar() {
+        var step = db.getstep()
+        if db.getchanged() == true {
+            switch step {
+            case 0:
+                workingdata.progress = 0.25
+                progress.setProgress(workingdata.progress, animated: true)
+                db.setchanged(answer: false)
+            case 1:
+                workingdata.progress = 0.50
+                progress.setProgress(workingdata.progress, animated: true)
+                db.setchanged(answer: false)
+            default:
+                print("cases are fucked")
+            }
+            
+        
+        }
     }
     func checkcompletion() {
         
@@ -47,13 +80,17 @@ class FselectorController: UIViewController {
         activebuts.removeAll()
         formlist.removeArrangedSubview(formlist.arrangedSubviews[0])
         uibuild()
+        reload()
     }
     func uibuild() {
         switch workingdata.userstep {
         case 0:
             for x in 0...0{
                 addbut(text: temple.getbuttons()[x], id: x)
+                
             }
+            var blub = UIImageView()
+        
             if db.checkform() == true {
                 let EQbutton = activebuts[0]
                 let img = UIImage(systemName: "checkmark.seal")
@@ -154,9 +191,12 @@ class FselectorController: UIViewController {
     
     }
     @IBAction func homepush(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: {})
     }
     
+    @IBAction func debugdown(_ sender: Any) {
+        print(db.getstep())
+    }
     
 }
 

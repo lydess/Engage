@@ -130,6 +130,7 @@ class DB {
         newclient.setValue(course, forKey: "course")
         newclient.setValue(false, forKey: "eqcomplete")
         newclient.setValue(Int16(0), forKey: "step")
+        newclient.setValue(true, forKey: "changed")
         
         
         do {
@@ -175,4 +176,90 @@ class DB {
         }
         return memes
     }
+    
+    func getchanged() -> Bool{
+        var subject = Bool()
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
+        request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
+        
+        do {
+            let result = try! context.fetch(request)
+            
+            for x in result as! [NSManagedObject]{
+                subject = x.value(forKey: "changed") as! Bool
+                
+            }
+            
+            
+        }
+        return subject
+    }
+    
+    func setchanged(answer: Bool) {
+        var subject = Bool()
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
+        request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
+        do {
+            let result = try! context.fetch(request)
+            
+            for x in result as! [NSManagedObject]{
+                x.setValue(answer, forKey: "changed")
+                
+            }
+            
+        
+    }
+}
+    func getstep() -> Int16 {
+        var subject:Int16 = 0
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        let currentuser = workingdata.userid
+        let pred = NSPredicate(format: "step == '\(currentuser)'")
+        request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
+        do {
+            let result = try! context.fetch(request)
+            
+            for x in result as! [NSManagedObject]{
+                subject = x.value(forKey: "step") as! Int16
+                
+            }
+            
+            
+            
+    }
+        return subject
+}
+    
+    func setstep(answer: Int16) {
+        var subject = Bool()
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        var currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
+        request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
+        do {
+            let result = try! context.fetch(request)
+            print(result.count)
+            for x in result as! [NSManagedObject]{
+                x.setValue(answer, forKey: "step")
+                
+            }
+            
+        
+    }}
 }

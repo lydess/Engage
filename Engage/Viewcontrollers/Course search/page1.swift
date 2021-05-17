@@ -38,7 +38,8 @@ class page1: UIViewController {
         var clrlist = clr.colorlist()
         alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
         regular.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: {_ in self.gohome()}))
-        datepicker.backgroundColor = .white
+        
+      
         datepicker.tintColor = .black
         datepicker.layer.cornerRadius = 10
         textview.backgroundColor = .white
@@ -51,7 +52,7 @@ class page1: UIViewController {
     }
     func readycheck() -> Bool {
         if firstnamefield.text == "" || secondnamefield.text == "" {
-            print("context fakse")
+            print("context false")
             return false
         }else{
             print("cotext true")
@@ -83,7 +84,10 @@ class page1: UIViewController {
     @IBAction func enquirysend(_ sender: Any) {
         if workingdata.loggedin == false {
         if readycheck() == false{
-            print("data missing")
+            var alert = UIAlertController(title: "Incomplete", message: "Please fill in all required forms", preferredStyle: .alert)
+            var action = UIAlertAction(title: "Okay", style: .default, handler: {_ in })
+            alert.addAction(action)
+            present(alert, animated: true, completion: {})
         }else{
             db.sendapp(course: workingdata.usercourse, username: firstnamefield.text!)
             db.checklogin(givenname: firstnamefield.text!)

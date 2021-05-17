@@ -20,6 +20,7 @@ class debugcontroller: UIViewController {
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var coursefield: UITextField!
    
+    @IBOutlet weak var changed: UIButton!
     @IBOutlet weak var eqcomplete: UISwitch!
     @IBOutlet weak var changetofield: UITextField!
     @IBOutlet weak var currentkeyfield: UITextField!
@@ -132,5 +133,8 @@ class debugcontroller: UIViewController {
     
     @IBAction func printcampus(_ sender: Any) {
         db.listcampus()
+    }
+    @IBAction func changeddown(_ sender: Any) {
+        
     }
 }
