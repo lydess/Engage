@@ -12,6 +12,7 @@ import CoreData
 class workingdata {
     static var loggedin = false
     
+    static var url = [String]()
     
     static var doc = 1
     static var template = 0

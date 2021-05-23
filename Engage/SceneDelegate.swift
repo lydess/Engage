@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             print(url)
             handleURL(url: url)
+            
         }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -64,7 +65,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     // celsiusapp://hostpart/my/path/?name=celsius&color=blue
     func handleURL(url: URL) {
-
+        var list = [String]()
           // A host, a path and query params are expected, else the URL will not be handled.
           guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
               let host = components.host,
@@ -79,15 +80,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           for (index, pathComponent) in url.pathComponents.enumerated() {
               NSLog("pathComponent \(index): \(pathComponent)")
           }
-          
+        
           for query in params {
               if let value = query.value {
-                  NSLog("Query param \(query.name): \(value)")
-                  continue
+                NSLog("Query param \(query.name): \(value)")
+                list.append(query.value!)
+                  //continue
               }
             
               NSLog("Query param \(query.name) has no value")
           }
+        workingdata.url = list
       }
 
 }

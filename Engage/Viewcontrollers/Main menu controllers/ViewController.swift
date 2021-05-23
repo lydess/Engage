@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomline: UILabel!
     @IBOutlet weak var contact: UIButton!
     
+    @IBOutlet weak var loginurldebug: UILabel!
     @IBOutlet weak var community: UIButton!
     var insp = ["Its never too late to learn", "You can Go there",
                   "We're job ready!", "Prepared for the future"]
@@ -43,28 +44,26 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         
-    
         
     }
-    @objc func mint() {
-        print("app is now active")
+
+    @objc func seturl() {
+        if workingdata.url.isEmpty == false {
+            loginurldebug.text = workingdata.url[0]
+        }
+        else {
+            print("loginwithouturl")
+        }
+        
     }
-    
 
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(mint), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(seturl), name: UIApplication.didBecomeActiveNotification, object: nil)
    
         
-        //self.application(UIApplication.shared, willFinishLaunchingWithOptions: )
+        setloginUI()
         
-        print(url.count)
-        
-    
-        
-        
-        
-        checklogin()
         switch workingdata.menuseen {
         case false:
             initalize()
@@ -79,9 +78,8 @@ class ViewController: UIViewController {
         
         
     }
-    func checklogin() {
+    func setloginUI() {
         if workingdata.loggedin == false {
-            print("loginchecked, user not logged in")
             Applications.isEnabled = false
             Applications.tintColor = .gray
             Applications.setTitleColor(.gray, for: .normal)
@@ -102,7 +100,7 @@ class ViewController: UIViewController {
         }
     }
     func initalize() {
-        checklogin()
+        setloginUI()
         billboardstart = billboard.frame
     
         midline.alpha = 0
@@ -112,7 +110,7 @@ class ViewController: UIViewController {
         Applications.titleLabel?.adjustsFontSizeToFitWidth = true
         contact.titleLabel?.adjustsFontSizeToFitWidth = true
         community.titleLabel?.adjustsFontSizeToFitWidth = true
-
+        loginurldebug.alpha = 0
         buttonstack.alpha = 0
         
         debug.alpha = 0
@@ -122,6 +120,7 @@ class ViewController: UIViewController {
         coloring()
         billboard.alpha = 0
         
+       
         
         var timer = Timer.scheduledTimer(timeInterval: 9, target: self, selector: #selector(anim), userInfo: nil, repeats: true)
         
@@ -149,7 +148,7 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.75, animations: {
                 self.midline.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: 0.5, animations: {
+                UIView.animate(withDuration: 1, animations: {
                     //self.billboard.frame = self.billboardstart
                     self.billboard.alpha = 1
                    
@@ -202,7 +201,7 @@ class ViewController: UIViewController {
     }
     @objc func login() {
         print("re-enabling application")
-        checklogin()
+        setloginUI()
         
     }
   
@@ -215,7 +214,8 @@ class ViewController: UIViewController {
         
             debug.isEnabled = true
             debug.isHidden = false
-        debug.alpha = 1
+            debug.alpha = 1
+            loginurldebug.alpha = 1
         
         
     }

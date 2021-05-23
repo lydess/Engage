@@ -1258,24 +1258,34 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-Jh-ba7">
+                                <rect key="frame" x="20" y="820" width="138" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WlV-ax-vdF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="pmf-Jh-ba7" firstAttribute="top" secondItem="rL5-Yl-8RN" secondAttribute="bottom" constant="187" id="4LK-Mj-SVi"/>
                             <constraint firstItem="XhL-ow-2Uj" firstAttribute="top" secondItem="aNr-CO-JYm" secondAttribute="bottom" constant="-11" id="5rp-U8-1MY"/>
                             <constraint firstItem="WlV-ax-vdF" firstAttribute="trailing" secondItem="sOE-4o-ZrH" secondAttribute="trailing" constant="6" id="BZ6-yW-FjP"/>
                             <constraint firstItem="XhL-ow-2Uj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="257" id="Bi6-ze-z7E"/>
                             <constraint firstAttribute="bottom" secondItem="sOE-4o-ZrH" secondAttribute="bottom" constant="14" id="Bj9-rq-lYm"/>
                             <constraint firstItem="rL5-Yl-8RN" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="20" id="F7A-zo-qxS"/>
                             <constraint firstItem="aNr-CO-JYm" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="82" id="FNJ-it-r7y"/>
+                            <constraint firstItem="WlV-ax-vdF" firstAttribute="bottom" secondItem="pmf-Jh-ba7" secondAttribute="bottom" constant="2" id="Hti-3Q-zj2"/>
                             <constraint firstItem="WlV-ax-vdF" firstAttribute="trailing" secondItem="CUE-8R-5GW" secondAttribute="trailing" constant="35" id="Lej-Nv-hA3"/>
+                            <constraint firstItem="c2s-r3-ok1" firstAttribute="leading" secondItem="pmf-Jh-ba7" secondAttribute="trailing" constant="8" id="MUz-z0-Q7E"/>
                             <constraint firstItem="WlV-ax-vdF" firstAttribute="trailing" secondItem="aNr-CO-JYm" secondAttribute="trailing" constant="81" id="POQ-nW-46i"/>
                             <constraint firstItem="CUE-8R-5GW" firstAttribute="top" secondItem="WlV-ax-vdF" secondAttribute="top" constant="8" id="QZo-bR-3HA"/>
                             <constraint firstItem="XhL-ow-2Uj" firstAttribute="centerX" secondItem="nZ9-X3-0Zx" secondAttribute="centerX" id="SWr-Xd-3iQ"/>
                             <constraint firstItem="XhL-ow-2Uj" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="136" id="WwP-he-dOI"/>
                             <constraint firstItem="c2s-r3-ok1" firstAttribute="bottom" secondItem="WlV-ax-vdF" secondAttribute="bottom" constant="-7" id="X7U-ZZ-MQm"/>
                             <constraint firstItem="sOE-4o-ZrH" firstAttribute="leading" secondItem="c2s-r3-ok1" secondAttribute="trailing" constant="94.333333333333343" id="dYY-UB-gPt"/>
+                            <constraint firstItem="pmf-Jh-ba7" firstAttribute="leading" secondItem="WlV-ax-vdF" secondAttribute="leading" constant="20" id="hl4-FF-gFZ"/>
                             <constraint firstAttribute="bottom" secondItem="nZ9-X3-0Zx" secondAttribute="bottom" id="iHM-uv-Ecr"/>
                             <constraint firstAttribute="trailing" secondItem="rL5-Yl-8RN" secondAttribute="trailing" constant="-6" id="j4t-ho-xPW"/>
                             <constraint firstItem="rL5-Yl-8RN" firstAttribute="top" secondItem="WlV-ax-vdF" secondAttribute="top" constant="299" id="ncE-G2-Spb"/>
@@ -1298,6 +1308,7 @@
                         <outlet property="courses" destination="cBZ-qc-3BC" id="oQB-Mq-Nfv"/>
                         <outlet property="debug" destination="c2s-r3-ok1" id="3xv-f5-5PX"/>
                         <outlet property="loginbutton" destination="feE-8X-KXd" id="20A-QK-3wH"/>
+                        <outlet property="loginurldebug" destination="pmf-Jh-ba7" id="UfD-8K-SFs"/>
                         <outlet property="midline" destination="XhL-ow-2Uj" id="rF3-pV-q2t"/>
                         <outlet property="swiperight" destination="hiG-WG-l7N" id="9yZ-p3-XOl"/>
                         <outlet property="topline" destination="aNr-CO-JYm" id="ITk-w6-aNp"/>
@@ -1310,7 +1321,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-636.44859813084111" y="88.120950323974085"/>
+            <point key="canvasLocation" x="-637.68115942028987" y="87.723214285714278"/>
         </scene>
         <!--Contactcontroller-->
         <scene sceneID="3J0-Oe-D38">
@@ -1925,7 +1936,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="2hz-fw-GNO"/>
-        <segue reference="8gQ-yQ-xhw"/>
+        <segue reference="gsb-e2-TgY"/>
         <segue reference="BKl-m4-Pyg"/>
         <segue reference="Bdw-CM-hLD"/>
     </inferredMetricsTieBreakers>
