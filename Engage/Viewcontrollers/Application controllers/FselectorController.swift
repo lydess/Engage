@@ -17,6 +17,7 @@ class FselectorController: UIViewController {
     @IBOutlet weak var FSAbutton: UIButton!
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var startlabel: UILabel!
     @IBOutlet weak var home: UIButton!
     var db = DB()
     var data = workingdata()
@@ -95,14 +96,23 @@ class FselectorController: UIViewController {
                 let EQbutton = activebuts[0]
                 let img = UIImage(systemName: "checkmark.seal")
                 activerightbuts[0].setImage(img, for: .normal)
+                startlabel.alpha = 0
                 status.alpha = 1
-                status.text = "Thanks! \(workingdata.userid) for getting these forms done!, we will give you a call soon to work out a good time for an interview!, feel free to contact us in the mean time at our contact centre (check us out back in the main menu)"
+                status.text = """
+Thanks! \(workingdata.userid) for getting these forms done!
+                
+            we will give you a call soon to work out a good time for an interview!, feel free to contact us in the mean time at our contact centre (check us out back in the main menu)
+"""
+                status.font = UIFont(name: "Poppins Bold", size: 20)
+                status.textColor = .white
                 EQbutton.setTitleColor(.black, for: .normal)
                 EQbutton.backgroundColor = .gray
                 EQbutton.isUserInteractionEnabled = false
             
             }else{
-                print("forms not done")
+                startlabel.font = UIFont(name: "Poppins Bold", size: 18)
+                startlabel.textColor = .white
+                startlabel.numberOfLines = 10
             }
         case 1:
             for x in 2...4{

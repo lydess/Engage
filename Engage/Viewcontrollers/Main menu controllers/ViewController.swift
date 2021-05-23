@@ -9,7 +9,6 @@ import UIKit
 import SceneKit
 import Foundation
 
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var buttonstack: UIStackView!
@@ -36,27 +35,34 @@ class ViewController: UIViewController {
     
     var navitem = UINavigationItem.init(title: "Return")
     
-  
+   
     
+    
+   
+    var url = [UIApplication.LaunchOptionsKey : Any]()
+
     override func viewDidAppear(_ animated: Bool) {
         
+    
         
     }
+    @objc func mint() {
+        print("app is now active")
+    }
     
+
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
-        midline.alpha = 0
-        topline.alpha = 0
-        courses.titleLabel?.adjustsFontSizeToFitWidth = true
-        Applications.titleLabel?.adjustsFontSizeToFitWidth = true
-        contact.titleLabel?.adjustsFontSizeToFitWidth = true
-        community.titleLabel?.adjustsFontSizeToFitWidth = true
+        NotificationCenter.default.addObserver(self, selector: #selector(mint), name: UIApplication.didBecomeActiveNotification, object: nil)
+   
+        
+        //self.application(UIApplication.shared, willFinishLaunchingWithOptions: )
+        
+        print(url.count)
+        
+    
         
         
-        
-        debug.alpha = 0
-        
-       
         
         checklogin()
         switch workingdata.menuseen {
@@ -98,16 +104,18 @@ class ViewController: UIViewController {
     func initalize() {
         checklogin()
         billboardstart = billboard.frame
-
-        //scrollview.alpha = 0
-        
-        topline.alpha = 0
+    
         midline.alpha = 0
-       
+        topline.alpha = 0
         
+        courses.titleLabel?.adjustsFontSizeToFitWidth = true
+        Applications.titleLabel?.adjustsFontSizeToFitWidth = true
+        contact.titleLabel?.adjustsFontSizeToFitWidth = true
+        community.titleLabel?.adjustsFontSizeToFitWidth = true
+
         buttonstack.alpha = 0
         
-      
+        debug.alpha = 0
         debug.isEnabled = false
         debug.isHidden = true
        // billboard.frame = CGRect(x: 0, y: -1000, width: 400, height: 400)

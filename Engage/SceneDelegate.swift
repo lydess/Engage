@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Engage
+//  URLreboot
 //
-//  Created by william Vise on 1/4/21.
+//  Created by william Vise on 23/5/21.
 //
 
 import UIKit
@@ -17,8 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        if let url = connectionOptions.urlContexts.first?.url {
+                    handleURL(url: url)
+                }
+        
     }
-
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+            // Get the first URL out of the URLContexts set. If it does not exist, abort handling the passed URLs and exit this method.
+            guard let url = URLContexts.first?.url else {
+                return NSLog("No URL passed to open the app")
+            }
+            print(url)
+            handleURL(url: url)
+        }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -49,7 +62,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
+    // celsiusapp://hostpart/my/path/?name=celsius&color=blue
+    func handleURL(url: URL) {
 
+          // A host, a path and query params are expected, else the URL will not be handled.
+          guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+              let host = components.host,
+              let _ = components.path,
+              let params = components.queryItems else {
+                  NSLog("Invalid URL. Host, path and query params are expected")
+                  return
+          }
+          
+          NSLog("host: \(host)")
+          
+          for (index, pathComponent) in url.pathComponents.enumerated() {
+              NSLog("pathComponent \(index): \(pathComponent)")
+          }
+          
+          for query in params {
+              if let value = query.value {
+                  NSLog("Query param \(query.name): \(value)")
+                  continue
+              }
+            
+              NSLog("Query param \(query.name) has no value")
+          }
+      }
 
 }
 
