@@ -19,7 +19,7 @@ class MainMenuController: UIViewController  {
     @IBOutlet weak var billboard: UIImageView!
     @IBOutlet weak var topline: UILabel!
     @IBOutlet weak var midline: UILabel!
-    @IBOutlet weak var loginbutton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var contact: UIButton!
     @IBOutlet weak var loginurldebug: UILabel!
     @IBOutlet weak var community: UIButton!
@@ -33,12 +33,11 @@ class MainMenuController: UIViewController  {
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(whenmadeactive), name: UIApplication.didBecomeActiveNotification, object: nil)
-   
+        setloginUI()
         switch workingdata.menuseen {
         case false:
             initalize()
             openinganimation()
-            setloginUI()
             workingdata.menuseen = true
             
         default:
@@ -53,6 +52,7 @@ class MainMenuController: UIViewController  {
             Applications.isEnabled = false
             Applications.tintColor = .gray
             Applications.setTitleColor(.gray, for: .normal)
+            print("user logged out")
             
             
         }
@@ -60,10 +60,11 @@ class MainMenuController: UIViewController  {
             Applications.isEnabled = true
             Applications.tintColor = .white
             Applications.setTitleColor(.orange, for: .normal)
-            loginbutton.setTitle("   Linked", for: .normal)
-            loginbutton.isEnabled = false
-            loginbutton.tintColor = .gray
-            loginbutton.titleLabel?.textColor = .gray
+            loginButton.setTitle("   Linked", for: .normal)
+            loginButton.isEnabled = false
+            loginButton.tintColor = .gray
+            loginButton.titleLabel?.textColor = .gray
+            print("user logged in")
             
             
             
@@ -98,7 +99,7 @@ class MainMenuController: UIViewController  {
             let userinfo = workingdata.urlinfo
             
             db.sendapp(course: userinfo[1], username: userinfo[0])
-            db.checklogin(givenname: userinfo[0])
+            db.checkIfUserDuplicate(givenname: userinfo[0])
             workingdata.loginstatus = .loggedin
             
             return
@@ -183,7 +184,10 @@ class MainMenuController: UIViewController  {
        
     }
     
-   
+    @IBAction func newdebugdown(_ sender: Any) {
+        print(workingdata.userid)
+    }
+    
     
     
     

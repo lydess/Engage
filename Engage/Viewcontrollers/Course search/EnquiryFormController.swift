@@ -90,7 +90,7 @@ class EnquiryFormController: UIViewController {
             present(alert, animated: true, completion: {})
         }else{
             db.sendapp(course: workingdata.usercourse, username: firstnamefield.text!)
-            db.checklogin(givenname: firstnamefield.text!)
+            db.checkIfUserDuplicate(givenname: firstnamefield.text!)
             workingdata.loginstatus = .loggedin
             self.present(regular, animated: true, completion: timerset)
             

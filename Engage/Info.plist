@@ -27,7 +27,7 @@
 			<string>com.Gotafe</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>home</string>
+				<string>Gotafe</string>
 			</array>
 		</dict>
 	</array>

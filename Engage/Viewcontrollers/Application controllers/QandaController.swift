@@ -11,28 +11,22 @@ import Foundation
 import UIKit
 import SceneKit
 class QandaController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var swiper: UISwipeGestureRecognizer!
     @IBOutlet weak var yes: yesno!
     @IBOutlet weak var no: yesno!
     @IBOutlet weak var textbox: animtextfield!
     @IBOutlet weak var texterror: UILabel!
     @IBOutlet weak var qtext: UILabel!
     @IBOutlet weak var debug: UIButton!
-    @IBOutlet var pan: UIPanGestureRecognizer!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var yesnocontainer: UIStackView!
     
-    
-    
-    
-    @IBOutlet var tapges: UITapGestureRecognizer!
 
     var data = workingdata()
     var cords = CGRect.init(x: 100, y: 100, width: 50, height: 50)
     var queue = [String]()
     var answer = NSMutableArray()
-    var qtype = [Int]()
+    var qtype = [Any]()
     var step = 0
     var activecbx = [checkbox]()
     var genstack = UIStackView()
@@ -109,10 +103,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
         
     }
-    func functionName() {
-        print("hello world")
-    }
-    func yesno(Boolean:Bool) {
+    func isTrueFalse(Boolean:Bool) {
         if Boolean == true {
        
             
@@ -129,20 +120,40 @@ class QandaController: UIViewController, UITextFieldDelegate {
             no.alpha = 0
             no.isEnabled = false
             yes.isEnabled = false
-            submit.alpha = 1
+            submit.alpha = 0
         }
     }
 
-    func submit(istrue:Bool) {
+    func isTextBox(istrue:Bool) {
         if istrue == true {
             textbox.alpha = 1
             textbox.isEnabled = true
+            submit.alpha = 1
+            submit.isHidden = false
             
         }
         else {
             textbox.alpha = 0
             textbox.isEnabled = false
+            submit.alpha = 0
+            submit.isHidden = true
            
+        }
+    }
+    func isCheckBox(Boolean:Bool) {
+        if Boolean == true {
+            genstack.isHidden = false
+            genstack.alpha = 1
+            rightgenstack.isHidden = false
+            rightgenstack.alpha = 1
+            submit.alpha = 1
+            submit.isHidden = false
+        } else {
+            genstack.isHidden = true
+            genstack.alpha = 0
+            rightgenstack.isHidden = true
+            rightgenstack.alpha = 0
+            
         }
     }
     func startup() {
@@ -188,80 +199,82 @@ class QandaController: UIViewController, UITextFieldDelegate {
         step = workingdata.resumedstep
         uistep()
     }
-    @objc func slidedown() {
-        workingdata.qlist = queue
-        workingdata.qtype = qtype
-        workingdata.resumedstep = step
-        
-    }
+//    @objc func slidedown() {
+//        workingdata.qlist = queue
+//        workingdata.qtype = qtype
+//        workingdata.resumedstep = step
+//
+//    }
     func uistep() {
         
         switch qtype[step] {
-        case 0:
+        case workingdata.questiontypes.trueFalse:
              case0()
-        case 1:
+        case workingdata.questiontypes.textBox:
             case1()
-        case 2:
+        case workingdata.questiontypes.checkBox:
             case2()
-        case 3:
+        case workingdata.questiontypes.checkBoxOther:
             case3()
-        case 4:
+        case workingdata.questiontypes.checkBoxmulti:
             case4()
-        case 5:
+        case workingdata.questiontypes.formCompelte:
             case5()
         default:
-            print("case 1")
+        print("memes")
+            
         }
     }
     
     
     // Loads the UI based on what type of question is being asked
     func case0() {
-        yesno(Boolean: true)
-        submit(istrue: false)
-        qtext.text = workingdata.qlist[step]
-        print("case 0")
-    }
-    func case1() {
-        yesno(Boolean: false)
-        submit(istrue: true)
+        isTrueFalse(Boolean: true)
+        isTextBox(istrue: false)
+        isCheckBox(Boolean: false)
         
         qtext.text = workingdata.qlist[step]
-        print("case 1")
+        
+    }
+    func case1() {
+        isTrueFalse(Boolean: false)
+        isTextBox(istrue: true)
+        isCheckBox(Boolean: false)
+        
+        qtext.text = workingdata.qlist[step]
+        
         
     }
     func case2() {
-        yesno(Boolean: false)
-        submit(istrue: false)
-        genstack.isHidden = false
-        rightgenstack.isHidden = false
+        isTrueFalse(Boolean: false)
+        isTextBox(istrue: false)
+        isCheckBox(Boolean: true)
+        
         qtext.text = workingdata.qlist[step]
         
-        let qray = workingdata.qcbx[step]
+        let checkBoxQuestions = workingdata.checkBoxQuestions[step]
         qtext.text = workingdata.qlist[step]
-        for x in 0...qray.count-1 {
-            let text = workingdata.qcbx[step][x]
+        for x in 0...checkBoxQuestions.count-1 {
+            let text = workingdata.checkBoxQuestions[step][x]
             buttongen(text: text, id: x)
             
             
         }
        
-        print("case 2")
+        
         
     }
     func case3() {
-        yesno(Boolean: false)
-        submit(istrue: false)
-        genstack.isHidden = false
-        genstack.alpha = 1
-        rightgenstack.isHidden = false
-        rightgenstack.alpha = 1
+        isTrueFalse(Boolean: false)
+        isTextBox(istrue: false)
+        isCheckBox(Boolean: true)
+        
         qtext.text = workingdata.qlist[step]
-        print(step)
-        let qray = workingdata.qcbx[step]
+        
+        let qray = workingdata.checkBoxQuestions[step]
         qtext.text = workingdata.qlist[step]
         for x in 0...qray.count-1 {
-            let text = workingdata.qcbx[step][x]
+            let text = workingdata.checkBoxQuestions[step][x]
             buttongen(text: text, id: x)
             
         }
@@ -272,15 +285,16 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     func case4() {
-        yesno(Boolean: false)
-        submit(istrue: false)
-        genstack.isHidden = false
-        genstack.alpha = 1
+        isTrueFalse(Boolean: false)
+        isTextBox(istrue: false)
+        isCheckBox(Boolean: true)
+        
         qtext.text = workingdata.qlist[step]
-        print(step)
-        let questions = workingdata.qcbx[step]
+        
+        
+        let questions = workingdata.checkBoxQuestions[step]
         for x in 0...questions.count-1 {
-            let text = workingdata.qcbx[step][x]
+            let text = workingdata.checkBoxQuestions[step][x]
             buttongen(text: text, id: x)
         }
         otherbuttongen(text: "Other", id: activecbx.count)
@@ -289,13 +303,18 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     func case5() {
-       let db = DB()
-       let alert = UIAlertAction(title: "Complete!", style: .default, handler: {_ in self.go()})
-        var action = UIAlertController(title: "Continue", message: "Your form is finished and submitted!", preferredStyle: .alert)
+        let db = DB()
+        let alert = UIAlertAction(title: "Complete!", style: .default, handler: {_ in self.go()})
+        let action = UIAlertController(title: "Continue", message: "Your form is finished and submitted!", preferredStyle: .alert)
         qtext.text = workingdata.qlist[step]
         complete = true
         db.finishform()
         action.addAction(alert)
+        print("completing form")
+        db.geteq()
+        isTrueFalse(Boolean: false)
+        isTextBox(istrue: false)
+        isCheckBox(Boolean: false)
         
         self.present(action, animated: true, completion: {})
         
@@ -430,9 +449,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func pandown(_ sender: Any) {
-        print("pan recognized")
-    }
+   
     
     
     @IBAction func debugpush(_ sender: Any) {
@@ -472,10 +489,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     
     
-    @IBAction func pan(_ sender: Any) {
-        let jacks = pan.translation(in: view)
-        print(jacks)
-    }
+    
     
     func saveanswer() {
         if step == workingdata.qlist.count-1 {
@@ -483,11 +497,11 @@ class QandaController: UIViewController, UITextFieldDelegate {
         }
         else{
         switch self.qtype[step] {
-        case 0:
+        case workingdata.questiontypes.trueFalse:
             answer.add(givenanswer)
             reload()
            
-        case 1:
+        case workingdata.questiontypes.textBox:
             if textbox.text?.isEmpty == true {
                 print("answer not given")
                 
@@ -498,7 +512,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             }
             
             
-        case 2:
+        case workingdata.questiontypes.checkBox:
             var answerlist = [String]()
             for x in activecbx{
                 if x.checked == true{
@@ -520,7 +534,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             }
             
             
-        case 3:
+        case workingdata.questiontypes.checkBoxmulti:
             view.sendSubviewToBack(yesnocontainer)
             var answerlist = [String]()
             for x in activecbx{
@@ -541,7 +555,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
                 reload()
             }
             
-        case 4:
+        case workingdata.questiontypes.checkBoxOther:
             view.sendSubviewToBack(yesnocontainer)
             var answerlist = [String]()
             for x in activecbx{
@@ -577,7 +591,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
             }
         
         default:
-            print("somthings wrong with your cases man")
+            print("somthings wrong with your cannnnoini'nnises man")
         }
         
         
@@ -596,16 +610,9 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             
         }
-        }
     }
-    // controls the swipe right to save answer functionality ONLY SAVE DATA TO THE ANSWERLIST FROM HERE
-    @IBAction func rightswipe(_ sender: Any) {
-        
-        
-    
-    
     }
-   
+    
     @IBAction func submit(_ sender: Any) {
         saveanswer()
         if complete == true {
@@ -615,11 +622,6 @@ class QandaController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func fallAndFade(_ sender: Any) {
-        SCNTransaction.animationDuration = 1.0
-        yes.alpha = 0
-        
-    }
     func yesnostart(button:UIButton) {
         UIView.animate(withDuration: 0) {
             self.yes.transform = CGAffineTransform(translationX: 0, y: 0)

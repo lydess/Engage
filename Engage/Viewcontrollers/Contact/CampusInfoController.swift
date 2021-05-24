@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class campusinfocontroller: UIViewController {
+class CampusInfoController: UIViewController {
     
     @IBOutlet weak var toplabel: UILabel!
     

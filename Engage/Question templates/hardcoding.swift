@@ -24,6 +24,7 @@ class templatetext {
         "Will you be doing 2 courses at the same time as this one? 📚",
         "Are you currently enrolled in secondary school? 🏫",
         "Are you undertaking a school based traineeship 👨‍🔧",
+        "Are you above the age of 20?",
         "You're done!"
         ]
         return qtext
@@ -38,8 +39,16 @@ class templatetext {
         ]
         return qtext
     }
-    func fsatype() -> [Int] {
-        let qtype = [0,0,0,0,0,5]
+    func questiontypes() -> [Any] {
+        let qtype = [
+            workingdata.questiontypes.trueFalse,
+            workingdata.questiontypes.trueFalse,
+            workingdata.questiontypes.checkBoxmulti,
+            workingdata.questiontypes.checkBox,
+            workingdata.questiontypes.trueFalse,
+            workingdata.questiontypes.textBox,
+            workingdata.questiontypes.formCompelte
+        ]
         return qtype
     }
     func cbxquestions() -> [Array<String>] {
@@ -50,12 +59,14 @@ class templatetext {
         let q4 = ["box1","box2", "box3", "box4" ]
         let q5 = ["box1","box2", "box3", "box4" ]
         let q6 = [String]()
+        let q7 = [String]()
         result.append(q1)
         result.append(q2)
         result.append(q3)
         result.append(q4)
         result.append(q5)
         result.append(q6)
+        result.append(q7)
         return result
     }
     struct campusinfo {

@@ -9,11 +9,11 @@ import Foundation
 import CoreData
 import UIKit
 
-class logincontroller: UIViewController {
+class LoginController: UIViewController {
     var loginstep = Int()
     var login = String()
-    
     var db = DB()
+    
     @IBOutlet weak var submit: UIButton!
     @IBOutlet weak var no: yesno!
     @IBOutlet weak var yes: yesno!
@@ -64,7 +64,7 @@ class logincontroller: UIViewController {
     }
     func progress() {
         login = textfield.text ?? ""
-        db.checklogin(givenname: login)
+        db.checkIfUserDuplicate(givenname: login)
         
         if workingdata.loginstatus == .loggedin {
             workingdata.loginstatus = .loggedin

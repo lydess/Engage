@@ -51,20 +51,20 @@ class DB {
                     print("Failed")
                 }}
     
-    func checklogin(givenname: String) -> Bool {
+    func checkIfUserDuplicate(givenname: String) -> Bool {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
         var userIsFound = Bool()
-        var pred = NSPredicate(format: "username == '\(givenname)'")
-        
+        let pred = NSPredicate(format: "username == '\(givenname)'")
+        request.predicate = pred
         request.returnsObjectsAsFaults = false
         
         do {
             let result = try! context.fetch(request)
             for x in result as! [NSManagedObject] {
                 if x.value(forKey: "username") as! String == givenname {
-                    print("USER was found")
-                    workingdata.setuser(data: x)
+                    print("user was found")
+                    //workingdata.setuser(data: x)
                     
                     userIsFound = true
                     
@@ -104,7 +104,7 @@ class DB {
     func finishform() {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
-        var currentuser = workingdata.userid
+        let currentuser = workingdata.userid
         let pred = NSPredicate(format: "username == '\(currentuser)'")
         request.returnsObjectsAsFaults = false
         request.predicate = pred
@@ -133,9 +133,12 @@ class DB {
         newclient.setValue(Int16(0), forKey: "step")
         newclient.setValue(true, forKey: "changed")
         
-        
+        workingdata.setuser(data: newclient)
         do {
-            try context.save()}
+            try context.save()
+            
+            
+        }
         catch {
             print("saving failed")
         }
@@ -202,10 +205,9 @@ class DB {
     }
     
     func setchanged(answer: Bool) {
-        var subject = Bool()
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
-        var currentuser = workingdata.userid
+        let currentuser = workingdata.userid
         let pred = NSPredicate(format: "username == '\(currentuser)'")
         request.returnsObjectsAsFaults = false
         request.predicate = pred
@@ -245,10 +247,9 @@ class DB {
 }
     
     func setstep(answer: Int16) {
-        var subject = Bool()
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
-        var currentuser = workingdata.userid
+        let currentuser = workingdata.userid
         let pred = NSPredicate(format: "username == '\(currentuser)'")
         request.returnsObjectsAsFaults = false
         request.predicate = pred
@@ -262,5 +263,23 @@ class DB {
             }
             
         
-    }}
+    }
+        
+    }
+    func geteq() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
+        let currentuser = workingdata.userid
+        let pred = NSPredicate(format: "username == '\(currentuser)'")
+        request.returnsObjectsAsFaults = false
+        request.predicate = pred
+        
+        do{
+            let result = try! context.fetch(request)
+            for x in result as! [NSManagedObject]{
+                var word = x.value(forKey: "eqcomplete") as! Bool
+                print(word)
+            }
+        }
+    }
 }

@@ -33,7 +33,7 @@ class templates {
     
     var hc = templatetext()
     var questions = [String]()
-    var Qtypes = [Int]()
+    var Qtypes = [Any]()
     var answers = NSMutableArray()
     var forms = [String]()
     
@@ -53,14 +53,14 @@ class templates {
     }
     
     // sets the answer type list based on given template iD
-    func Getanswers(tempid:Int) -> [Int] {
-        var answer = [Int]()
+    func Getanswers(tempid:Int) -> [Any] {
+        var answer = [Any]()
         
         switch tempid {
         case 0:
-            answer = hc.fsatype()
+            answer = hc.questiontypes()
         default:
-            answer = [Int]()
+            answer = [Any]()
         }
         return answer
     }
@@ -136,7 +136,8 @@ class fsatemp {
 
     func setup() {
         lists.questions = hc.fsatext()
-        lists.Qtypes = hc.fsatype()
+        lists.Qtypes = hc.questiontypes()
+        
     }
     
 }

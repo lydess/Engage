@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class costscontroller: UIViewController {
+class CostsController: UIViewController {
     @IBOutlet weak var contentview: UIView!
     
     @IBOutlet weak var leftcheck: UIImageView!

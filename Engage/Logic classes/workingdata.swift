@@ -25,8 +25,8 @@ class workingdata {
     
     static var qlist = [String]()
     static var alist = NSMutableArray()
-    static var qtype = [Int]()
-    static var qcbx = [Array<String>]()
+    static var qtype = [Any]()
+    static var checkBoxQuestions = [Array<String>]()
     
     static var isworking = false
     static var alreadyworking = false
@@ -67,6 +67,15 @@ class workingdata {
         
     }
     
+    enum questiontypes {
+        case trueFalse
+        case textBox
+        case checkBox
+        case checkBoxmulti
+        case checkBoxOther
+        case formCompelte
+    }
+    
     
     
     func templateset(templateid:Int) {
@@ -77,8 +86,8 @@ class workingdata {
             workingdata.templatename = "FSA-151"
             workingdata.templateset = true
             workingdata.qlist =  temple.Getquestions(tempid: templateid)
-            workingdata.qtype = temple.Getanswers(tempid: templateid)
-            workingdata.qcbx = temple.getlists()
+            workingdata.qtype =  temple.Getanswers(tempid: templateid)
+            workingdata.checkBoxQuestions = temple.getlists()
             
             
             
@@ -91,7 +100,7 @@ class workingdata {
         workingdata.templateset = false
         workingdata.qlist = [String]()
         workingdata.qtype = [Int]()
-        workingdata.qcbx = [Array<String>]()
+        workingdata.checkBoxQuestions = [Array<String>]()
         workingdata.alist = NSMutableArray()
         workingdata.alreadyworking = false
         print("WORKING DATA WIPED OUT, ALL DATA IS SET TO DEFAULT VALUES")

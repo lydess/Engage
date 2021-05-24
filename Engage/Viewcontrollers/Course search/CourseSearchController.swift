@@ -14,8 +14,6 @@ import SceneKit
 class CourseSearchController: UIViewController {
     @IBOutlet weak var bubble: UIStackView!
     @IBOutlet weak var debug: UIButton!
-
-    
     @IBOutlet weak var homelabel: UILabel!
 
     var color = colors()
