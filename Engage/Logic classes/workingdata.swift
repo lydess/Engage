@@ -10,9 +10,13 @@ import UIKit
 import CoreData
 // stores the "at a momment" data needed for the operation of the app, is callable at any point and can be set at any time, insecure dont store creds
 class workingdata {
-    static var loggedin = false
     
-    static var url = [String]()
+    var fsa = fsatemp()
+    var temple = templates()
+    
+    static var loginstatus = loginstate.loggedout
+    
+    static var urlinfo = [String]()
     
     static var doc = 1
     static var template = 0
@@ -43,9 +47,18 @@ class workingdata {
     static var progress = Float(0.0)
     
     static var shownews = false
+
+    static var state = loginstate.abortedlogin
     
-    var fsa = fsatemp()            // hardcoded, to be replaced
-    var temple = templates()
+    enum loginstate {
+        case loggedout
+        case attemptinglogin
+        case abortedlogin
+        case justloggedin
+        case loggedin
+    }
+    
+    
     
     func templateset(templateid:Int) {
         workingdata.template = templateid
@@ -79,7 +92,7 @@ class workingdata {
         print("dismissed")
     }
     static func setuser(data: NSManagedObject) {
-        workingdata.loggedin = true
+        workingdata.loginstatus = .loggedin
         workingdata.userid = data.value(forKey: "username") as! String
         workingdata.usercourse = data.value(forKey: "course") as! String
         workingdata.userstep = data.value(forKey: "step") as! Int16

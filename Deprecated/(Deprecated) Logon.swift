@@ -164,7 +164,7 @@ class logon: UIViewController {
     @IBAction func check(_ sender: Any) {
         print("editing finished")
         let answer = users.checklogin(givenname: textfield.text!)
-        if workingdata.loggedin == true {
+        if workingdata.loginstatus == .loggedin {
             performSegue(withIdentifier: "main", sender: Any?.self)
         }
         

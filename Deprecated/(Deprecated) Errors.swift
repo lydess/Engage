@@ -7,10 +7,10 @@
 
 import Foundation
 import UIKit
-struct Errors {
+class possiblErrors {
     enum errorlist: Error {
-        case data_not_found
+        case nodata
         case badrequest
-        case cases_are_broken
+        case badcases
     }
 }

@@ -348,14 +348,14 @@
 		0390F971261695A3004FD4AE /* Logic classes */ = {
 			isa = PBXGroup;
 			children = (
+				03AD6F7F263245C1005C53CC /* subclasses.swift */,
+				0328986726422BF1003BC87A /* swiftassets.swift */,
 				033E6C992648B60F00CCE764 /* PDF management */,
 				0390F972261695B6004FD4AE /* workingdata.swift */,
 				03DDB6CE2616B4290046B613 /* templates.swift */,
 				0373148A261D375200438D6B /* button.swift */,
-				03AD6F7F263245C1005C53CC /* subclasses.swift */,
 				034E6253263A27DD00629BA4 /* Database.swift */,
 				033E6CA5264A378B00CCE764 /* Dataclasses.swift */,
-				0328986726422BF1003BC87A /* swiftassets.swift */,
 			);
 			path = "Logic classes";
 			sourceTree = "<group>";

@@ -82,7 +82,7 @@ class page1: UIViewController {
     }
    
     @IBAction func enquirysend(_ sender: Any) {
-        if workingdata.loggedin == false {
+        if workingdata.loginstatus == .loggedout {
         if readycheck() == false{
             var alert = UIAlertController(title: "Incomplete", message: "Please fill in all required forms", preferredStyle: .alert)
             var action = UIAlertAction(title: "Okay", style: .default, handler: {_ in })
@@ -91,7 +91,7 @@ class page1: UIViewController {
         }else{
             db.sendapp(course: workingdata.usercourse, username: firstnamefield.text!)
             db.checklogin(givenname: firstnamefield.text!)
-            workingdata.loggedin = true
+            workingdata.loginstatus = .loggedin
             self.present(regular, animated: true, completion: timerset)
             
             

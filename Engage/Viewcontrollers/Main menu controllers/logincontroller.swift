@@ -66,8 +66,8 @@ class logincontroller: UIViewController {
         login = textfield.text ?? ""
         db.checklogin(givenname: login)
         
-        if workingdata.loggedin == true {
-            workingdata.loggedin = true
+        if workingdata.loginstatus == .loggedin {
+            workingdata.loginstatus = .loggedin
             print("logged in!")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userdidlogin"), object: nil)
                 dismiss(animated: true, completion: {})

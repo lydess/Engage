@@ -90,7 +90,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
               NSLog("Query param \(query.name) has no value")
           }
-        workingdata.url = list
+        workingdata.urlinfo = list
       }
 
 }
