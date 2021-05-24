@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
-		031BF265263CC198000C1FBC /* page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* page1.swift */; };
+		031BF265263CC198000C1FBC /* EnquiryFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* EnquiryFormController.swift */; };
 		0326D429265206D40072C377 /* servicescontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326D428265206D40072C377 /* servicescontroller.swift */; };
 		0328986826422BF1003BC87A /* swiftassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986726422BF1003BC87A /* swiftassets.swift */; };
 		0328986E26424F8C003BC87A /* Newsfeedcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */; };
@@ -26,7 +26,7 @@
 		034D885A263F8AA60070DC23 /* uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D8859263F8AA60070DC23 /* uitests.swift */; };
 		034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D885E263F91D50070DC23 /* embedtestcontroller.swift */; };
 		034E6254263A27DD00629BA4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E6253263A27DD00629BA4 /* Database.swift */; };
-		03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* courseinfocontroller.swift */; };
+		03568CB7263A1CD000979E49 /* DetailedCourseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* DetailedCourseInfoController.swift */; };
 		0373148B261D375200438D6B /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373148A261D375200438D6B /* button.swift */; };
 		037904C5262E49E50039BC40 /* TypoGraphica1 in Resources */ = {isa = PBXBuildFile; fileRef = 037904C4262E49E50039BC40 /* TypoGraphica1 */; };
 		037904CE262EA22C0039BC40 /* (Deprecated) Logon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037904CD262EA22B0039BC40 /* (Deprecated) Logon.swift */; };
@@ -53,11 +53,11 @@
 		03A8881A2634FBB300A79A8B /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AD6F8E263265B0005C53CC /* Poppins-SemiBold.ttf */; };
 		03A8881B2634FBB300A79A8B /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AD6F95263265B8005C53CC /* Poppins-ThinItalic.ttf */; };
 		03A8881C2634FBB300A79A8B /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03AD6F90263265B1005C53CC /* Poppins-Bold.ttf */; };
-		03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */; };
+		03AD6F3B263165B2005C53CC /* CourseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6F3A263165B2005C53CC /* CourseSearchController.swift */; };
 		03AD6F80263245C1005C53CC /* subclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD6F7F263245C1005C53CC /* subclasses.swift */; };
 		03C00F8226155495002A4488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F8126155495002A4488 /* AppDelegate.swift */; };
 		03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F8326155495002A4488 /* SceneDelegate.swift */; };
-		03C00F8626155495002A4488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F8526155495002A4488 /* ViewController.swift */; };
+		03C00F8626155495002A4488 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F8526155495002A4488 /* MainMenuController.swift */; };
 		03C00F8926155495002A4488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C00F8726155495002A4488 /* Main.storyboard */; };
 		03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C00F8A26155495002A4488 /* Engage.xcdatamodeld */; };
 		03C00F8E26155496002A4488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C00F8D26155496002A4488 /* Assets.xcassets */; };
@@ -97,7 +97,7 @@
 
 /* Begin PBXFileReference section */
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
-		031BF264263CC198000C1FBC /* page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1.swift; sourceTree = "<group>"; };
+		031BF264263CC198000C1FBC /* EnquiryFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnquiryFormController.swift; sourceTree = "<group>"; };
 		0326D428265206D40072C377 /* servicescontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicescontroller.swift; sourceTree = "<group>"; };
 		0328986726422BF1003BC87A /* swiftassets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftassets.swift; sourceTree = "<group>"; };
 		0328986D26424F8C003BC87A /* Newsfeedcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeedcontroller.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		034D8859263F8AA60070DC23 /* uitests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uitests.swift; sourceTree = "<group>"; };
 		034D885E263F91D50070DC23 /* embedtestcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = embedtestcontroller.swift; sourceTree = "<group>"; };
 		034E6253263A27DD00629BA4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		03568CB6263A1CD000979E49 /* courseinfocontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseinfocontroller.swift; sourceTree = "<group>"; };
+		03568CB6263A1CD000979E49 /* DetailedCourseInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCourseInfoController.swift; sourceTree = "<group>"; };
 		0373148A261D375200438D6B /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
 		037904C4262E49E50039BC40 /* TypoGraphica1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TypoGraphica1; sourceTree = "<group>"; };
 		037904C9262E4A340039BC40 /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		0390F96C261691A1004FD4AE /* QandaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QandaController.swift; sourceTree = "<group>"; };
 		0390F972261695B6004FD4AE /* workingdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workingdata.swift; sourceTree = "<group>"; };
 		03A887A0263395A100A79A8B /* Brand guidelines */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Brand guidelines"; sourceTree = "<group>"; };
-		03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseviewcontroller.swift; sourceTree = "<group>"; };
+		03AD6F3A263165B2005C53CC /* CourseSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSearchController.swift; sourceTree = "<group>"; };
 		03AD6F7F263245C1005C53CC /* subclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subclasses.swift; sourceTree = "<group>"; };
 		03AD6F84263265B0005C53CC /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		03AD6F85263265B0005C53CC /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		03C00F7E26155495002A4488 /* Engage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Engage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C00F8126155495002A4488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03C00F8326155495002A4488 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03C00F8526155495002A4488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03C00F8526155495002A4488 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		03C00F8826155495002A4488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03C00F8B26155495002A4488 /* Engage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Engage.xcdatamodel; sourceTree = "<group>"; };
 		03C00F8D26155496002A4488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,9 +220,9 @@
 		0328986C26424F77003BC87A /* Course search */ = {
 			isa = PBXGroup;
 			children = (
-				031BF264263CC198000C1FBC /* page1.swift */,
-				03AD6F3A263165B2005C53CC /* courseviewcontroller.swift */,
-				03568CB6263A1CD000979E49 /* courseinfocontroller.swift */,
+				031BF264263CC198000C1FBC /* EnquiryFormController.swift */,
+				03AD6F3A263165B2005C53CC /* CourseSearchController.swift */,
+				03568CB6263A1CD000979E49 /* DetailedCourseInfoController.swift */,
 				032BF9362651ECD00068F620 /* costscontroller.swift */,
 			);
 			path = "Course search";
@@ -289,7 +289,7 @@
 		03568CB5263A1CB000979E49 /* Main menu controllers */ = {
 			isa = PBXGroup;
 			children = (
-				03C00F8526155495002A4488 /* ViewController.swift */,
+				03C00F8526155495002A4488 /* MainMenuController.swift */,
 				0349E1F1263FFB7800D4C8D7 /* logincontroller.swift */,
 			);
 			path = "Main menu controllers";
@@ -623,15 +623,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C00F8626155495002A4488 /* ViewController.swift in Sources */,
+				03C00F8626155495002A4488 /* MainMenuController.swift in Sources */,
 				032BF9372651ECD00068F620 /* costscontroller.swift in Sources */,
 				03FAD8B12617CFBC0040B62F /* Animation test.swift in Sources */,
 				03DDB6CF2616B4290046B613 /* templates.swift in Sources */,
 				0390F96D261691A1004FD4AE /* QandaController.swift in Sources */,
 				03C00F8226155495002A4488 /* AppDelegate.swift in Sources */,
 				033E6CA22649FCDE00CCE764 /* Contactcontroller.swift in Sources */,
-				03AD6F3B263165B2005C53CC /* courseviewcontroller.swift in Sources */,
-				03568CB7263A1CD000979E49 /* courseinfocontroller.swift in Sources */,
+				03AD6F3B263165B2005C53CC /* CourseSearchController.swift in Sources */,
+				03568CB7263A1CD000979E49 /* DetailedCourseInfoController.swift in Sources */,
 				034498722643771500F8A26E /* (Deprecated) Errors.swift in Sources */,
 				034D885A263F8AA60070DC23 /* uitests.swift in Sources */,
 				0326D429265206D40072C377 /* servicescontroller.swift in Sources */,
@@ -645,7 +645,7 @@
 				03AD6F80263245C1005C53CC /* subclasses.swift in Sources */,
 				0349E1F2263FFB7800D4C8D7 /* logincontroller.swift in Sources */,
 				037904CE262EA22C0039BC40 /* (Deprecated) Logon.swift in Sources */,
-				031BF265263CC198000C1FBC /* page1.swift in Sources */,
+				031BF265263CC198000C1FBC /* EnquiryFormController.swift in Sources */,
 				0328986E26424F8C003BC87A /* Newsfeedcontroller.swift in Sources */,
 				03FAD8A92616B9D60040B62F /* hardcoding.swift in Sources */,
 				037904D3262F95730039BC40 /* Sidepannelcontroller.swift in Sources */,

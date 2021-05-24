@@ -11,7 +11,7 @@ import UIKit
 import SceneKit
 
 
-class courseviewcontroller: UIViewController {
+class CourseSearchController: UIViewController {
     @IBOutlet weak var bubble: UIStackView!
     @IBOutlet weak var debug: UIButton!
 

@@ -9,7 +9,7 @@ import UIKit
 import SceneKit
 import Foundation
 
-class ViewController: UIViewController  {
+class MainMenuController: UIViewController  {
 
     @IBOutlet weak var buttonstack: UIStackView!
     @IBOutlet weak var debug: UIButton!
@@ -27,7 +27,7 @@ class ViewController: UIViewController  {
     var billboardstart = CGRect()
     var results = possiblErrors.errorlist.self
     var navitem = UINavigationItem.init(title: "Return")
-    
+    var db = DB()
 
     
     override func viewDidLoad() {
@@ -93,6 +93,19 @@ class ViewController: UIViewController  {
           
     }
     
+    func loginWithUrl() {
+        guard workingdata.urlinfo.isEmpty else {
+            let userinfo = workingdata.urlinfo
+            
+            db.sendapp(course: userinfo[1], username: userinfo[0])
+            db.checklogin(givenname: userinfo[0])
+            workingdata.loginstatus = .loggedin
+            
+            return
+        }
+        print("URL doesent exist")
+    }
+    
     func openinganimation() {
         UIView.animate(withDuration: 1, animations: {
             self.topline.alpha = 1
@@ -139,6 +152,7 @@ class ViewController: UIViewController  {
   
     @objc func whenmadeactive() {
         setloginUI()
+        loginWithUrl()
         
         if workingdata.urlinfo.isEmpty == false {
             loginurldebug.text = workingdata.urlinfo[0]
@@ -151,9 +165,7 @@ class ViewController: UIViewController  {
     
     
     
-    @IBAction func debugpush(_ sender: Any) {
-     
-    }
+ 
     @IBAction func swiperight(_ sender: Any) {
         
             debug.isEnabled = true

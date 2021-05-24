@@ -8,30 +8,27 @@
 import Foundation
 import  UIKit
 
-class courseinfoviewcontroller: UIViewController {
+class DetailedCourseInfoController: UIViewController {
     @IBOutlet weak var topbar: UIImageView!
-
-    
     @IBOutlet weak var costsbutton: UIButton!
     @IBOutlet weak var Coursetitle: UILabel!
     @IBOutlet weak var courseblurb: UITextView!
 
-    @IBOutlet weak var cviewbox: UIView!
    
-    var clr = colors()
+    var templateColors = colors()
     var clrlist = [UIColor]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initalize()
         
     }
-    
+    var jack = UIColor()
     func initalize() {
-        var course = workingdata.currentCourseView
-
+        
         Coursetitle.text = workingdata.selectedCourse
-        clrlist = clr.colorlist()
+        clrlist = templateColors.colorlist()
         
         costsbutton.layer.cornerRadius = 20
         courseblurb.layer.cornerRadius = 20

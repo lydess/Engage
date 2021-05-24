@@ -54,7 +54,7 @@ class DB {
     func checklogin(givenname: String) -> Bool {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
-        var found = Bool()
+        var userIsFound = Bool()
         var pred = NSPredicate(format: "username == '\(givenname)'")
         
         request.returnsObjectsAsFaults = false
@@ -66,16 +66,17 @@ class DB {
                     print("USER was found")
                     workingdata.setuser(data: x)
                     
-                    found = true
+                    userIsFound = true
                     
                 }else{
-                    found = false
+                    print("User not found")
+                    userIsFound = false
                 }
             }
                 
             
         }
-        return found
+        return userIsFound
     }
     
     func checkform() -> Bool {
