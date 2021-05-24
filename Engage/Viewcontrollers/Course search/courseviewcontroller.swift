@@ -14,16 +14,12 @@ import SceneKit
 class courseviewcontroller: UIViewController {
     @IBOutlet weak var bubble: UIStackView!
     @IBOutlet weak var debug: UIButton!
-    @IBOutlet weak var vertstack: UIStackView!
-    @IBOutlet weak var avo: UIButton!
+
     
     @IBOutlet weak var homelabel: UILabel!
-    @IBOutlet weak var debug2: UIButton!
-    @IBOutlet weak var buttonstack: UIStackView!
-    @IBOutlet weak var trades: UIButton!
-    @IBOutlet weak var scrollview: UIScrollView!
+
     var color = colors()
-    var userview = 0
+  
     var buttonheight = CGFloat(80)
     var buttonwidth = CGFloat(250)
     var stackspacing = 20
@@ -44,19 +40,9 @@ class courseviewcontroller: UIViewController {
     
     
     override func viewDidLoad() {
-        //bubble.isLayoutMarginsRelativeArrangement = true
-        //bubble.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 30)
+       initalize()
+
         
-        clr = color.colorlist()
-        dynamicstack.frame = CGRect(x: 0, y: 0, width: buttonwidth, height: buttonheight)
-        //dynamicstack.backgroundColor = .yellow
-        dynamicstack.distribution = .fillEqually
-        dynamicstack.spacing = CGFloat(stackspacing)
-        dynamicstack.axis = .vertical
-        bubble.addSubview(dynamicstack)
-        setuserview()
-        debug.contentVerticalAlignment = .fill
-        debug.contentHorizontalAlignment = .fill
         
          
         
@@ -65,38 +51,49 @@ class courseviewcontroller: UIViewController {
         
     }
     
+    func initalize() {
+        clr = color.colorlist()
+        dynamicstack.frame = CGRect(x: 0, y: 0, width: buttonwidth, height: buttonheight)
+        dynamicstack.distribution = .fillEqually
+        dynamicstack.spacing = CGFloat(stackspacing)
+        dynamicstack.axis = .vertical
+        bubble.addSubview(dynamicstack)
+        setuserview()
+        debug.contentVerticalAlignment = .fill
+        debug.contentHorizontalAlignment = .fill
+    }
+    
     func setuserview() {
-        switch workingdata.courseview {
-        case 0:
+        switch workingdata.currentCourseView {
+        case .mainMenu:
             for x in 0...mainmenu.count-1 {
-                addbut(text: self.mainmenu[x],color: clr[x])
+                generateButton(text: self.mainmenu[x],color: clr[x])
             }
-        case 1:
+        case .technicalTrades:
             for x in 0...techtxt.count-1 {
-                addbut(text: techtxt[x], color: clr[0])
+                generateButton(text: techtxt[x], color: clr[0])
             }
-        case 2:
+        case .healthAndCommunity:
             for x in 0...healthtxt.count-1 {
-                addbut(text: healthtxt[x], color: clr[1])
+                generateButton(text: healthtxt[x], color: clr[1])
             }
-        case 3:
+        case .landAndAnimals:
             for x in 0...landtxt.count-1 {
-                addbut(text: landtxt[x], color: clr[2])
+                generateButton(text: landtxt[x], color: clr[2])
             }
-        case 4:
+        case .businessAndTechnology:
             for x in 0...technology.count-1 {
-                addbut(text: technology[x], color: clr[3])
+                generateButton(text: technology[x], color: clr[3])
             }
-        case 5:
+        case .shortCourses:
             for x in 0...sctxt.count-1 {
-                addbut(text: sctxt[x], color: clr[4])
+                generateButton(text: sctxt[x], color: clr[4])
             }
-        default:
-            print("somthings wrong with cases")
+        
         }
     }
     
-    func viewchange() {
+    func Resetview() {
         activebut.removeAll()
         for x in dynamicstack.subviews{
             x.removeFromSuperview()
@@ -117,7 +114,7 @@ class courseviewcontroller: UIViewController {
         
         }
     
-    func addbut(text: String, color: UIColor) {
+    func generateButton(text: String, color: UIColor) {
         
         let button = UIButton()
 
@@ -129,12 +126,14 @@ class courseviewcontroller: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(click), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tag = buttonid
-        buttonid += 1
+        button.tag = activebut.count
+
+        
+        
+        
         
         activebut.append(button)
-        
-        addrow()
+        Addstackheight()
         dynamicstack.addArrangedSubview(button)
         
        // Creates a UI button and sets it up as part of the scrollview stack
@@ -142,67 +141,56 @@ class courseviewcontroller: UIViewController {
         
         
     }
-    func addrow() {
+    func Addstackheight() {
         
         dynamicstack.frame = CGRect(x: 0, y: 0, width: dynamicstack.frame.width, height: dynamicstack.frame.height + buttonheight + CGFloat(stackspacing))
         
         
     }
     
-    @objc func click(sender: UIButton){
-        print("current button id is " + String(buttonid))
-        var bcolor = sender.backgroundColor
-        homelabel.text = "Back"
-        var answer = "The button you clicked was "
-        if workingdata.courseview == 0{
-        workingdata.courseview = sender.tag
-        switch workingdata.courseview {
+    func setButtonLink(butt: UIButton) -> workingdata.coursetypes {
+        var answer = workingdata.coursetypes.mainMenu
+        switch butt.tag {
+        case 0:
+            answer = .technicalTrades
         case 1:
-            print("current view is technical trades")
-            userview = 1
-            viewchange()
+            answer = .healthAndCommunity
         case 2:
-            print("current view is Health and Community")
-            userview = 2
-            viewchange()
+            answer = .landAndAnimals
         case 3:
-            print("current view is land and animals")
-            userview = 3
-            viewchange()
+            answer = .businessAndTechnology
         case 4:
-            print("current view is technology")
-            userview = 4
-            viewchange()
-        case 5:
-            print("current view is shortcourses")
-            userview = 5
-            viewchange()
+            answer = .shortCourses
         default:
-            print("somthings wrong with the cases")
-            viewchange()
+            print("cases failed")
             
         }
+        return answer
         
+    }
+    
+    @objc func click(sender: UIButton){
+        homelabel.text = "Back"
         
-        }
-        else
-        {
-            print(answer + sender.titleLabel!.text!)
-            workingdata.selectedcourse = sender.titleLabel!.text!
+        if workingdata.currentCourseView == .mainMenu{
+        workingdata.currentCourseView = setButtonLink(butt: sender)
+        Resetview()
+            
+        } else {
+    
+            workingdata.selectedCourse = sender.titleLabel!.text!
             performSegue(withIdentifier: "courseinfo", sender: Any?.self)
         }
         
     }
     
-    @IBAction func topdebugpush(_ sender: Any) {
-        if workingdata.courseview != 0 {
+    @IBAction func Backbutton(_ sender: Any) {
+        if workingdata.currentCourseView != .mainMenu {
             
-        
-        workingdata.courseview = 0
-        userview = 0
-        viewchange()
-            homelabel.text = "Home"
-        print("going home")
+        workingdata.currentCourseView = .mainMenu
+        //userview = 0
+        Resetview()
+        homelabel.text = "Home"
         
         }
         else {performSegue(withIdentifier: "home", sender: Any?.self)}

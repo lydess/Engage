@@ -971,7 +971,7 @@
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="21"/>
                                 <state key="normal" image="arrow.backward.square" catalog="system"/>
                                 <connections>
-                                    <action selector="topdebugpush:" destination="Fje-2O-7Kq" eventType="touchUpInside" id="b22-2h-bPc"/>
+                                    <action selector="Backbutton:" destination="Fje-2O-7Kq" eventType="touchUpInside" id="b22-2h-bPc"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-Fc-oej">

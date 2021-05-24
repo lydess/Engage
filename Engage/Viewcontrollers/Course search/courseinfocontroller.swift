@@ -22,34 +22,31 @@ class courseinfoviewcontroller: UIViewController {
     var clrlist = [UIColor]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("welcome to course info")
+
         initalize()
         
     }
     
     func initalize() {
-        
-        Coursetitle.text = workingdata.selectedcourse
-        //topbar.layer.shadowOffset = .init(width: 500, height: 500)
-        //fullfeelabel.shadowColor = .black
-        //fullfeelabel.toggleBoldface(Any?.self)
-        //fullfeelabel.shadowOffset = CGSize(width: 1, height: 1)
+        var course = workingdata.currentCourseView
+
+        Coursetitle.text = workingdata.selectedCourse
         clrlist = clr.colorlist()
-        var course = workingdata.courseview
+        
         costsbutton.layer.cornerRadius = 20
         courseblurb.layer.cornerRadius = 20
-        //topbar.layer.cornerRadius = 20
-        switch workingdata.courseview {
-        case 0:
+       
+        switch workingdata.currentCourseView {
+        case .technicalTrades:
             topbar.backgroundColor = clrlist[1]
-        case 1:
-            topbar.backgroundColor = clrlist[course]
-        case 2:
-            topbar.backgroundColor = clrlist[course]
-        case 3:
-            topbar.backgroundColor = clrlist[course]
-        case 4:
-            topbar.backgroundColor = clrlist[course]
+        case .healthAndCommunity:
+            topbar.backgroundColor = clrlist[2]
+        case .landAndAnimals:
+            topbar.backgroundColor = clrlist[3]
+        case .businessAndTechnology:
+            topbar.backgroundColor = clrlist[4]
+        case .shortCourses:
+            topbar.backgroundColor = clrlist[5]
         
         default:
             topbar.backgroundColor = .darkGray

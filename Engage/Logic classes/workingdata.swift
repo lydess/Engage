@@ -31,8 +31,8 @@ class workingdata {
     static var isworking = false
     static var alreadyworking = false
     static var menuseen = false
-    static var courseview = 0
-    static var selectedcourse = "NO_COURSE_SELECTED"
+    static var currentCourseView = coursetypes.mainMenu
+    static var selectedCourse = "NO_COURSE_SELECTED"
     
     static var resumedlist = NSMutableArray()
     static var resumedstep = Int()
@@ -56,6 +56,15 @@ class workingdata {
         case abortedlogin
         case justloggedin
         case loggedin
+    }
+    enum coursetypes {
+        case mainMenu
+        case technicalTrades
+        case healthAndCommunity
+        case landAndAnimals
+        case businessAndTechnology
+        case shortCourses
+        
     }
     
     

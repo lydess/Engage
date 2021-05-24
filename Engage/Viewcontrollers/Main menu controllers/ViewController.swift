@@ -23,11 +23,11 @@ class ViewController: UIViewController  {
     @IBOutlet weak var contact: UIButton!
     @IBOutlet weak var loginurldebug: UILabel!
     @IBOutlet weak var community: UIButton!
+    
     var billboardstart = CGRect()
-    var step = 0
     var results = possiblErrors.errorlist.self
     var navitem = UINavigationItem.init(title: "Return")
-    var url = [UIApplication.LaunchOptionsKey : Any]()
+    
 
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class ViewController: UIViewController  {
         switch workingdata.menuseen {
         case false:
             initalize()
-            list()
+            openinganimation()
             setloginUI()
             workingdata.menuseen = true
             
@@ -93,7 +93,7 @@ class ViewController: UIViewController  {
           
     }
     
-    func list() {
+    func openinganimation() {
         UIView.animate(withDuration: 1, animations: {
             self.topline.alpha = 1
         }, completion: { _ in

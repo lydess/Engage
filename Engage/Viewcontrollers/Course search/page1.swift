@@ -44,7 +44,7 @@ class page1: UIViewController {
         datepicker.layer.cornerRadius = 10
         textview.backgroundColor = .white
         textview.inputAccessoryView = toolbar
-        header.backgroundColor = clrlist[workingdata.courseview]
+        header.backgroundColor = .red
         NotificationCenter.default.addObserver(self, selector: #selector(toolbarshow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toolbarhide), name: UIResponder.keyboardWillShowNotification, object: nil)
                 
