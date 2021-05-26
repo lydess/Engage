@@ -34,3 +34,18 @@ class campus {
     }
     
 }
+
+class cells {
+    var celllist = [UICollectionViewCell]()
+    func buildcells() {
+        let titlecell = UICollectionViewCell(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let bodycell = UICollectionViewCell(frame: CGRect(x: 0, y: 0, width: 100, height: 300))
+        
+        celllist.append(titlecell)
+        celllist.append(bodycell)
+    }
+    func getcells() -> [UICollectionViewCell] {
+        buildcells()
+        return celllist
+    }
+}

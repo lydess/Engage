@@ -95,17 +95,17 @@ class templates {
     }
     func getcampusimages() -> [UIImage] {
         var imagestack = [UIImage]()
-        let wallan = UIImage(imageLiteralResourceName: "wallan")
         let fryers = UIImage(imageLiteralResourceName: "fryers")
         let archer = UIImage(imageLiteralResourceName: "archer")
+        let wallan = UIImage(imageLiteralResourceName: "wallan")
         let seymour = UIImage(imageLiteralResourceName: "seymour")
         let tone = UIImage(imageLiteralResourceName: "tone")
         let benalla = UIImage(imageLiteralResourceName: "benalla")
         let docker = UIImage(imageLiteralResourceName: "docker")
         
-        imagestack.append(wallan)
         imagestack.append(fryers)
         imagestack.append(archer)
+        imagestack.append(wallan)
         imagestack.append(seymour)
         imagestack.append(tone)
         imagestack.append(benalla)
@@ -115,9 +115,9 @@ class templates {
     }
     func getcampustitles() -> [String] {
         var stringstack = [String]()
-        stringstack.append("Wallan")
         stringstack.append("Fryers st")
-        stringstack.append("Archer")
+        stringstack.append("Archer st")
+        stringstack.append("Wallan")
         //stringstack.append("William Orr")
         stringstack.append("Docker st")
         stringstack.append("Benalla")

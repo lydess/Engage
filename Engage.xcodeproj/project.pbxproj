@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03112C93265C8D1600034B82 /* examplecoco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03112C92265C8D1600034B82 /* examplecoco.swift */; };
+		03112C95265C8D8C00034B82 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03112C94265C8D8C00034B82 /* CollectionViewController.swift */; };
 		031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B97B9262A74220024CD3F /* debugcontroller.swift */; };
 		031BF265263CC198000C1FBC /* EnquiryFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BF264263CC198000C1FBC /* EnquiryFormController.swift */; };
 		0326D429265206D40072C377 /* servicescontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326D428265206D40072C377 /* servicescontroller.swift */; };
@@ -27,6 +29,9 @@
 		034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D885E263F91D50070DC23 /* embedtestcontroller.swift */; };
 		034E6254263A27DD00629BA4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E6253263A27DD00629BA4 /* Database.swift */; };
 		03568CB7263A1CD000979E49 /* DetailedCourseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03568CB6263A1CD000979E49 /* DetailedCourseInfoController.swift */; };
+		0366F4F9265CEB4C0015AC8B /* CampusDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366F4F8265CEB4C0015AC8B /* CampusDetailController.swift */; };
+		0366F4FB265CF2920015AC8B /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0366F4FA265CF2920015AC8B /* readme.rtf */; };
+		0366F4FD265CF2D50015AC8B /* campusinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366F4FC265CF2D50015AC8B /* campusinfo.swift */; };
 		0373148B261D375200438D6B /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373148A261D375200438D6B /* button.swift */; };
 		037904C5262E49E50039BC40 /* TypoGraphica1 in Resources */ = {isa = PBXBuildFile; fileRef = 037904C4262E49E50039BC40 /* TypoGraphica1 */; };
 		037904CE262EA22C0039BC40 /* (Deprecated) Logon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037904CD262EA22B0039BC40 /* (Deprecated) Logon.swift */; };
@@ -96,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03112C92265C8D1600034B82 /* examplecoco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examplecoco.swift; sourceTree = "<group>"; };
+		03112C94265C8D8C00034B82 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		031B97B9262A74220024CD3F /* debugcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugcontroller.swift; sourceTree = "<group>"; };
 		031BF264263CC198000C1FBC /* EnquiryFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnquiryFormController.swift; sourceTree = "<group>"; };
 		0326D428265206D40072C377 /* servicescontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicescontroller.swift; sourceTree = "<group>"; };
@@ -118,6 +125,9 @@
 		034D885E263F91D50070DC23 /* embedtestcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = embedtestcontroller.swift; sourceTree = "<group>"; };
 		034E6253263A27DD00629BA4 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		03568CB6263A1CD000979E49 /* DetailedCourseInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCourseInfoController.swift; sourceTree = "<group>"; };
+		0366F4F8265CEB4C0015AC8B /* CampusDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusDetailController.swift; sourceTree = "<group>"; };
+		0366F4FA265CF2920015AC8B /* readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		0366F4FC265CF2D50015AC8B /* campusinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = campusinfo.swift; sourceTree = "<group>"; };
 		0373148A261D375200438D6B /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
 		037904C4262E49E50039BC40 /* TypoGraphica1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TypoGraphica1; sourceTree = "<group>"; };
 		037904C9262E4A340039BC40 /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
@@ -252,6 +262,7 @@
 			children = (
 				033E6CA12649FCDE00CCE764 /* Contactcontroller.swift */,
 				033E6CA3264A355D00CCE764 /* CampusInfoController.swift */,
+				0366F4F8265CEB4C0015AC8B /* CampusDetailController.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -261,6 +272,8 @@
 			children = (
 				034498712643771500F8A26E /* (Deprecated) Errors.swift */,
 				037904CD262EA22B0039BC40 /* (Deprecated) Logon.swift */,
+				03112C92265C8D1600034B82 /* examplecoco.swift */,
+				03112C94265C8D8C00034B82 /* CollectionViewController.swift */,
 			);
 			path = Deprecated;
 			sourceTree = "<group>";
@@ -389,7 +402,7 @@
 				03A887A0263395A100A79A8B /* Brand guidelines */,
 				037904C3262E49C30039BC40 /* Fonts */,
 				037904A3262D58C80039BC40 /* PDF */,
-				03FAD8A72616B8040040B62F /* Question templates */,
+				03FAD8A72616B8040040B62F /* Hardcoded */,
 				0390F971261695A3004FD4AE /* Logic classes */,
 				0390F96826168DD4004FD4AE /* Viewcontrollers */,
 				03C00F8126155495002A4488 /* AppDelegate.swift */,
@@ -422,12 +435,14 @@
 			path = EngageUITests;
 			sourceTree = "<group>";
 		};
-		03FAD8A72616B8040040B62F /* Question templates */ = {
+		03FAD8A72616B8040040B62F /* Hardcoded */ = {
 			isa = PBXGroup;
 			children = (
+				0366F4FA265CF2920015AC8B /* readme.rtf */,
 				03FAD8A82616B9D60040B62F /* hardcoding.swift */,
+				0366F4FC265CF2D50015AC8B /* campusinfo.swift */,
 			);
-			path = "Question templates";
+			path = Hardcoded;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,6 +601,7 @@
 				03A888172634FBB300A79A8B /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				03A8880E2634FBB300A79A8B /* Poppins-SemiBoldItalic.ttf in Resources */,
 				03A8881A2634FBB300A79A8B /* Poppins-SemiBold.ttf in Resources */,
+				0366F4FB265CF2920015AC8B /* readme.rtf in Resources */,
 				03A888102634FBB300A79A8B /* Poppins-ExtraLight.ttf in Resources */,
 				03A887A1263395A100A79A8B /* Brand guidelines in Resources */,
 				03A888182634FBB300A79A8B /* Poppins-BlackItalic.ttf in Resources */,
@@ -635,6 +651,7 @@
 				034498722643771500F8A26E /* (Deprecated) Errors.swift in Sources */,
 				034D885A263F8AA60070DC23 /* uitests.swift in Sources */,
 				0326D429265206D40072C377 /* servicescontroller.swift in Sources */,
+				03112C95265C8D8C00034B82 /* CollectionViewController.swift in Sources */,
 				033E6C9D2648BF8800CCE764 /* PDFdirector.swift in Sources */,
 				034D8852263F888C0070DC23 /* masterdebugcontroller.swift in Sources */,
 				03C00F8C26155495002A4488 /* Engage.xcdatamodeld in Sources */,
@@ -642,6 +659,7 @@
 				033E6CA4264A355D00CCE764 /* CampusInfoController.swift in Sources */,
 				03F18123264CC01800ED4F51 /* campusviewcontroller.swift in Sources */,
 				03C00F8426155495002A4488 /* SceneDelegate.swift in Sources */,
+				03112C93265C8D1600034B82 /* examplecoco.swift in Sources */,
 				03AD6F80263245C1005C53CC /* subclasses.swift in Sources */,
 				0349E1F2263FFB7800D4C8D7 /* LoginController.swift in Sources */,
 				037904CE262EA22C0039BC40 /* (Deprecated) Logon.swift in Sources */,
@@ -653,6 +671,8 @@
 				034D885F263F91D50070DC23 /* embedtestcontroller.swift in Sources */,
 				033E6C9B2648BDF800CCE764 /* pdfactions.swift in Sources */,
 				0373148B261D375200438D6B /* button.swift in Sources */,
+				0366F4FD265CF2D50015AC8B /* campusinfo.swift in Sources */,
+				0366F4F9265CEB4C0015AC8B /* CampusDetailController.swift in Sources */,
 				033E6C9F2648C05600CCE764 /* PDFparser.swift in Sources */,
 				033E6CA6264A378B00CCE764 /* Dataclasses.swift in Sources */,
 				031B97BA262A74220024CD3F /* debugcontroller.swift in Sources */,

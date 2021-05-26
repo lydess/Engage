@@ -99,11 +99,9 @@ class FselectorController: UIViewController {
                 startlabel.alpha = 0
                 status.alpha = 1
                 status.text = """
-Thanks! \(workingdata.userid) for getting these forms done!
-                
-            we will give you a call soon to work out a good time for an interview!, feel free to contact us in the mean time at our contact centre (check us out back in the main menu)
+Thanks! \(workingdata.userid), Based on your answers given, the app lets you know what your potential fees will be.\r\n \r\n Your Enquiry is now being handed over to our Engagement team! they will call soon to work out a good time for a chat about your study options, or you can respond to emails and in the future live chat messages from right here in the app!
 """
-                status.font = UIFont(name: "Poppins Bold", size: 20)
+                status.font = UIFont(name: "Poppins Bold", size: 15)
                 status.textColor = .white
                 EQbutton.setTitleColor(.black, for: .normal)
                 EQbutton.backgroundColor = .gray

@@ -23,11 +23,13 @@ class MainMenuController: UIViewController  {
     @IBOutlet weak var contact: UIButton!
     @IBOutlet weak var loginurldebug: UILabel!
     @IBOutlet weak var community: UIButton!
+ 
     
     var billboardstart = CGRect()
     var results = possiblErrors.errorlist.self
     var navitem = UINavigationItem.init(title: "Return")
     var db = DB()
+    var screen = UIScreen.main
 
     
     override func viewDidLoad() {
@@ -45,7 +47,7 @@ class MainMenuController: UIViewController  {
             
         }
         
-    
+        
     }
     func setloginUI() {
         if workingdata.loginstatus == .loggedout {

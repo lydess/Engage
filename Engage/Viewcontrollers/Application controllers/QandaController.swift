@@ -304,8 +304,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
     }
     func case5() {
         let db = DB()
-        let alert = UIAlertAction(title: "Complete!", style: .default, handler: {_ in self.go()})
-        let action = UIAlertController(title: "Continue", message: "Your form is finished and submitted!", preferredStyle: .alert)
+        let alert = UIAlertAction(title: "Continue", style: .default, handler: {_ in self.go()})
+        let action = UIAlertController(title: "Complete!", message: "Your form is finished and submitted!", preferredStyle: .alert)
         qtext.text = workingdata.qlist[step]
         complete = true
         db.finishform()
@@ -525,7 +525,10 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             }
             if answerlist.count != 1 {
-                print("ERROR")
+                var checkanswer = UIAlertController(title: "Too many answers", message: "Please select only 1", preferredStyle: .alert)
+                var checkaction = UIAlertAction(title: "Okay", style: .default, handler:nil)
+                checkanswer.addAction(checkaction)
+                present(checkanswer, animated: true, completion: {})
                 
             }
             if answerlist.count == 1{
@@ -548,7 +551,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
             
             }
             if answerlist.count < 1 {
-                print("Please select an answer")
+                answer.add(answerlist)
+                reload()
             }
             else{
                 answer.add(answerlist)

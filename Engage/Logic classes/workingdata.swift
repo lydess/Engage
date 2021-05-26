@@ -13,7 +13,7 @@ class workingdata {
     
     var fsa = fsatemp()
     var temple = templates()
-    
+    var cdata = campusdataobject()
     static var loginstatus = loginstate.loggedout
     
     static var urlinfo = [String]()
@@ -49,6 +49,7 @@ class workingdata {
     static var shownews = false
 
     static var state = loginstate.abortedlogin
+    static var currentcampus = campusdataobject.campuses.Archer
     
     enum loginstate {
         case loggedout
@@ -75,6 +76,8 @@ class workingdata {
         case checkBoxOther
         case formCompelte
     }
+    
+    
     
     
     

@@ -104,7 +104,15 @@ class contactcontroller: UIViewController {
     }
     @objc func taped(sender: UIButton){
         workingdata.selectedcampus = sender.tag
-        //performSegue(withIdentifier: "campusinfo", sender: Any?.self)
+        switch workingdata.selectedcampus {
+        case 0:
+            workingdata.currentcampus = .Fryers
+        case 1:
+            workingdata.currentcampus = .Archer
+        default:
+            workingdata.currentcampus = .Fryers
+        }
+        performSegue(withIdentifier: "campusinfo", sender: Any?.self)
     }
     @objc func imgtapped() {
         print("imgtapped")
