@@ -642,7 +642,7 @@ class QandaController: UIViewController, UITextFieldDelegate {
         var img = UIImage(systemName: "hand.thumbsdown.fill")
         no.setImage(UIImage(systemName: "hand.thumbsdown.fill"), for: .normal)
         var timea = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false, block: {_ in self.no.setImage(UIImage(systemName: "hand.thumbsdown"), for: .normal)
-            timea.invalidate()
+            
         })
         
         givenanswer = false
@@ -657,8 +657,8 @@ class QandaController: UIViewController, UITextFieldDelegate {
         var img = UIImage(systemName: "hand.thumbsup.fill")
         
         yes.setImage(UIImage(systemName: "hand.thumbsup.fill"), for: .normal)
-        var timea = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false, block: {_ in self.yes.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
-            timea.invalidate()
+        var timer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false, block: { _ in self.yes.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
+            
         })
         givenanswer = true
         saveanswer()
