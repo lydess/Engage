@@ -308,13 +308,6 @@
 			path = "Main menu controllers";
 			sourceTree = "<group>";
 		};
-		037904A3262D58C80039BC40 /* PDF */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PDF;
-			sourceTree = "<group>";
-		};
 		037904C3262E49C30039BC40 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,7 +394,6 @@
 			children = (
 				03A887A0263395A100A79A8B /* Brand guidelines */,
 				037904C3262E49C30039BC40 /* Fonts */,
-				037904A3262D58C80039BC40 /* PDF */,
 				03FAD8A72616B8040040B62F /* Hardcoded */,
 				0390F971261695A3004FD4AE /* Logic classes */,
 				0390F96826168DD4004FD4AE /* Viewcontrollers */,

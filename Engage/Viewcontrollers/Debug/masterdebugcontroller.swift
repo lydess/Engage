@@ -23,7 +23,7 @@ class masterdebugcontroller: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        let warning = UIAlertController(title: "WARNING!", message: "This is the developer menu, dont screw with this unless you're Will", preferredStyle: .alert)
+        let warning = UIAlertController(title: "WARNING!", message: "This is the developer menu, messing with this can result in corrupted data or a broken app", preferredStyle: .alert)
         
         let alert = UIAlertAction(title: "Understood", style: .destructive, handler: {_ in })
         warning.addAction(alert)
